@@ -310,7 +310,17 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
   "summaryOnly": "רק התמונה המשותפת. מה שנכתב בפרטי לא מועתק לכאן.",
   "startWeek": "התחלה של תוכנית שבעה ימים לזוג",
   "planTitle": "שבעה ימים",
-  "planIntro": "שלושת הימים הראשונים הם אישיים. המדריך מחליף למי השיחה: צד א, אחר כך צד ב, אחר כך צד א. מיום 4 השיחות משותפות, ושניכם צריכים להיות בחדר. יום מאוחר יותר נשאר נעול עד התאריך שלו.",
+  "planIntro": "שלושת הימים הראשונים הם אישיים. המדריך מחליף למי השיחה: צד א, אחר כך צד ב, אחר כך צד א. מיום 4 השיחות משותפות, ושניכם צריכים להיות בחדר. במפגש משותף יש תרגול מדבר ומקשיב עם שעון של שלוש דקות. יום מאוחר יותר נשאר נעול עד התאריך שלו.",
+  "slTitle": "תור של דיבור והקשבה",
+  "slBody": "מי שמדבר מקבל שלוש דקות. מי שמקשיב לא מתווכח בתוך התור, ורק אחריו אומר במשפט אחד מה ששמע, לפני כל תשובה.",
+  "slSpeaker": "עכשיו מדבר/ת: {name}",
+  "slListener": "עכשיו מקשיב/ה: {name}",
+  "slStart": "התחלה של תור בן שלוש דקות",
+  "slSwitch": "החלפת מי שמדבר",
+  "slStop": "עצירת השעון",
+  "slDone": "הזמן נגמר. מי שמקשיב מסכם במשפט אחד, ואז מחליפים תור.",
+  "slTick": "נותרו {m}:{s}",
+  "reopenSum": "חזרה לתמונה המשותפת",
   "planProgress": "הושלמו {done} מתוך {total} מפגשים. התחלה ב־{start}.",
   "dayLabel": "יום {n}",
   "openDay": "פתיחת המפגש",
@@ -477,6 +487,8 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
 
   var state = { view: "home", dayId: null, crisis: null, hold: false, guideText: "", guide: null, pad: "", pst: {}, check: null, result: null, formError: "", confirmClear: false, cplErr: "", cplReset: false };
   var breath = { running: false, timer: null, mode: "468", phaseIdx: 0, left: 4, cycle: 0, totalCycles: 5, dayId: null, finishedMsg: "" };
+  var cplSlTimer = null;
+  var cplSl = { running: false, left: 180, done: false };
 
   function breathModes() {
     return {
@@ -820,11 +832,14 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
   function render() {
     var breathingHere = state.view === "breathe" || (state.view === "day" && state.dayId === "t1");
     if (!breathingHere) stopBreath(false);
+    clearCplSlTimer();
     var app = document.getElementById("app");
     if (!app) return;
     app.innerHTML = shell(viewHTML());
     renderCrisis();
     if (breath.running) syncBreathDom();
+    if (!document.getElementById("cpl-sl-tick")) cplSl.running = false;
+    else if (cplSl.running) armCplSlTimer();
   }
   function readRoute() {
     var h = (location.hash || "#home").replace("#", "");
@@ -1122,6 +1137,65 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     });
     state.cplErr = "";
     state.cplReset = false;
+    cplSl.running = false;
+    cplSl.done = false;
+    cplSl.left = 180;
+    clearCplSlTimer();
+  }
+  function clearCplSlTimer() {
+    if (cplSlTimer) {
+      clearInterval(cplSlTimer);
+      cplSlTimer = null;
+    }
+  }
+  function cplSlSpeakerSide(meta) {
+    if (meta && (meta.slSpeakerSide === "a" || meta.slSpeakerSide === "b")) return meta.slSpeakerSide;
+    return meta && meta.active === "b" ? "b" : "a";
+  }
+  function cplSlParts() {
+    var left = cplSl.left;
+    if (left < 0) left = 0;
+    var m = Math.floor(left / 60);
+    var s = left % 60;
+    return { m: String(m), s: (s < 10 ? "0" : "") + s };
+  }
+  function cplSlTickText() {
+    return fill(CPL.slTick, cplSlParts());
+  }
+  function syncCplSlDom() {
+    if (typeof document === "undefined") return;
+    var tick = document.getElementById("cpl-sl-tick");
+    if (!tick) return;
+    var finished = cplSl.done && !cplSl.running;
+    tick.textContent = finished ? CPL.slDone : cplSlTickText();
+    var card = tick.closest ? tick.closest(".cpl-sl") : null;
+    if (card) card.classList.toggle("is-done", finished);
+  }
+  function cplSlOnTick() {
+    if (!cplSl.running) return;
+    cplSl.left -= 1;
+    if (cplSl.left <= 0) {
+      cplSl.left = 0;
+      cplSl.running = false;
+      cplSl.done = true;
+      clearCplSlTimer();
+    }
+    syncCplSlDom();
+  }
+  function armCplSlTimer() {
+    clearCplSlTimer();
+    if (!cplSl.running || cplSl.left <= 0) return;
+    if (typeof document === "undefined") return;
+    if (!document.getElementById("cpl-sl-tick")) return;
+    cplSlTimer = setInterval(cplSlOnTick, 1000);
+  }
+  function cplJointOpen(meta) {
+    if (!meta || meta.screen !== "session") return null;
+    var plan = loadCplPlan();
+    var found = cplDayDef(meta.openDay);
+    if (!plan || !found || found.def.mode !== "joint") return null;
+    if (found.index > todayIndex(plan, jerusalemToday())) return null;
+    return found;
   }
   function scrubSide(which) {
     var rec = loadCplSide(which);
@@ -1293,7 +1367,10 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
       "<h2>" + esc(CPL.needH) + "</h2><p>" + esc(sum.needs) + "</p>" +
       "<h2>" + esc(CPL.appH) + "</h2><p>" + esc(sum.appreciate) + "</p>" +
       '<p class="muted">' + esc(CPL.summaryOnly) + "</p>" +
-      '<button type="button" class="btn block" data-action="cpl-start-plan">' + esc(CPL.startWeek) + "</button></section>";
+      '<div class="stack">' +
+      '<button type="button" class="btn block" data-action="cpl-start-plan">' + esc(CPL.startWeek) + "</button>" +
+      (loadCplPlan() ? '<button type="button" class="btn secondary block" data-action="cpl-back-plan">' + esc(CPL.backPlan) + "</button>" : "") +
+      "</div></section>";
   }
   function viewCplPlan(meta) {
     var plan = loadCplPlan();
@@ -1313,7 +1390,26 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     return whoBanner(meta) + '<section class="card"><p class="kicker">' + esc(CPL.kicker) + "</p><h1>" + esc(CPL.planTitle) + "</h1>" +
       "<p>" + esc(CPL.planIntro) + "</p>" +
       "<p>" + esc(fill(CPL.planProgress, { done: done, total: 7, start: plan.startDate })) + "</p>" +
+      '<button type="button" class="btn secondary block" data-action="cpl-reopen-sum">' + esc(CPL.reopenSum) + "</button>" +
       list + cplResetBlock() + "</section>";
+  }
+  function cplSlCard(meta) {
+    var side = cplSlSpeakerSide(meta);
+    var speaker = nameOf(meta, side) || CPL.noname;
+    var listener = nameOf(meta, otherOf(side)) || CPL.noname;
+    var finished = cplSl.done && !cplSl.running;
+    var tick = finished ? CPL.slDone : cplSlTickText();
+    return '<div class="cpl-sl' + (finished ? " is-done" : "") + '">' +
+      "<h2>" + esc(CPL.slTitle) + "</h2>" +
+      "<p>" + esc(CPL.slBody) + "</p>" +
+      '<p class="cpl-sl-role"><strong>' + esc(fill(CPL.slSpeaker, { name: speaker })) + "</strong></p>" +
+      '<p class="cpl-sl-role">' + esc(fill(CPL.slListener, { name: listener })) + "</p>" +
+      '<p id="cpl-sl-tick" class="cpl-sl-tick" role="timer">' + esc(tick) + "</p>" +
+      '<div class="stack">' +
+      '<button type="button" class="btn olive block" data-action="cpl-sl-start">' + esc(CPL.slStart) + "</button>" +
+      '<button type="button" class="btn secondary block" data-action="cpl-sl-switch">' + esc(CPL.slSwitch) + "</button>" +
+      '<button type="button" class="btn secondary block" data-action="cpl-sl-stop">' + esc(CPL.slStop) + "</button>" +
+      "</div></div>";
   }
   function viewCplSession(meta) {
     var plan = loadCplPlan();
@@ -1350,10 +1446,12 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
       }
     }
     var both = "";
+    var slHTML = "";
     if (def.mode === "joint") {
       both = '<label class="check"><input type="checkbox" data-cpl="both" data-day="' + esc(def.id) + '"' + (day.bothHere ? " checked" : "") + ">" + esc(CPL.bothHere) + "</label>";
+      slHTML = cplSlCard(meta);
     }
-    return head + sumHTML +
+    return head + sumHTML + slHTML +
       "<h2>" + esc(CPL.lessonH) + "</h2><p>" + esc(def.lesson) + "</p>" +
       "<h2>" + esc(CPL.exerciseH) + "</h2><p>" + esc(def.exercise) + "</p>" +
       both +
@@ -1530,6 +1628,38 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
       saveCplMeta(meta);
       render(); return;
     }
+    if (action === "cpl-reopen-sum") {
+      if (!loadCplSide("a").done || !loadCplSide("b").done) return;
+      meta.screen = "summary";
+      saveCplMeta(meta);
+      render(); return;
+    }
+    if (action === "cpl-sl-start") {
+      if (!cplJointOpen(meta)) return;
+      if (meta.slSpeakerSide !== "a" && meta.slSpeakerSide !== "b") {
+        meta.slSpeakerSide = meta.active === "b" ? "b" : "a";
+        saveCplMeta(meta);
+      }
+      cplSl.left = 180;
+      cplSl.done = false;
+      cplSl.running = true;
+      render(); return;
+    }
+    if (action === "cpl-sl-switch") {
+      if (!cplJointOpen(meta)) return;
+      meta.slSpeakerSide = otherOf(cplSlSpeakerSide(meta));
+      saveCplMeta(meta);
+      cplSl.running = false;
+      cplSl.done = false;
+      cplSl.left = 180;
+      clearCplSlTimer();
+      render(); return;
+    }
+    if (action === "cpl-sl-stop") {
+      cplSl.running = false;
+      clearCplSlTimer();
+      render(); return;
+    }
     if (action === "cpl-done") {
       var plan = loadCplPlan();
       var found = cplDayDef(t.dataset.day);
@@ -1602,6 +1732,70 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     eq(html.indexOf(secretA) === -1, "ask view leak");
     eq(html.indexOf("only B topic") !== -1 || html.indexOf(CPL.questions[0]) !== -1, "ask shows B");
     eq(html.indexOf("Omar") !== -1, "who banner");
+    eq(CPL.slSpeaker === "עכשיו מדבר/ת: {name}", "slSpeaker");
+    eq(CPL.slListener === "עכשיו מקשיב/ה: {name}", "slListener");
+    eq(CPL.slTick === "נותרו {m}:{s}", "slTick");
+    eq(CPL.reopenSum === "חזרה לתמונה המשותפת", "reopenSum");
+    eq(!!(CPL.slTitle && CPL.slBody && CPL.slStart && CPL.slSwitch && CPL.slStop && CPL.slDone), "sl strings");
+    eq(CPL.planIntro.indexOf("שלוש דקות") !== -1, "plan intro timer");
+    eq(fill(CPL.slTick, { m: "3", s: "00" }) === "נותרו 3:00", "tick format");
+    eq(fill(CPL.slSpeaker, { name: "Lina" }) === "עכשיו מדבר/ת: Lina", "speaker line");
+    var safetyHtml = viewCplSafety({});
+    eq(safetyHtml.indexOf("100") !== -1 && safetyHtml.indexOf("1201") !== -1 && safetyHtml.indexOf(CPL.safetyTitle) !== -1, "safety card");
+    cplSl.running = false;
+    cplSl.done = false;
+    cplSl.left = 180;
+    var planToday = makeCplPlan();
+    saveJSON(K_CPL_PLAN, planToday);
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "session", openDay: "c1", safety: false });
+    var solo = viewCouples();
+    eq(solo.indexOf("cpl-sl-start") === -1 && solo.indexOf(CPL.slTitle) === -1, "no timer on solo");
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "session", openDay: "c4", safety: false });
+    var lockedJoint = viewCouples();
+    eq(lockedJoint.indexOf(CPL.lockedBody) !== -1 && lockedJoint.indexOf("cpl-sl-start") === -1, "locked joint");
+    var openPlan = makeCplPlan();
+    openPlan.startDate = "2020-01-01";
+    saveJSON(K_CPL_PLAN, openPlan);
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "session", openDay: "c4", safety: false });
+    var joint = viewCouples();
+    eq(joint.indexOf(CPL.slTitle) !== -1 && joint.indexOf(CPL.slBody) !== -1, "joint copy");
+    eq(joint.indexOf(CPL.slStart) !== -1 && joint.indexOf(CPL.slSwitch) !== -1 && joint.indexOf(CPL.slStop) !== -1, "joint buttons");
+    eq(joint.indexOf('data-action="cpl-sl-start"') !== -1 && joint.indexOf('data-action="cpl-sl-switch"') !== -1 && joint.indexOf('data-action="cpl-sl-stop"') !== -1, "joint actions");
+    eq(joint.indexOf("עכשיו מדבר/ת: Lina") !== -1 && joint.indexOf("עכשיו מקשיב/ה: Omar") !== -1, "roles from active");
+    eq(joint.indexOf("נותרו 3:00") !== -1, "joint tick");
+    eq(joint.indexOf(secretA) === -1, "joint hides private");
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "session", openDay: "c4", safety: false, slSpeakerSide: "b" });
+    var swapped = viewCouples();
+    eq(swapped.indexOf("עכשיו מדבר/ת: Omar") !== -1 && swapped.indexOf("עכשיו מקשיב/ה: Lina") !== -1, "slSpeakerSide");
+    cplSl.done = true;
+    cplSl.running = false;
+    cplSl.left = 0;
+    var doneTurn = viewCouples();
+    eq(doneTurn.indexOf(CPL.slDone) !== -1, "time up copy");
+    cplSl.done = false;
+    cplSl.left = 180;
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "plan", safety: false, slSpeakerSide: "b" });
+    var planHtml = viewCouples();
+    eq(planHtml.indexOf(CPL.planIntro) !== -1 && planHtml.indexOf("שלוש דקות") !== -1, "plan mentions timer");
+    eq(planHtml.indexOf(CPL.reopenSum) !== -1 && planHtml.indexOf('data-action="cpl-reopen-sum"') !== -1, "reopen summary");
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "summary", safety: false });
+    var sumBack = viewCouples();
+    eq(sumBack.indexOf(CPL.startWeek) !== -1 && sumBack.indexOf(CPL.backPlan) !== -1 && sumBack.indexOf('data-action="cpl-back-plan"') !== -1, "summary back to plan");
+    try { localStorage.removeItem(K_CPL_PLAN); } catch (ePlan) {}
+    var sumOnly = viewCouples();
+    eq(sumOnly.indexOf(CPL.startWeek) !== -1 && sumOnly.indexOf(CPL.backPlan) === -1, "summary without plan");
+    cplSl.left = 3;
+    cplSl.running = true;
+    cplSl.done = false;
+    cplSlOnTick();
+    eq(cplSl.left === 2 && cplSl.running === true && cplSl.done === false, "tick");
+    cplSlOnTick();
+    cplSlOnTick();
+    eq(cplSl.left === 0 && cplSl.running === false && cplSl.done === true && cplSlTimer === null, "done at zero");
+    cplSl.running = false;
+    cplSl.done = false;
+    cplSl.left = 180;
+    clearCplSlTimer();
     return errors;
   }
   function init() {
