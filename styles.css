@@ -787,6 +787,43 @@ textarea { min-height: 100px; resize: vertical; }
   color: var(--ink);
 }
 
+.cpl-nice h2 { font-size: 1.25rem; margin-bottom: 6px; }
+.cpl-nice textarea { min-height: 76px; }
+.cpl-nice-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 12px;
+}
+.cpl-nice-item {
+  background: var(--sand);
+  border: 1px solid #ead9c0;
+  border-radius: 14px;
+  padding: 10px 12px;
+  margin: 0 0 8px;
+}
+.cpl-nice-item p { margin: 0 0 6px; }
+.cpl-nice-item .btn { margin-top: 4px; }
+.cpl-nice-count {
+  background: var(--olive-soft);
+  border: 1px solid #c9d9ce;
+  border-radius: 14px;
+  padding: 10px 12px;
+  margin: 8px 0 12px;
+}
+.cpl-nice-count p { margin: 0 0 4px; }
+.cpl-nice-count .muted { margin: 0; }
+.cpl-nice-joint {
+  background: linear-gradient(180deg, #f7f1e6, #efe3ce);
+  border: 1px solid #e0d0b8;
+  border-radius: 16px;
+  padding: 14px;
+  margin: 12px 0;
+  box-shadow: var(--shadow-sm);
+}
+.cpl-nice-joint h2 { font-size: 1.2rem; margin-bottom: 6px; }
+.cpl-nice-joint p { margin: 0 0 8px; }
+.cpl-nice-joint .kicker { margin-bottom: 2px; }
+
 @media (prefers-reduced-motion: reduce) {
   .orb { transition: none !important; }
   .tile, .btn, .progress > span { transition: none !important; }
