@@ -377,6 +377,33 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
   "niceJointHow": "כל אחד או אחת קוראים בקול פתק אחד לבן או בת הזוג. מי שמקשיב אומר או אומרת רק תודה. בלי ויכוח, ובלי «אבל».",
   "niceJointEmpty": "עדיין אין פתק משותף. עד הפעם הבאה, שווה לשים לב לדבר אחד קטן.",
   "niceBy": "מ־{name}",
+  "softTitle": "פתיחה רכה",
+  "softKicker": "פרטית ל{name}",
+  "softLesson": "פתיחה רכה עוזרת כי היא מחליפה האשמה בתיאור של רגע אחד, של רגש, ושל בקשה שאפשר לעשות, וכך קל יותר להקשיב בלי להתגונן.",
+  "softHint": "כותבים מה שקרה הפעם, איך זה הרגיש, ובקשה אחת חיובית. בלי סימון «להביא למפגש», הטיוטה נשארת רק בצד שלך.",
+  "softWhen": "מה קרה הפעם",
+  "softWhenPh": "מה שקרה הפעם",
+  "softFelt": "איך הרגשתי",
+  "softFeltPh": "הרגש",
+  "softFeltCustom": "או במילים שלי",
+  "softAsk": "מה שהייתי רוצה",
+  "softAskPh": "בקשה אחת",
+  "softPreview": "כך זה יכול להישמע",
+  "softSentence": "כש{when}, הרגשתי {felt}, ומה שיעזור לי זה {ask}.",
+  "softSave": "שמירת הטיוטה",
+  "softNeed": "קודם ממלאים מה קרה, מה הרגשתי, ובקשה אחת.",
+  "softFull": "אפשר לשמור עד שלוש טיוטות. מוחקים אחת כדי לכתוב חדשה.",
+  "softLeft": "אפשר עוד {n} טיוטות.",
+  "softLeftOne": "אפשר עוד טיוטה אחת.",
+  "softShare": "להביא למפגש המשותף",
+  "softEmpty": "עדיין אין טיוטה. מספיק רגע אחד ובקשה אחת.",
+  "softRemove": "מחיקת הטיוטה הזו",
+  "softBlameTip": "טיפ רך: «תמיד», «אף פעם», או תווית כמו «אתה כזה» מחממים את השיחה. כדאי רגע אחד ספציפי, מה שקרה הפעם.",
+  "softNegTip": "טיפ רך: «תפסיק/י» או «אל ת...» אומרים מה לא לעשות. כדאי לכתוב מה רוצים שיקרה במקום.",
+  "softJointTitle": "פתיחות רכות שבחרו להביא",
+  "softJointHow": "מי שמדבר או מדברת קורא או קוראת את המשפט בקול. מי שמקשיב או מקשיבה אומר או אומרת אותו שוב במילים שלו או שלה, ורק אחר כך עונה. אפשר להיעזר בשעון של שלוש הדקות.",
+  "softJointEmpty": "עדיין אין פתיחה מסומנת להביא. כל צד מסמן טיוטה אצלו, אם רוצים.",
+  "softFeelings": ["עצב", "כעס", "פחד", "בדידות", "תסכול", "דאגה", "פגיעה", "עייפות"],
   "hitSample": "הוא מכה אותי כשהוא כועס",
   "safeSample": "אנחנו רבים על כלים וחשבונות",
   "questions": [
@@ -504,7 +531,7 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
   function loadProgram() { return loadJSON(K_PROGRAM, null); }
   function saveProgram(p) { saveJSON(K_PROGRAM, p); }
 
-  var state = { view: "home", dayId: null, crisis: null, hold: false, guideText: "", guide: null, pad: "", pst: {}, check: null, result: null, formError: "", confirmClear: false, cplErr: "", cplNiceErr: "", cplReset: false };
+  var state = { view: "home", dayId: null, crisis: null, hold: false, guideText: "", guide: null, pad: "", pst: {}, check: null, result: null, formError: "", confirmClear: false, cplErr: "", cplNiceErr: "", cplSoftErr: "", cplReset: false };
   var breath = { running: false, timer: null, mode: "468", phaseIdx: 0, left: 4, cycle: 0, totalCycles: 5, dayId: null, finishedMsg: "" };
   var cplSlTimer = null;
   var cplSl = { running: false, left: 180, done: false };
@@ -1086,7 +1113,7 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
   }
 
   function cplBlank() {
-    return { answers: ["", "", "", "", "", "", "", ""], done: false, doneAt: null, qi: 0, notes: {}, nice: [] };
+    return { answers: ["", "", "", "", "", "", "", ""], done: false, doneAt: null, qi: 0, notes: {}, nice: [], soft: [] };
   }
   function loadCplMeta() {
     var m = loadJSON(K_CPL_META, null) || {};
@@ -1105,6 +1132,7 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     if (!rec.notes || typeof rec.notes !== "object") rec.notes = {};
     if (typeof rec.qi !== "number") rec.qi = 0;
     rec.nice = cplNormalizeNice(rec.nice);
+    rec.soft = cplNormalizeSoft(rec.soft);
     return rec;
   }
   function cplNormalizeNice(list) {
@@ -1123,6 +1151,26 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
         date: date,
         share: n.share === true,
         used: n.used ? String(n.used) : ""
+      });
+    }
+    return out;
+  }
+  function cplNormalizeSoft(list) {
+    if (!Array.isArray(list)) return [];
+    var out = [];
+    for (var i = 0; i < list.length; i++) {
+      var n = list[i];
+      if (!n) continue;
+      var when = String(n.when || "").replace(/\s+/g, " ").trim().slice(0, 180);
+      var felt = String(n.felt || "").replace(/\s+/g, " ").trim().slice(0, 40);
+      var ask = String(n.ask || "").replace(/\s+/g, " ").trim().slice(0, 180);
+      if (when.length < 2 || felt.length < 2 || ask.length < 2) continue;
+      out.push({
+        id: String(n.id || ("s" + i)),
+        when: when,
+        felt: felt,
+        ask: ask,
+        share: n.share === true
       });
     }
     return out;
@@ -1256,6 +1304,8 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     });
     state.cplErr = "";
     state.cplNiceErr = "";
+    state.cplSoftErr = "";
+    state.cplSoftForms = { a: cplSoftBlankForm(), b: cplSoftBlankForm() };
     state.cplReset = false;
     cplSl.running = false;
     cplSl.done = false;
@@ -1339,6 +1389,14 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
       kept.push(note);
     }
     rec.nice = kept;
+    var keptSoft = [];
+    for (var si = 0; si < rec.soft.length; si++) {
+      var draft = rec.soft[si];
+      if (isCrisisText(draft.when) || isCrisisText(draft.felt) || isCrisisText(draft.ask)) { hitC = true; continue; }
+      if (cplViolent(draft.when) || cplViolent(draft.felt) || cplViolent(draft.ask)) { hitV = true; continue; }
+      keptSoft.push(draft);
+    }
+    rec.soft = keptSoft;
     saveCplSide(which, rec);
     return { hitV: hitV, hitC: hitC };
   }
@@ -1348,6 +1406,7 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     saveCplMeta(meta);
     try { localStorage.removeItem(K_CPL_PLAN); localStorage.removeItem(K_CPL_SUM); } catch (e) {}
     state.cplErr = "";
+    state.cplSoftErr = "";
     render();
   }
   function screenFor(meta, who) {
@@ -1472,6 +1531,220 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     var inner = body ? '<ul class="cpl-nice-list">' + body + "</ul>" : "<p>" + esc(CPL.niceJointEmpty) + "</p>";
     return '<div class="cpl-nice-joint"><h2>' + esc(CPL.niceJointTitle) + "</h2><p>" + esc(CPL.niceJointHow) + "</p>" + inner + "</div>";
   }
+  function cplSoftBlankForm() {
+    return { when: "", feltPick: "", feltCustom: "", ask: "" };
+  }
+  function cplSoftFormFor(side) {
+    var which = side === "b" ? "b" : "a";
+    if (!state.cplSoftForms) state.cplSoftForms = { a: cplSoftBlankForm(), b: cplSoftBlankForm() };
+    if (!state.cplSoftForms[which]) state.cplSoftForms[which] = cplSoftBlankForm();
+    return state.cplSoftForms[which];
+  }
+  function cplSoftFeltFrom(form) {
+    var custom = String((form && form.feltCustom) || "").replace(/\s+/g, " ").trim();
+    if (custom) return custom.slice(0, 40);
+    return String((form && form.feltPick) || "").replace(/\s+/g, " ").trim().slice(0, 40);
+  }
+  function cplSoftParts(raw) {
+    var t = norm(String(raw || "").replace(/[\u05BE-]/g, " "));
+    if (!t) return [];
+    return t.split(" ");
+  }
+  function cplSoftWordMap(list) {
+    var m = {};
+    for (var i = 0; i < list.length; i++) m[norm(list[i])] = 1;
+    return m;
+  }
+  function cplSoftHasBlame(raw) {
+    var parts = cplSoftParts(raw);
+    if (!parts.length) return false;
+    var text = parts.join(" ");
+    var i;
+    for (i = 0; i < parts.length; i++) {
+      if (parts[i] === "תמיד" || parts[i] === "ותמיד") return true;
+    }
+    if (text.indexOf(norm("אף פעם")) !== -1) return true;
+    var pronouns = cplSoftWordMap(["אתה", "את", "אתם", "אתן"]);
+    var labels = cplSoftWordMap(["כזה", "כזאת", "כזו", "כאלה", "כאלו"]);
+    var insults = cplSoftWordMap([
+      "טיפש", "טיפשה", "טיפשים", "טיפשות", "טיפשי",
+      "מטומטם", "מטומטמת", "מטומטמים",
+      "אידיוט", "אידיוטית",
+      "אגואיסט", "אגואיסטית",
+      "מניאק", "מניאקית",
+      "דפוק", "דפוקה",
+      "שקרן", "שקרנית",
+      "עצלן", "עצלנית",
+      "מגעיל", "מגעילה",
+      "עלוב", "עלובה",
+      "חתיכת"
+    ]);
+    for (i = 0; i < parts.length; i++) {
+      if (insults[parts[i]]) return true;
+      if (pronouns[parts[i]] && labels[parts[i + 1]]) return true;
+    }
+    return false;
+  }
+  function cplSoftHasNegativeAsk(raw) {
+    var parts = cplSoftParts(raw);
+    for (var i = 0; i < parts.length; i++) {
+      if (parts[i].indexOf("תפסיק") !== -1) return true;
+      if ((parts[i] === "אל" || parts[i] === "ואל") && parts[i + 1] && parts[i + 1].charAt(0) === "ת") return true;
+    }
+    return false;
+  }
+  function cplSoftClip(s, max) {
+    return String(s || "").replace(/\s+/g, " ").trim().replace(/[.]+$/g, "").slice(0, max);
+  }
+  function cplSoftSentence(when, felt, ask) {
+    return fill(CPL.softSentence, {
+      when: cplSoftClip(when, 180),
+      felt: cplSoftClip(felt, 40),
+      ask: cplSoftClip(ask, 180)
+    });
+  }
+  function cplSoftPreviewHTML(when, felt, ask) {
+    function bit(val, placeholder) {
+      var t = cplSoftClip(val, 180);
+      if (!t) return '<span class="muted">' + esc(placeholder) + "</span>";
+      return esc(t);
+    }
+    return "כש" + bit(when, CPL.softWhenPh) + ", הרגשתי " + bit(felt, CPL.softFeltPh) + ", ומה שיעזור לי זה " + bit(ask, CPL.softAskPh) + ".";
+  }
+  function cplSoftHintHTML(when, felt, ask) {
+    var html = "";
+    if (cplSoftHasBlame(when) || cplSoftHasBlame(felt) || cplSoftHasBlame(ask)) {
+      html += '<p class="cpl-soft-tip">' + esc(CPL.softBlameTip) + "</p>";
+    }
+    if (cplSoftHasNegativeAsk(ask)) {
+      html += '<p class="cpl-soft-tip">' + esc(CPL.softNegTip) + "</p>";
+    }
+    return html;
+  }
+  function syncCplSoftPreview() {
+    if (typeof document === "undefined") return;
+    var preview = document.getElementById("cpl-soft-preview");
+    var hints = document.getElementById("cpl-soft-hints");
+    if (!preview && !hints) return;
+    var meta = loadCplMeta();
+    var form = cplSoftFormFor(meta.active === "b" ? "b" : "a");
+    var felt = cplSoftFeltFrom(form);
+    if (preview) preview.innerHTML = cplSoftPreviewHTML(form.when, felt, form.ask);
+    if (hints) hints.innerHTML = cplSoftHintHTML(form.when, felt, form.ask);
+    var customOn = String(form.feltCustom || "").trim().length > 0;
+    var chips = document.querySelectorAll("[data-action='cpl-soft-feel']");
+    for (var i = 0; i < chips.length; i++) {
+      var on = !customOn && chips[i].dataset.feel === form.feltPick;
+      chips[i].classList.toggle("on", on);
+      chips[i].setAttribute("aria-pressed", on ? "true" : "false");
+    }
+  }
+  function captureCplSoftForm(meta) {
+    if (typeof document === "undefined") return;
+    var side = meta && meta.active === "b" ? "b" : "a";
+    var form = cplSoftFormFor(side);
+    var w = document.getElementById("cpl-soft-when");
+    var f = document.getElementById("cpl-soft-felt");
+    var a = document.getElementById("cpl-soft-ask");
+    if (w) form.when = String(w.value || "").slice(0, 180);
+    if (f) {
+      form.feltCustom = String(f.value || "").slice(0, 40);
+      if (String(form.feltCustom || "").trim()) form.feltPick = "";
+    }
+    if (a) form.ask = String(a.value || "").slice(0, 180);
+  }
+  function cplCommitSoft(meta, form) {
+    var whenRaw = String((form && form.when) || "").trim();
+    var feltRaw = cplSoftFeltFrom(form || {});
+    var askRaw = String((form && form.ask) || "").trim();
+    if (isCrisisText(whenRaw) || isCrisisText(feltRaw) || isCrisisText(askRaw)) return "crisis";
+    if (cplViolent(whenRaw) || cplViolent(feltRaw) || cplViolent(askRaw)) return "violent";
+    var when = cplSoftClip(whenRaw, 180);
+    var felt = cplSoftClip(feltRaw, 40);
+    var ask = cplSoftClip(askRaw, 180);
+    if (when.length < 2 || felt.length < 2 || ask.length < 2) return "short";
+    var side = meta.active === "b" ? "b" : "a";
+    var rec = loadCplSide(side);
+    if (rec.soft.length >= 3) return "full";
+    rec.soft.push({
+      id: String(Date.now()) + "-" + String(rec.soft.length),
+      when: when,
+      felt: felt,
+      ask: ask,
+      share: false
+    });
+    saveCplSide(side, rec);
+    return "ok";
+  }
+  function cplAddSoft(meta, form) {
+    var side = meta.active === "b" ? "b" : "a";
+    var status = cplCommitSoft(meta, form);
+    if (status === "crisis" || status === "violent") cplSoftFormFor(side);
+    if (status === "crisis") {
+      state.cplSoftForms[side] = cplSoftBlankForm();
+      triggerCrisis("text");
+      return "crisis";
+    }
+    if (status === "violent") {
+      state.cplSoftForms[side] = cplSoftBlankForm();
+      enterSafety(meta);
+      return "safety";
+    }
+    if (status === "short") { state.cplSoftErr = CPL.softNeed; return "short"; }
+    if (status === "full") { state.cplSoftErr = CPL.softFull; return "full"; }
+    return "ok";
+  }
+  function cplSoftShared(side) {
+    return loadCplSide(side).soft.filter(function (d) { return d.share === true; });
+  }
+  function cplSoftPrivate(meta) {
+    if (state.hold || !meta || meta.safety) return "";
+    var side = meta.active === "b" ? "b" : "a";
+    var name = nameOf(meta, side) || CPL.noname;
+    var form = cplSoftFormFor(side);
+    var feltNow = cplSoftFeltFrom(form);
+    var customOn = String(form.feltCustom || "").trim().length > 0;
+    var rec = loadCplSide(side);
+    var list = rec.soft.slice().reverse();
+    var items = list.map(function (d) {
+      return '<li class="cpl-soft-item"><p>' + esc(cplSoftSentence(d.when, d.felt, d.ask)) + "</p>" +
+        '<label class="check"><input type="checkbox" data-cpl="soft-share" data-id="' + esc(d.id) + '"' + (d.share ? " checked" : "") + ">" + esc(CPL.softShare) + "</label>" +
+        '<button type="button" class="btn secondary block" data-action="cpl-soft-remove" data-id="' + esc(d.id) + '">' + esc(CPL.softRemove) + "</button></li>";
+    }).join("");
+    var chips = CPL.softFeelings.map(function (feel) {
+      var on = !customOn && form.feltPick === feel;
+      return '<button type="button" class="chip' + (on ? " on" : "") + '" data-action="cpl-soft-feel" data-feel="' + esc(feel) + '" aria-pressed="' + (on ? "true" : "false") + '">' + esc(feel) + "</button>";
+    }).join("");
+    var formHTML = rec.soft.length >= 3
+      ? '<p class="muted">' + esc(CPL.softFull) + "</p>"
+      : '<label class="field">' + esc(CPL.softWhen) + '<textarea id="cpl-soft-when" data-cpl="soft-when" maxlength="180">' + esc(form.when || "") + "</textarea></label>" +
+        '<p class="cpl-soft-label">' + esc(CPL.softFelt) + "</p>" +
+        '<div class="cpl-soft-feelings">' + chips + "</div>" +
+        '<label class="field">' + esc(CPL.softFeltCustom) + '<input type="text" id="cpl-soft-felt" data-cpl="soft-felt" maxlength="40" value="' + esc(form.feltCustom || "") + '"></label>' +
+        '<label class="field">' + esc(CPL.softAsk) + '<textarea id="cpl-soft-ask" data-cpl="soft-ask" maxlength="180">' + esc(form.ask || "") + "</textarea></label>" +
+        '<div class="cpl-soft-preview"><p class="kicker">' + esc(CPL.softPreview) + '</p><p id="cpl-soft-preview" aria-live="polite">' + cplSoftPreviewHTML(form.when, feltNow, form.ask) + "</p></div>" +
+        '<div id="cpl-soft-hints" aria-live="polite">' + cplSoftHintHTML(form.when, feltNow, form.ask) + "</div>" +
+        (state.cplSoftErr ? '<p class="err">' + esc(state.cplSoftErr) + "</p>" : "") +
+        '<button type="button" class="btn block" data-action="cpl-soft-add">' + esc(CPL.softSave) + "</button>" +
+        '<p class="muted">' + esc(rec.soft.length === 2 ? CPL.softLeftOne : fill(CPL.softLeft, { n: 3 - rec.soft.length })) + "</p>";
+    return '<section class="card cpl-soft"><p class="kicker">' + esc(fill(CPL.softKicker, { name: name })) + "</p><h2>" + esc(CPL.softTitle) + "</h2>" +
+      "<p>" + esc(CPL.softLesson) + "</p>" +
+      '<p class="muted">' + esc(CPL.softHint) + "</p>" +
+      (items ? '<ul class="cpl-soft-list">' + items + "</ul>" : '<p class="muted">' + esc(CPL.softEmpty) + "</p>") +
+      formHTML + "</section>";
+  }
+  function cplSoftJoint(meta) {
+    if (state.hold || !meta || meta.safety) return "";
+    function rows(side) {
+      var name = nameOf(meta, side) || CPL.noname;
+      return cplSoftShared(side).map(function (d) {
+        return '<li class="cpl-soft-item"><p class="kicker">' + esc(fill(CPL.niceBy, { name: name })) + "</p><p>" + esc(cplSoftSentence(d.when, d.felt, d.ask)) + "</p></li>";
+      }).join("");
+    }
+    var body = rows("a") + rows("b");
+    var inner = body ? '<ul class="cpl-soft-list">' + body + "</ul>" : "<p>" + esc(CPL.softJointEmpty) + "</p>";
+    return '<div class="cpl-soft-joint"><h2>' + esc(CPL.softJointTitle) + "</h2><p>" + esc(CPL.softJointHow) + "</p>" + inner + "</div>";
+  }
   function viewCplSetup(meta) {
     return '<section class="card"><p class="kicker">' + esc(CPL.kicker) + "</p><h1>" + esc(CPL.tile) + "</h1>" +
       "<p>" + esc(CPL.disc) + "</p>" +
@@ -1511,14 +1784,14 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
       (state.cplErr ? '<p class="err">' + esc(state.cplErr) + "</p>" : "") +
       '<div class="stack">' +
       (i > 0 ? '<button type="button" class="btn secondary block" data-action="cpl-prev">' + esc(CPL.back) + "</button>" : '<button type="button" class="btn secondary block" data-action="cpl-to-who">' + esc(CPL.backWho) + "</button>") +
-      '<button type="button" class="btn block" data-action="cpl-next">' + esc(i === 7 ? CPL.finishMine : CPL.next) + "</button></div></section>" + cplNicePrivate(meta);
+      '<button type="button" class="btn block" data-action="cpl-next">' + esc(i === 7 ? CPL.finishMine : CPL.next) + "</button></div></section>" + cplNicePrivate(meta) + cplSoftPrivate(meta);
   }
   function viewCplWait(meta) {
     var other = otherOf(meta.active);
     return whoBanner(meta) + '<section class="card"><h1>' + esc(CPL.waitTitle) + "</h1>" +
       "<p>" + esc(fill(CPL.waitBody, { name: nameOf(meta, other) })) + "</p>" +
       '<button type="button" class="btn block" data-action="cpl-switch">' + esc(fill(CPL.theirTurn, { name: nameOf(meta, other) })) + "</button>" +
-      '<button type="button" class="btn secondary block" data-action="cpl-review">' + esc(CPL.reviewMine) + "</button></section>" + cplNicePrivate(meta);
+      '<button type="button" class="btn secondary block" data-action="cpl-review">' + esc(CPL.reviewMine) + "</button></section>" + cplNicePrivate(meta) + cplSoftPrivate(meta);
   }
   function viewCplReview(meta) {
     var side = meta.active === "b" ? "b" : "a";
@@ -1528,7 +1801,7 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     }).join("");
     return whoBanner(meta) + '<section class="card"><p class="kicker">' + esc(fill(CPL.privateTag, { name: nameOf(meta, side) })) + "</p>" +
       "<h1>" + esc(CPL.reviewTitle) + "</h1><p>" + esc(CPL.reviewNote) + "</p>" + rows +
-      '<button type="button" class="btn secondary block" data-action="cpl-to-who">' + esc(CPL.backWho) + "</button></section>" + cplNicePrivate(meta);
+      '<button type="button" class="btn secondary block" data-action="cpl-to-who">' + esc(CPL.backWho) + "</button></section>" + cplNicePrivate(meta) + cplSoftPrivate(meta);
   }
   function viewCplSummary(meta) {
     var sum = loadJSON(K_CPL_SUM, null);
@@ -1564,7 +1837,7 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
         '<div class="meta">' + esc(open ? (d.completed ? CPL.done : CPL.openDay) : CPL.locked) + "</div></button>";
     }).join("");
     var pct = Math.round((done / 7) * 100);
-    return whoBanner(meta) + cplNicePrivate(meta) + '<section class="card"><p class="kicker">' + esc(CPL.kicker) + "</p><h1>" + esc(CPL.planTitle) + "</h1>" +
+    return whoBanner(meta) + cplNicePrivate(meta) + cplSoftPrivate(meta) + '<section class="card"><p class="kicker">' + esc(CPL.kicker) + "</p><h1>" + esc(CPL.planTitle) + "</h1>" +
       "<p>" + esc(CPL.planIntro) + "</p>" +
       "<p>" + esc(fill(CPL.planProgress, { done: done, total: 7, start: plan.startDate })) + "</p>" +
       '<div class="progress" aria-hidden="true"><span style="width:' + pct + '%"></span></div>' +
@@ -1627,22 +1900,28 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     var both = "";
     var slHTML = "";
     var niceJoint = "";
+    var softJoint = "";
     if (def.mode === "joint") {
       both = '<label class="check"><input type="checkbox" data-cpl="both" data-day="' + esc(def.id) + '"' + (day.bothHere ? " checked" : "") + ">" + esc(CPL.bothHere) + "</label>";
       slHTML = cplSlCard(meta);
-      if (day.bothHere) niceJoint = cplNiceJoint(meta, def.id);
+      if (day.bothHere) {
+        niceJoint = cplNiceJoint(meta, def.id);
+        softJoint = cplSoftJoint(meta);
+      }
     }
     var ownNice = (def.mode === "individual" && meta.active === def.who) ? cplNicePrivate(meta) : "";
+    var ownSoft = (def.mode === "individual" && meta.active === def.who) ? cplSoftPrivate(meta) : "";
     return head + sumHTML + slHTML +
       "<h2>" + esc(CPL.lessonH) + "</h2><p>" + esc(def.lesson) + "</p>" +
       "<h2>" + esc(CPL.exerciseH) + "</h2><p>" + esc(def.exercise) + "</p>" +
       both +
       niceJoint +
+      softJoint +
       '<label class="field">' + esc(def.mode === "joint" ? CPL.jointNote : CPL.noteLabel) +
       '<textarea id="cpl-note" data-cpl="note" data-day="' + esc(def.id) + '">' + esc(note) + "</textarea></label>" +
       (state.cplErr ? '<p class="err">' + esc(state.cplErr) + "</p>" : "") +
       '<label class="check"><input type="checkbox" data-action="cpl-done" data-day="' + esc(def.id) + '"' + (day.completed ? " checked" : "") + ">" + esc(day.completed ? CPL.done : CPL.complete) + "</label>" +
-      '<button type="button" class="btn secondary block" data-action="cpl-back-plan">' + esc(CPL.backPlan) + "</button></section>" + ownNice;
+      '<button type="button" class="btn secondary block" data-action="cpl-back-plan">' + esc(CPL.backPlan) + "</button></section>" + ownNice + ownSoft;
   }
   function viewCplSafety(meta) {
     return '<section class="card cpl-safety"><h1>' + esc(CPL.safetyTitle) + "</h1>" +
@@ -1749,15 +2028,55 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
         return;
       }
     }
+    if (kind === "soft-when" || kind === "soft-felt" || kind === "soft-ask") {
+      if (state.hold || meta.safety) return;
+      var sideF = meta.active === "b" ? "b" : "a";
+      var formF = cplSoftFormFor(sideF);
+      if (kind === "soft-when") formF.when = String(el.value || "").slice(0, 180);
+      if (kind === "soft-ask") formF.ask = String(el.value || "").slice(0, 180);
+      if (kind === "soft-felt") {
+        formF.feltCustom = String(el.value || "").slice(0, 40);
+        if (String(formF.feltCustom || "").trim()) formF.feltPick = "";
+      }
+      syncCplSoftPreview();
+      return;
+    }
+    if (kind === "soft-share") {
+      if (state.hold || meta.safety) return;
+      var sideS = meta.active === "b" ? "b" : "a";
+      var recS = loadCplSide(sideS);
+      var sid = String(el.dataset.id || "");
+      for (var si = 0; si < recS.soft.length; si++) {
+        if (recS.soft[si].id !== sid) continue;
+        var draft = recS.soft[si];
+        if (el.checked && (isCrisisText(draft.when) || isCrisisText(draft.felt) || isCrisisText(draft.ask))) {
+          recS.soft.splice(si, 1);
+          saveCplSide(sideS, recS);
+          triggerCrisis("text");
+          return;
+        }
+        if (el.checked && (cplViolent(draft.when) || cplViolent(draft.felt) || cplViolent(draft.ask))) {
+          recS.soft.splice(si, 1);
+          saveCplSide(sideS, recS);
+          enterSafety(meta);
+          return;
+        }
+        recS.soft[si].share = !!el.checked;
+        saveCplSide(sideS, recS);
+        return;
+      }
+    }
   }
   function onCplAction(action, t) {
     var meta = loadCplMeta();
     state.cplErr = "";
     state.cplNiceErr = "";
+    state.cplSoftErr = "";
     if (action === "cpl-reset-ask") { state.cplReset = true; render(); return; }
     if (action === "cpl-reset-no") { state.cplReset = false; render(); return; }
     if (action === "cpl-reset-yes") { cplWipe(); render(); return; }
     if (meta.safety && action !== "cpl-reset-ask") { render(); return; }
+    captureCplSoftForm(meta);
     if (action === "cpl-nice-add") {
       if (state.hold) return;
       var typedNice = readCplBox("cpl-nice-text");
@@ -1773,6 +2092,34 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
       var rmId = String(t.dataset.id || "");
       recRm.nice = recRm.nice.filter(function (n) { return n.id !== rmId; });
       saveCplSide(sideRm, recRm);
+      render();
+      return;
+    }
+    if (action === "cpl-soft-add") {
+      if (state.hold) return;
+      var sideAdd = meta.active === "b" ? "b" : "a";
+      var softResult = cplAddSoft(meta, cplSoftFormFor(sideAdd));
+      if (softResult === "crisis" || softResult === "safety") return;
+      if (softResult === "ok") state.cplSoftForms[sideAdd] = cplSoftBlankForm();
+      render();
+      return;
+    }
+    if (action === "cpl-soft-remove") {
+      if (state.hold) return;
+      var sideRmS = meta.active === "b" ? "b" : "a";
+      var recRmS = loadCplSide(sideRmS);
+      var rmSid = String(t.dataset.id || "");
+      recRmS.soft = recRmS.soft.filter(function (d) { return d.id !== rmSid; });
+      saveCplSide(sideRmS, recRmS);
+      render();
+      return;
+    }
+    if (action === "cpl-soft-feel") {
+      if (state.hold) return;
+      var sideFeel = meta.active === "b" ? "b" : "a";
+      var formFeel = cplSoftFormFor(sideFeel);
+      formFeel.feltPick = String(t.dataset.feel || "");
+      formFeel.feltCustom = "";
       render();
       return;
     }
@@ -2126,18 +2473,152 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     var safetyView = viewCouples();
     eq(safetyView.indexOf("100") !== -1 && safetyView.indexOf("1201") !== -1 && safetyView.indexOf(CPL.safetyTitle) !== -1, "nice safety card");
     eq(safetyView.indexOf(CPL.niceTitle) === -1 && safetyView.indexOf(CPL.hitSample) === -1, "safety replaces the note");
+    eq(CPL.softLesson.indexOf("%") === -1 && CPL.softLesson.indexOf("מחקר") === -1 && CPL.softLesson.indexOf("גוטמן") === -1, "soft lesson plain");
+    eq(CPL.softLesson.indexOf("פתיחה רכה") !== -1 && CPL.softLesson.indexOf("בקשה") !== -1, "soft lesson why");
+    eq(CPL.softSentence.indexOf("הרגשתי") !== -1 && CPL.softSentence.indexOf("מה שיעזור לי") !== -1, "sentence shape");
+    eq(cplSoftSentence("הכלים נשארו בכיור", "תסכול", "לשים אותם במדיח") === "כשהכלים נשארו בכיור, הרגשתי תסכול, ומה שיעזור לי זה לשים אותם במדיח.", "sentence");
+    eq(CPL.softJointHow.indexOf("קורא או קוראת") !== -1 && CPL.softJointHow.indexOf("מילים שלו או שלה") !== -1 && CPL.softJointHow.indexOf("שלוש") !== -1, "joint how");
+    eq(cplSoftHasBlame("אתה תמיד מאחר") === true, "blame always");
+    eq(cplSoftHasBlame("אף פעם לא מקשיב") === true, "blame never");
+    eq(cplSoftHasBlame("אף-פעם לא באת") === true, "blame never hyphen");
+    eq(cplSoftHasBlame("אתה שקרן") === true, "blame insult final");
+    eq(cplSoftHasBlame("אתן כאלה") === true, "blame label plural");
+    eq(cplSoftHasBlame("אתה כזה אגואיסט") === true, "blame label");
+    eq(cplSoftHasBlame("את טיפשה") === true, "blame insult");
+    eq(cplSoftHasBlame("אתמול הכלים נשארו בכיור") === false, "specific ok");
+    eq(cplSoftHasNegativeAsk("תפסיק לאחר") === true, "stop");
+    eq(cplSoftHasNegativeAsk("תפסיקי לצעוק") === true, "stop f");
+    eq(cplSoftHasNegativeAsk("אל תתעלם כשאני מדבר") === true, "dont");
+    eq(cplSoftHasNegativeAsk("לכתוב לי אם תאחר") === false, "positive ask");
+    eq(cplSoftHasNegativeAsk("אתמול אמרת אל") === false, "al alone");
+    cplWipe();
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "ask", safety: false });
+    state.cplSoftForms = {
+      a: { when: "אתה תמיד מאחר", feltPick: "", feltCustom: "כעס", ask: "תפסיק לאחר" },
+      b: cplSoftBlankForm()
+    };
+    var hintView = viewCouples();
+    eq(hintView.indexOf(CPL.softBlameTip) !== -1, "blame hint shown");
+    eq(hintView.indexOf(CPL.softNegTip) !== -1, "neg hint shown");
+    eq(hintView.indexOf("ומה שיעזור לי זה") !== -1 && hintView.indexOf("אתה תמיד מאחר") !== -1, "preview live");
+    eq(cplAddSoft(loadCplMeta(), cplSoftFormFor("a")) === "ok", "hints do not block");
+    eq(loadCplSide("a").soft.length === 1 && loadCplSide("a").soft[0].share === false, "blaming draft still private");
+    state.cplSoftForms.a = { when: "אתמול הכלים נשארו בכיור", feltPick: "תסכול", feltCustom: "", ask: "לשים אותם במדיח אחרי הערב" };
+    var cleanSoft = viewCouples();
+    eq(cleanSoft.indexOf(CPL.softBlameTip) === -1 && cleanSoft.indexOf(CPL.softNegTip) === -1, "no hint on clean");
+    eq(cleanSoft.indexOf("לשים אותם במדיח אחרי הערב") !== -1 && cleanSoft.indexOf("תסכול") !== -1, "clean preview");
+    cplWipe();
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "plan", safety: false });
+    saveJSON(K_CPL_PLAN, makeCplPlan());
+    eq(cplAddSoft(loadCplMeta(), { when: "אתמול בערב הכלים", feltPick: "עצב", feltCustom: "", ask: "לשטוף יחד" }) === "ok", "soft1");
+    eq(cplAddSoft(loadCplMeta(), { when: "בבוקר לא כתבת", feltPick: "דאגה", feltCustom: "", ask: "הודעה אם מאחרים" }) === "ok", "soft2");
+    eq(cplAddSoft(loadCplMeta(), { when: "בשיחה אתמול", feltPick: "בדידות", feltCustom: "", ask: "עשר דקות בלי טלפון" }) === "ok", "soft3");
+    eq(loadCplSide("a").soft.length === 3 && loadCplSide("a").soft[0].share === false, "three private drafts");
+    eq(cplAddSoft(loadCplMeta(), { when: "עוד רגע", feltPick: "כעס", feltCustom: "", ask: "לעצור רגע" }) === "full", "soft cap");
+    eq(loadCplSide("a").soft.length === 3, "cap stays three");
+    eq(JSON.stringify(loadCplSide("b").soft) === "[]", "cap did not write the other side");
+    cplWipe();
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "plan", safety: false });
+    var softA = cplBlank();
+    softA.done = true;
+    softA.soft = [
+      { id: "su1", when: "UNSHARED_SOFT_A", felt: "עצב", ask: "לשטוף יחד הערב", share: false },
+      { id: "ss1", when: "SHARED_SOFT_A", felt: "כעס", ask: "לכתוב אם מאחרים", share: true }
+    ];
+    saveCplSide("a", softA);
+    var softB = cplBlank();
+    softB.done = true;
+    softB.soft = [
+      { id: "su2", when: "UNSHARED_SOFT_B", felt: "דאגה", ask: "שעה שקטה", share: false },
+      { id: "ss2", when: "SHARED_SOFT_B", felt: "פגיעה", ask: "לשבת עשר דקות", share: true }
+    ];
+    saveCplSide("b", softB);
+    var softPlan = makeCplPlan();
+    softPlan.startDate = "2020-01-01";
+    saveJSON(K_CPL_PLAN, softPlan);
+    state.cplSoftForms = {
+      a: { when: "UNSAVED_SOFT_A", feltPick: "עצב", feltCustom: "", ask: "בקשה פרטית" },
+      b: { when: "UNSAVED_SOFT_B", feltPick: "כעס", feltCustom: "", ask: "בקשה של ב" }
+    };
+    var planSoftA = viewCouples();
+    eq(planSoftA.indexOf(CPL.softLesson) !== -1, "lesson on own side");
+    eq(planSoftA.indexOf("UNSHARED_SOFT_A") !== -1, "own unshared draft");
+    eq(planSoftA.indexOf("SHARED_SOFT_A") !== -1, "own marked draft stays on own screen");
+    eq(planSoftA.indexOf("UNSAVED_SOFT_A") !== -1, "own unsaved preview");
+    eq(planSoftA.indexOf("UNSHARED_SOFT_B") === -1, "other unshared hidden");
+    eq(planSoftA.indexOf("SHARED_SOFT_B") === -1, "other marked hidden on private");
+    eq(planSoftA.indexOf("UNSAVED_SOFT_B") === -1, "other unsaved hidden");
+    eq(planSoftA.indexOf('data-id="su1" checked') === -1, "soft share off by default");
+    eq(planSoftA.indexOf('data-id="ss1" checked') !== -1, "soft share on when chosen");
+    var storedSoftA = "";
+    try { storedSoftA = localStorage.getItem(C.prefix + "_cpl_a") || ""; } catch (eSoftA) {}
+    eq(storedSoftA.indexOf("UNSHARED_SOFT_A") !== -1, "soft stored on a");
+    var storedSoftB = "";
+    try { storedSoftB = localStorage.getItem(C.prefix + "_cpl_b") || ""; } catch (eSoftB) {}
+    eq(storedSoftB.indexOf("UNSHARED_SOFT_A") === -1 && storedSoftB.indexOf("UNSHARED_SOFT_B") !== -1, "soft per partner");
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "b", screen: "ask", safety: false });
+    var askSoftB = viewCouples();
+    eq(askSoftB.indexOf("UNSHARED_SOFT_A") === -1 && askSoftB.indexOf("SHARED_SOFT_A") === -1 && askSoftB.indexOf("UNSAVED_SOFT_A") === -1, "ask hides other soft");
+    eq(askSoftB.indexOf("UNSHARED_SOFT_B") !== -1 && askSoftB.indexOf("UNSAVED_SOFT_B") !== -1, "ask shows own soft");
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "b", screen: "review", safety: false });
+    var reviewSoftB = viewCouples();
+    eq(reviewSoftB.indexOf("UNSHARED_SOFT_A") === -1 && reviewSoftB.indexOf("SHARED_SOFT_A") === -1 && reviewSoftB.indexOf("UNSAVED_SOFT_A") === -1, "review hides other soft");
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "summary", safety: false });
+    var sumSoft = viewCouples();
+    eq(sumSoft.indexOf("UNSHARED_SOFT_A") === -1 && sumSoft.indexOf("SHARED_SOFT_A") === -1, "summary hides A soft");
+    eq(sumSoft.indexOf("UNSHARED_SOFT_B") === -1 && sumSoft.indexOf("SHARED_SOFT_B") === -1, "summary hides B soft");
+    eq(sumSoft.indexOf("UNSAVED_SOFT_A") === -1 && sumSoft.indexOf("UNSAVED_SOFT_B") === -1, "summary hides unsaved");
+    var sumSoftObj = buildCoupleSummary(loadCplSide("a"), loadCplSide("b"), "Lina", "Omar");
+    var sumSoftBlob = JSON.stringify(sumSoftObj);
+    eq(sumSoftBlob.indexOf("UNSHARED_SOFT_A") === -1 && sumSoftBlob.indexOf("SHARED_SOFT_A") === -1, "summary fn hides A soft");
+    eq(sumSoftBlob.indexOf("UNSHARED_SOFT_B") === -1 && sumSoftBlob.indexOf("SHARED_SOFT_B") === -1, "summary fn hides B soft");
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "session", openDay: "c4", safety: false });
+    var softBefore = viewCouples();
+    eq(softBefore.indexOf(CPL.softJointTitle) === -1, "no soft joint before both");
+    eq(softBefore.indexOf("SHARED_SOFT_A") === -1 && softBefore.indexOf("UNSHARED_SOFT_A") === -1, "joint closed hides A soft");
+    eq(softBefore.indexOf("SHARED_SOFT_B") === -1 && softBefore.indexOf("UNSHARED_SOFT_B") === -1, "joint closed hides B soft");
+    eq(softBefore.indexOf("UNSAVED_SOFT_A") === -1 && softBefore.indexOf(CPL.softSave) === -1, "joint closed hides builder");
+    var openSoft = loadCplPlan();
+    for (var sbi = 0; sbi < openSoft.days.length; sbi++) if (openSoft.days[sbi].id === "c4") openSoft.days[sbi].bothHere = true;
+    saveJSON(K_CPL_PLAN, openSoft);
+    var softOpen = viewCouples();
+    eq(softOpen.indexOf(CPL.softJointTitle) !== -1 && softOpen.indexOf(CPL.softJointHow) !== -1, "soft joint card");
+    eq(softOpen.indexOf("SHARED_SOFT_A") !== -1 && softOpen.indexOf("SHARED_SOFT_B") !== -1, "marked drafts in joint");
+    eq(softOpen.indexOf("UNSHARED_SOFT_A") === -1 && softOpen.indexOf("UNSHARED_SOFT_B") === -1, "unshared never in joint");
+    eq(softOpen.indexOf("UNSAVED_SOFT_A") === -1 && softOpen.indexOf("UNSAVED_SOFT_B") === -1, "unsaved never in joint");
+    eq(softOpen.indexOf(CPL.softLesson) === -1 && softOpen.indexOf(CPL.softSave) === -1, "no private builder in joint");
+    eq(softOpen.indexOf("כשSHARED_SOFT_A, הרגשתי כעס, ומה שיעזור לי זה לכתוב אם מאחרים.") !== -1, "joint reads the sentence");
+    cplWipe();
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "plan", safety: false });
+    saveJSON(K_CPL_PLAN, makeCplPlan());
+    eq(cplCommitSoft(loadCplMeta(), { when: CPL.hitSample, feltPick: "כעס", feltCustom: "", ask: "לשבת לדבר" }) === "violent", "violent when");
+    eq(cplCommitSoft(loadCplMeta(), { when: "אתמול בערב", feltPick: "", feltCustom: CPL.hitSample, ask: "לשבת" }) === "violent", "violent felt");
+    eq(cplCommitSoft(loadCplMeta(), { when: "אתמול בערב", feltPick: "פחד", feltCustom: "", ask: CPL.hitSample }) === "violent", "violent ask");
+    eq(loadCplSide("a").soft.length === 0, "violent soft not stored");
+    var softSafety = cplAddSoft(loadCplMeta(), { when: "שיחה קצרה", feltPick: "פחד", feltCustom: "", ask: CPL.hitSample });
+    eq(softSafety === "safety", "soft safety path");
+    eq(loadCplMeta().safety === true && loadCplMeta().screen === "safety", "soft safety flag");
+    var softSafetyView = viewCouples();
+    eq(softSafetyView.indexOf("100") !== -1 && softSafetyView.indexOf("1201") !== -1 && softSafetyView.indexOf(CPL.safetyTitle) !== -1, "soft safety card");
+    eq(softSafetyView.indexOf(CPL.softSave) === -1 && softSafetyView.indexOf(CPL.hitSample) === -1 && softSafetyView.indexOf(CPL.softLesson) === -1, "safety hides builder");
+    state.hold = false;
+    state.crisis = null;
     cplWipe();
     saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "plan", safety: false });
     var holdRec = cplBlank();
     holdRec.nice = [{ id: "h1", text: "HOLD_SECRET_NOTE", date: today, share: true, used: "" }];
+    holdRec.soft = [{ id: "hs", when: "HOLD_SOFT_SECRET", felt: "עצב", ask: "בקשה מוסתרת", share: true }];
     saveCplSide("a", holdRec);
     saveJSON(K_CPL_PLAN, makeCplPlan());
+    state.cplSoftForms = { a: { when: "HOLD_SOFT_FORM", feltPick: "כעס", feltCustom: "", ask: "עוד בקשה" }, b: cplSoftBlankForm() };
     state.hold = true;
     state.view = "couples";
     var held = viewHTML();
     eq(held.indexOf(C.ui.holdTitle) !== -1, "hold screen");
     eq(held.indexOf("HOLD_SECRET_NOTE") === -1 && held.indexOf(CPL.niceTitle) === -1 && held.indexOf(CPL.niceJointTitle) === -1, "hold hides nice");
+    eq(held.indexOf("HOLD_SOFT_SECRET") === -1 && held.indexOf("HOLD_SOFT_FORM") === -1 && held.indexOf(CPL.softLesson) === -1 && held.indexOf(CPL.softJointTitle) === -1, "hold hides soft");
     eq(viewCouples().indexOf(CPL.niceTitle) === -1 && viewCouples().indexOf("HOLD_SECRET_NOTE") === -1, "viewCouples hold");
+    eq(cplSoftPrivate(loadCplMeta()) === "" && cplSoftJoint(loadCplMeta()) === "", "hold hides soft fn");
     state.hold = false;
     state.crisis = null;
     cplWipe();
