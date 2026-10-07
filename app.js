@@ -310,7 +310,7 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
   "summaryOnly": "רק התמונה המשותפת. מה שנכתב בפרטי לא מועתק לכאן.",
   "startWeek": "התחלה של תוכנית שבעה ימים לזוג",
   "planTitle": "שבעה ימים",
-  "planIntro": "שלושת הימים הראשונים הם אישיים. המדריך מחליף למי השיחה: צד א, אחר כך צד ב, אחר כך צד א. מיום 4 השיחות משותפות, ושניכם צריכים להיות בחדר. במפגש משותף יש תרגול מדבר ומקשיב עם שעון של שלוש דקות. יום מאוחר יותר נשאר נעול עד התאריך שלו.",
+  "planIntro": "שלושת הימים הראשונים הם אישיים. המדריך מחליף למי השיחה: צד א, אחר כך צד ב, אחר כך צד א. בימים האלה כל צד ממלא בפרטי תוכנית הפסקה ותיקון. מיום 4 השיחות משותפות, ושניכם צריכים להיות בחדר. במפגש משותף יש תרגול מדבר ומקשיב עם שעון של שלוש דקות, וכפתור הפסקה של עשרים דקות אם השיחה מתחממת. יום מאוחר יותר נשאר נעול עד התאריך שלו.",
   "slTitle": "תור של דיבור והקשבה",
   "slBody": "מי שמדבר מקבל שלוש דקות. מי שמקשיב לא מתווכח בתוך התור, ורק אחריו אומר במשפט אחד מה ששמע, לפני כל תשובה.",
   "slSpeaker": "עכשיו מדבר/ת: {name}",
@@ -345,6 +345,7 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
   "policeLabel": "משטרה",
   "eranShort": "ער״ן, עזרה ראשונה נפשית",
   "safetyCall": "בישראל: מתקשרים למשטרה ב־100 אם יש סכנה, ולער״ן ב־1201 אם צריך לדבר עם מישהו. לא נשארים כדי לסיים תרגיל.",
+  "safetyTimeout": "הפסקה ותיקון אינם פתרון לאלימות. פסק זמן לא מחליף יציאה למקום בטוח, ומפגש משותף לא מתאים כשיש פחד, איום, או אלימות.",
   "resetAsk": "מחיקת תשובות הזוג מהמכשיר הזה",
   "resetYes": "כן, למחוק",
   "resetNo": "להשאיר",
@@ -403,6 +404,71 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
   "softJointTitle": "פתיחות רכות שבחרו להביא",
   "softJointHow": "מי שמדבר או מדברת קורא או קוראת את המשפט בקול. מי שמקשיב או מקשיבה אומר או אומרת אותו שוב במילים שלו או שלה, ורק אחר כך עונה. אפשר להיעזר בשעון של שלוש הדקות.",
   "softJointEmpty": "עדיין אין פתיחה מסומנת להביא. כל צד מסמן טיוטה אצלו, אם רוצים.",
+  "toTitle": "הפסקה ותיקון",
+  "toKicker": "פרטית ל{name}",
+  "toLesson": "כשהגוף מוצף, עוד משפט בדרך כלל מחמם ולא מסביר. הפסקה של עשרים דקות לפחות נותנת לדופק ולנשימה לרדת. זו הפסקה עם הבטחה לחזור: לא יוצאים מהחדר בלי מילה, לא שותקים כעונש, ולא מענישים.",
+  "toWhy": "הפסקה של דקה או שתיים משאירה את הגוף בכוננות. עשרים דקות הן המינימום כדי להירגע באמת, ואפשר להאריך לשלושים.",
+  "toBody": "סימנים בגוף",
+  "toBodyPh": "למשל לב דופק, כתפיים קפוצות, חום בפנים",
+  "toThoughts": "מחשבות",
+  "toThoughtsPh": "למשל «אין טעם לדבר» או «אני חייב/ת לנצח»",
+  "toVoice": "קול ודיבור",
+  "toVoicePh": "למשל הקול עולה, דיבור מהיר, או שתיקה פתאומית",
+  "toPhrase": "משפט הפסקה ניטרלי",
+  "toPhrasePh": "הפסקה עכשיו, ונחזור בעוד עשרים דקות",
+  "toActsLabel": "מה מרגיע אותי בזמן ההפסקה",
+  "toActsHint": "בוחרים שתיים עד ארבע. נשימה, הליכה, מוזיקה או מקלחת, או משהו משלך. ההפסקה היא לא זמן לחשוב שוב ושוב על המריבה, ולא לתרגל את הטיעון.",
+  "toCustom": "פעילות משלי",
+  "toCustomPh": "למשל מים קרים, או לשבת במרפסת",
+  "toReturn": "אני מתחייב/ת לחזור לשיחה אחרי ההפסקה. זו לא עזיבה, לא שתיקה כעונש, ולא ענישה.",
+  "toFearQ": "יש פחד מבן או בת הזוג, איום, או אלימות פיזית?",
+  "toFearNo": "לא",
+  "toFearYes": "כן, יש",
+  "toShare": "לשתף במפגש המשותף רק את משפט ההפסקה ואת ההסכמה לחזור. הסימנים ורשימת ההרגעה נשארים רק אצלי.",
+  "toSave": "שמירת התוכנית שלי",
+  "toUpdate": "עדכון התוכנית שלי",
+  "toNeed": "קודם ממלאים סימן בגוף, מחשבה, קול, משפט הפסקה, שתיים עד ארבע פעילויות, את ההסכמה לחזור, ומסמנים שאין פחד, איום או אלימות.",
+  "toActMax": "עד ארבע פעילויות. אפשר להוריד אחת ואז להוסיף.",
+  "toReady": "התוכנית שלך להפסקה ותיקון מוכנה.",
+  "toMissing": "עדיין אין תוכנית הפסקה ותיקון. כדאי למלא אותה בימים האישיים, לפני המפגשים המשותפים.",
+  "toStatus": "תוכנית הפסקה ותיקון: אצל {a} {an}, ואצל {b} {bn}.",
+  "toStatusNote": "כאן רק אם יש תוכנית. בלי הסימנים, בלי משפט ההפסקה, ובלי רשימת ההרגעה.",
+  "toHas": "יש תוכנית",
+  "toNone": "עדיין אין",
+  "toRuminateTip": "טיפ רך: לחשוב שוב ושוב על המריבה, או לתרגל את הטיעון, מחזיק את ההצפה. עדיף נשימה, הליכה, מוזיקה או מקלחת.",
+  "toActs": [
+    {"id": "breath", "t": "נשימה איטית"},
+    {"id": "walk", "t": "הליכה"},
+    {"id": "music", "t": "מוזיקה"},
+    {"id": "shower", "t": "מקלחת"}
+  ],
+  "toPauseTitle": "הפסקה כשהשיחה מתחממת",
+  "toPauseBody": "לוחצים כשמישהו מוצף. עשרים דקות של שקט, ואז חוזרים עם משפט תיקון אחד. זו הפסקה עם הבטחה לחזור, לא יציאה, לא שתיקה כעונש, ולא ענישה.",
+  "toPauseStart": "הפסקה של עשרים דקות",
+  "toPauseExtend": "להאריך לשלושים דקות",
+  "toPauseExtended": "ההפסקה הוארכה לשלושים דקות.",
+  "toPauseTick": "נותרו {m}:{s}",
+  "toPauseCool": "הגוף צריך את הזמן הזה. לא חוזרים לוויכוח באמצע.",
+  "toPauseMine": "מה שמרגיע אותי עכשיו",
+  "toPauseMineNote": "הרשימה רק של {name}. אם זה לא אתה או את, עוברים צד. הצד השני לא רואה אותה.",
+  "toPauseMineEmpty": "עדיין אין רשימת הרגעה בצד שלך. אפשר למלא תוכנית במסך שבעת הימים.",
+  "toPauseNoRuminate": "בזמן ההפסקה לא חוזרים על המריבה בראש, ולא מתרגלים את הטיעון.",
+  "toPauseNoPlan": "אם עדיין אין תוכנית בצד שלך, ההפסקה עדיין מתחילה. את רשימת ההרגעה ממלאים במסך שבעת הימים.",
+  "toSharedTitle": "מה שבחרו לשתף",
+  "toSharedEmpty": "אף צד לא סימן עדיין משפט הפסקה לשיתוף. הסימנים ורשימת ההרגעה נשארים פרטיים בכל מקרה.",
+  "toReturnShared": "{name} מתחייב/ת לחזור אחרי ההפסקה.",
+  "toPhraseBy": "משפט ההפסקה של {name}: {phrase}",
+  "toRepairTitle": "חוזרים עם משפט תיקון",
+  "toRepairHow": "בוחרים משפט אחד, או כותבים משפט קצר. לוקחים אחריות על חלק אחד, או מבקשים להתחיל שוב ברכות. אחר כך ממשיכים עם שעון הדיבור וההקשבה.",
+  "toRepairCustom": "או משפט שלי",
+  "toRepairGo": "אמרנו את המשפט, ממשיכים עם שעון הדיבור",
+  "toRepairNeed": "קודם בוחרים או כותבים משפט תיקון אחד.",
+  "toRepairPhrases": [
+    "אני לוקח/ת אחריות על הטון שלי.",
+    "אפשר להתחיל את המשפט מחדש, יותר ברכות?",
+    "חזרתי. אני רוצה להקשיב קודם.",
+    "סליחה על חלק אחד. אפשר להמשיך לאט?"
+  ],
   "softFeelings": ["עצב", "כעס", "פחד", "בדידות", "תסכול", "דאגה", "פגיעה", "עייפות"],
   "hitSample": "הוא מכה אותי כשהוא כועס",
   "safeSample": "אנחנו רבים על כלים וחשבונות",
@@ -494,7 +560,7 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
       "who": "both",
       "title": "עשרים דקות על המעגל",
       "method": "טיפול ממוקד רגש: מעגל הרדיפה והנסיגה",
-      "lesson": "הרבה זוגות נתקעים במעגל. צד אחד רודף: מדבר יותר, עוקב, מתעקש. הצד השני נסוג: שותק, יוצא, סוגר את הנושא. כל תנועה היא ניסיון להתמודד, והיא מושכת את התנועה השנייה. התמונה המשותפת נותנת שם למעגל רק אם התשובות הראו אותו. היא לא עותק של הסיפורים הפרטיים. יושבים יחד עשרים דקות, ואז עוצרים. סדר: (1) כל אחד אומר את הפתיחה הרכה, בערך שתי דקות, בלי ויכוח; (2) משפט אחד על המעגל; (3) כל אחד אומר את הצורך מהתמונה המשותפת; (4) עוצרים גם אם לא נגמר.",
+      "lesson": "הרבה זוגות נתקעים במעגל. צד אחד רודף: מדבר יותר, עוקב, מתעקש. הצד השני נסוג: שותק, יוצא, סוגר את הנושא. כל תנועה היא ניסיון להתמודד, והיא מושכת את התנועה השנייה. התמונה המשותפת נותנת שם למעגל רק אם התשובות הראו אותו. היא לא עותק של הסיפורים הפרטיים. יושבים יחד עשרים דקות, ואז עוצרים. סדר: (1) כל אחד אומר את הפתיחה הרכה, בערך שתי דקות, בלי ויכוח; (2) משפט אחד על המעגל; (3) כל אחד אומר את הצורך מהתמונה המשותפת; (4) עוצרים גם אם לא נגמר. אם מישהו מוצף, לוחצים על הפסקה של עשרים דקות, נרגעים, וחוזרים עם משפט תיקון.",
       "exercise": "שניכם צריכים להיות בחדר. אחרי עשרים הדקות כותבים שורה אחת שלא פותחים שוב הלילה."
     },
     {
@@ -521,7 +587,7 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
       "who": "both",
       "title": "ניסיון תיקון, ואז עוצרים",
       "method": "גוטמן: ניסיון תיקון",
-      "lesson": "ניסיון תיקון הוא כל מהלך שמוריד את החום: «אפשר להתחיל את המשפט מחדש?», «אני מוצף וצריך עשר דקות», או «אני מבין את החלק על האיחור». זה לא אומר שמסכימים. זה אומר שהשיחה יכולה לחכות בלי בוז. אם מישהו מפחד, או יש איום, לא משתמשים בתרגיל הזה. יוצאים ופונים לכרטיס הבטיחות.",
+      "lesson": "ניסיון תיקון הוא כל מהלך שמוריד את החום: «אפשר להתחיל את המשפט מחדש?», «אני מוצף וצריך עשרים דקות», או «אני מבין את החלק על האיחור». זה לא אומר שמסכימים. זה אומר שהשיחה יכולה לחכות בלי בוז. אם מישהו מפחד, או יש איום, לא משתמשים בתרגיל הזה ולא בהפסקה. יוצאים ופונים לכרטיס הבטיחות.",
       "exercise": "כל אחד אומר בקול משפט תיקון אחד. כותבים את שני המשפטים בהערה המשותפת, ואז עוצרים ללילה. השבוע היה תרגול, לא זוגיות גמורה."
     }
   ]
@@ -531,10 +597,12 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
   function loadProgram() { return loadJSON(K_PROGRAM, null); }
   function saveProgram(p) { saveJSON(K_PROGRAM, p); }
 
-  var state = { view: "home", dayId: null, crisis: null, hold: false, guideText: "", guide: null, pad: "", pst: {}, check: null, result: null, formError: "", confirmClear: false, cplErr: "", cplNiceErr: "", cplSoftErr: "", cplReset: false };
+  var state = { view: "home", dayId: null, crisis: null, hold: false, guideText: "", guide: null, pad: "", pst: {}, check: null, result: null, formError: "", confirmClear: false, cplErr: "", cplNiceErr: "", cplSoftErr: "", cplToErr: "", cplPauseErr: "", cplReset: false };
   var breath = { running: false, timer: null, mode: "468", phaseIdx: 0, left: 4, cycle: 0, totalCycles: 5, dayId: null, finishedMsg: "" };
   var cplSlTimer = null;
   var cplSl = { running: false, left: 180, done: false };
+  var cplPauseTimer = null;
+  var cplPause = { phase: "idle", startedAt: 0, endsAt: 0, extended: false, repairPick: "", repairCustom: "" };
 
   function breathModes() {
     return {
@@ -879,9 +947,11 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
   }
   function render() {
     if (typeof document === "undefined") return;
+    if (cplPause.phase === "cooling" && cplPauseLeft() <= 0) cplPause.phase = "repair";
     var breathingHere = state.view === "breathe" || (state.view === "day" && state.dayId === "t1");
     if (!breathingHere) stopBreath(false);
     clearCplSlTimer();
+    clearCplPauseTimer();
     var app = document.getElementById("app");
     if (!app) return;
     app.innerHTML = shell(viewHTML());
@@ -889,6 +959,7 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     if (breath.running) syncBreathDom();
     if (!document.getElementById("cpl-sl-tick")) cplSl.running = false;
     else if (cplSl.running) armCplSlTimer();
+    if (cplPause.phase === "cooling") armCplPauseTimer();
   }
   function readRoute() {
     var h = (location.hash || "#home").replace("#", "");
@@ -1113,7 +1184,7 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
   }
 
   function cplBlank() {
-    return { answers: ["", "", "", "", "", "", "", ""], done: false, doneAt: null, qi: 0, notes: {}, nice: [], soft: [] };
+    return { answers: ["", "", "", "", "", "", "", ""], done: false, doneAt: null, qi: 0, notes: {}, nice: [], soft: [], timeout: cplTimeoutBlank() };
   }
   function loadCplMeta() {
     var m = loadJSON(K_CPL_META, null) || {};
@@ -1133,6 +1204,7 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     if (typeof rec.qi !== "number") rec.qi = 0;
     rec.nice = cplNormalizeNice(rec.nice);
     rec.soft = cplNormalizeSoft(rec.soft);
+    rec.timeout = cplNormalizeTimeout(rec.timeout);
     return rec;
   }
   function cplNormalizeNice(list) {
@@ -1305,12 +1377,15 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     state.cplErr = "";
     state.cplNiceErr = "";
     state.cplSoftErr = "";
+    state.cplToErr = "";
+    state.cplPauseErr = "";
     state.cplSoftForms = { a: cplSoftBlankForm(), b: cplSoftBlankForm() };
     state.cplReset = false;
     cplSl.running = false;
     cplSl.done = false;
     cplSl.left = 180;
     clearCplSlTimer();
+    cplPauseReset();
   }
   function clearCplSlTimer() {
     if (cplSlTimer) {
@@ -1397,6 +1472,18 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
       keptSoft.push(draft);
     }
     rec.soft = keptSoft;
+    if (rec.timeout) {
+      var tFields = ["body", "thoughts", "voice", "phrase", "custom"];
+      for (var ti = 0; ti < tFields.length; ti++) {
+        var tv = rec.timeout[tFields[ti]] || "";
+        if (isCrisisText(tv)) { rec.timeout[tFields[ti]] = ""; rec.timeout.saved = false; hitC = true; }
+        else if (cplViolent(tv)) { rec.timeout[tFields[ti]] = ""; rec.timeout.saved = false; hitV = true; }
+      }
+      if (rec.timeout.fear === "yes") {
+        rec.timeout = cplTimeoutBlank();
+        hitV = true;
+      }
+    }
     saveCplSide(which, rec);
     return { hitV: hitV, hitC: hitC };
   }
@@ -1407,6 +1494,11 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     try { localStorage.removeItem(K_CPL_PLAN); localStorage.removeItem(K_CPL_SUM); } catch (e) {}
     state.cplErr = "";
     state.cplSoftErr = "";
+    state.cplToErr = "";
+    state.cplPauseErr = "";
+    cplSl.running = false;
+    clearCplSlTimer();
+    cplPauseReset();
     render();
   }
   function screenFor(meta, who) {
@@ -1745,6 +1837,436 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     var inner = body ? '<ul class="cpl-soft-list">' + body + "</ul>" : "<p>" + esc(CPL.softJointEmpty) + "</p>";
     return '<div class="cpl-soft-joint"><h2>' + esc(CPL.softJointTitle) + "</h2><p>" + esc(CPL.softJointHow) + "</p>" + inner + "</div>";
   }
+  function cplTimeoutBlank() {
+    return {
+      body: "",
+      thoughts: "",
+      voice: "",
+      phrase: "",
+      activities: [],
+      custom: "",
+      returnCommit: false,
+      share: false,
+      fear: "",
+      saved: false
+    };
+  }
+  function cplTimeoutClip(s, max) {
+    return String(s || "").replace(/\s+/g, " ").trim().slice(0, max);
+  }
+  function cplTimeoutActIds() {
+    var ids = {};
+    for (var i = 0; i < CPL.toActs.length; i++) ids[CPL.toActs[i].id] = CPL.toActs[i].t;
+    return ids;
+  }
+  function cplTimeoutActCount(plan) {
+    if (!plan) return 0;
+    var n = (plan.activities || []).length;
+    if (cplTimeoutClip(plan.custom, 80).length >= 2) n += 1;
+    return n;
+  }
+  function cplTimeoutFieldsOk(plan) {
+    if (!plan) return false;
+    if (plan.fear !== "no") return false;
+    if (plan.returnCommit !== true) return false;
+    if (cplTimeoutClip(plan.body, 160).length < 2) return false;
+    if (cplTimeoutClip(plan.thoughts, 160).length < 2) return false;
+    if (cplTimeoutClip(plan.voice, 120).length < 2) return false;
+    if (cplTimeoutClip(plan.phrase, 80).length < 2) return false;
+    var n = cplTimeoutActCount(plan);
+    return n >= 2 && n <= 4;
+  }
+  function cplTimeoutReady(plan) {
+    return !!(plan && plan.saved === true && cplTimeoutFieldsOk(plan));
+  }
+  function cplTimeoutTexts(plan) {
+    if (!plan) return [];
+    return [plan.body, plan.thoughts, plan.voice, plan.phrase, plan.custom];
+  }
+  function cplTimeoutHasCrisis(plan) {
+    var parts = cplTimeoutTexts(plan);
+    for (var i = 0; i < parts.length; i++) if (isCrisisText(parts[i])) return true;
+    return false;
+  }
+  function cplTimeoutHasViolent(plan) {
+    var parts = cplTimeoutTexts(plan);
+    for (var i = 0; i < parts.length; i++) if (cplViolent(parts[i])) return true;
+    return false;
+  }
+  function cplNormalizeTimeout(raw) {
+    var plan = cplTimeoutBlank();
+    if (!raw || typeof raw !== "object") return plan;
+    plan.body = cplTimeoutClip(raw.body, 160);
+    plan.thoughts = cplTimeoutClip(raw.thoughts, 160);
+    plan.voice = cplTimeoutClip(raw.voice, 120);
+    plan.phrase = cplTimeoutClip(raw.phrase, 80);
+    plan.custom = cplTimeoutClip(raw.custom, 80);
+    var allowed = cplTimeoutActIds();
+    var acts = [];
+    var src = Array.isArray(raw.activities) ? raw.activities : [];
+    for (var i = 0; i < src.length; i++) {
+      var id = String(src[i] || "");
+      if (allowed[id] && acts.indexOf(id) === -1) acts.push(id);
+    }
+    plan.activities = acts.slice(0, 4);
+    plan.returnCommit = raw.returnCommit === true;
+    plan.share = raw.share === true;
+    plan.fear = raw.fear === "no" ? "no" : "";
+    plan.saved = raw.saved === true && cplTimeoutFieldsOk(plan);
+    return plan;
+  }
+  function cplTimeoutRuminate(raw) {
+    var t = norm(raw);
+    if (!t) return false;
+    var keys = [
+      "לחשוב שוב",
+      "לחשוב על המריבה",
+      "לחשוב על הויכוח",
+      "לשחזר",
+      "לתרגל את הטיעון",
+      "לתרגל את הויכוח",
+      "לתרגל את המריבה",
+      "לחזור על הויכוח",
+      "לחזור על המריבה",
+      "לנתח את המריבה",
+      "לנתח את הויכוח",
+      "להתכונן לויכוח",
+      "לשנן",
+      "רומינציה"
+    ];
+    for (var i = 0; i < keys.length; i++) {
+      if (t.indexOf(norm(keys[i])) !== -1) return true;
+    }
+    return false;
+  }
+  function cplTimeoutActLabels(plan) {
+    var allowed = cplTimeoutActIds();
+    var labels = [];
+    var acts = plan && plan.activities ? plan.activities : [];
+    for (var i = 0; i < acts.length; i++) if (allowed[acts[i]]) labels.push(allowed[acts[i]]);
+    var custom = cplTimeoutClip(plan && plan.custom, 80);
+    if (custom.length >= 2) labels.push(custom);
+    return labels;
+  }
+  function cplTimeoutClear(side) {
+    var rec = loadCplSide(side);
+    rec.timeout = cplTimeoutBlank();
+    saveCplSide(side, rec);
+    return rec;
+  }
+  function cplTimeoutSave(meta) {
+    var side = meta.active === "b" ? "b" : "a";
+    var rec = loadCplSide(side);
+    var plan = rec.timeout;
+    if (cplTimeoutHasCrisis(plan)) {
+      cplTimeoutClear(side);
+      return "crisis";
+    }
+    if (cplTimeoutHasViolent(plan)) {
+      cplTimeoutClear(side);
+      return "violent";
+    }
+    if (!cplTimeoutFieldsOk(plan)) return "short";
+    plan.saved = true;
+    rec.timeout = plan;
+    saveCplSide(side, rec);
+    return "ok";
+  }
+  function cplTimeoutApplySave(meta) {
+    var status = cplTimeoutSave(meta);
+    if (status === "crisis") { triggerCrisis("text"); return "crisis"; }
+    if (status === "violent") { enterSafety(meta); return "safety"; }
+    if (status === "short") { state.cplToErr = CPL.toNeed; return "short"; }
+    return "ok";
+  }
+  function cplTimeoutFear(meta, answer) {
+    var side = meta.active === "b" ? "b" : "a";
+    if (answer === "yes") {
+      cplTimeoutClear(side);
+      return "violent";
+    }
+    if (answer === "no") {
+      var rec = loadCplSide(side);
+      rec.timeout.fear = "no";
+      rec.timeout.saved = false;
+      saveCplSide(side, rec);
+      return "ok";
+    }
+    return "short";
+  }
+  function cplTimeoutToggleAct(meta, id) {
+    var allowed = cplTimeoutActIds();
+    if (!allowed[id]) return "bad";
+    var side = meta.active === "b" ? "b" : "a";
+    var rec = loadCplSide(side);
+    var plan = rec.timeout;
+    var idx = plan.activities.indexOf(id);
+    if (idx >= 0) plan.activities.splice(idx, 1);
+    else {
+      if (cplTimeoutActCount(plan) >= 4) return "max";
+      plan.activities.push(id);
+    }
+    plan.saved = false;
+    saveCplSide(side, rec);
+    return "ok";
+  }
+  function captureCplTimeout(meta) {
+    if (typeof document === "undefined" || !meta) return;
+    if (!document.getElementById("cpl-to-body")) return;
+    var side = meta.active === "b" ? "b" : "a";
+    var rec = loadCplSide(side);
+    var plan = rec.timeout;
+    function pull(id, key, max) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      var val = String(el.value || "").slice(0, max);
+      if (plan[key] !== val) plan.saved = false;
+      plan[key] = val;
+    }
+    pull("cpl-to-body", "body", 160);
+    pull("cpl-to-thoughts", "thoughts", 160);
+    pull("cpl-to-voice", "voice", 120);
+    pull("cpl-to-phrase", "phrase", 80);
+    pull("cpl-to-custom", "custom", 80);
+    var ret = document.getElementById("cpl-to-return");
+    if (ret && plan.returnCommit !== !!ret.checked) {
+      plan.returnCommit = !!ret.checked;
+      plan.saved = false;
+    }
+    var share = document.getElementById("cpl-to-share");
+    if (share && plan.share !== !!share.checked) {
+      plan.share = !!share.checked;
+      plan.saved = false;
+    }
+    saveCplSide(side, rec);
+  }
+  function cplTimeoutGuard(meta) {
+    if (!meta) return "ok";
+    var side = meta.active === "b" ? "b" : "a";
+    var plan = loadCplSide(side).timeout;
+    if (cplTimeoutHasCrisis(plan)) {
+      cplTimeoutClear(side);
+      cplPauseReset();
+      triggerCrisis("text");
+      return "stop";
+    }
+    if (cplTimeoutHasViolent(plan)) {
+      cplTimeoutClear(side);
+      enterSafety(meta);
+      return "stop";
+    }
+    return "ok";
+  }
+  function syncCplTimeoutHint() {
+    if (typeof document === "undefined") return;
+    var el = document.getElementById("cpl-to-hints");
+    if (!el) return;
+    var meta = loadCplMeta();
+    var plan = loadCplSide(meta.active === "b" ? "b" : "a").timeout;
+    el.innerHTML = cplTimeoutRuminate(plan.custom) ? '<p class="cpl-to-tip">' + esc(CPL.toRuminateTip) + "</p>" : "";
+  }
+  function cplTimeoutStatus(meta) {
+    if (state.hold || !meta || meta.safety) return "";
+    var an = cplTimeoutReady(loadCplSide("a").timeout) ? CPL.toHas : CPL.toNone;
+    var bn = cplTimeoutReady(loadCplSide("b").timeout) ? CPL.toHas : CPL.toNone;
+    return '<div class="cpl-to-status"><p>' + esc(fill(CPL.toStatus, { a: meta.aName, b: meta.bName, an: an, bn: bn })) + '</p><p class="muted">' + esc(CPL.toStatusNote) + "</p></div>";
+  }
+  function cplTimeoutSharedHTML(meta) {
+    function bit(side) {
+      var plan = loadCplSide(side).timeout;
+      if (!cplTimeoutReady(plan) || plan.share !== true) return "";
+      if (cplTimeoutHasViolent(plan) || cplTimeoutHasCrisis(plan)) return "";
+      var name = nameOf(meta, side) || CPL.noname;
+      return '<p class="kicker">' + esc(fill(CPL.niceBy, { name: name })) + "</p>" +
+        "<p>" + esc(fill(CPL.toPhraseBy, { name: name, phrase: plan.phrase })) + "</p>" +
+        "<p>" + esc(fill(CPL.toReturnShared, { name: name })) + "</p>";
+    }
+    var body = bit("a") + bit("b");
+    if (!body) return "<p>" + esc(CPL.toSharedEmpty) + "</p>";
+    return body;
+  }
+  function cplTimeoutPrivate(meta) {
+    if (state.hold || !meta || meta.safety) return "";
+    var side = meta.active === "b" ? "b" : "a";
+    var name = nameOf(meta, side) || CPL.noname;
+    var plan = loadCplSide(side).timeout;
+    var chips = CPL.toActs.map(function (act) {
+      var on = plan.activities.indexOf(act.id) !== -1;
+      return '<button type="button" class="chip' + (on ? " on" : "") + '" data-action="cpl-to-act" data-act="' + esc(act.id) + '" aria-pressed="' + (on ? "true" : "false") + '">' + esc(act.t) + "</button>";
+    }).join("");
+    var fearNo = plan.fear === "no";
+    var hint = cplTimeoutRuminate(plan.custom) ? '<p class="cpl-to-tip">' + esc(CPL.toRuminateTip) + "</p>" : "";
+    var ready = cplTimeoutReady(plan)
+      ? '<p class="okbox">' + esc(CPL.toReady) + "</p>"
+      : (cplTimeoutFieldsOk(plan) ? "" : '<p class="muted">' + esc(CPL.toMissing) + "</p>");
+    return '<section class="card cpl-to"><p class="kicker">' + esc(fill(CPL.toKicker, { name: name })) + "</p><h2>" + esc(CPL.toTitle) + "</h2>" +
+      "<p>" + esc(CPL.toLesson) + "</p>" +
+      "<p>" + esc(CPL.toWhy) + "</p>" +
+      ready +
+      '<label class="field">' + esc(CPL.toBody) + '<textarea id="cpl-to-body" data-cpl="to-body" maxlength="160" placeholder="' + esc(CPL.toBodyPh) + '">' + esc(plan.body) + "</textarea></label>" +
+      '<label class="field">' + esc(CPL.toThoughts) + '<textarea id="cpl-to-thoughts" data-cpl="to-thoughts" maxlength="160" placeholder="' + esc(CPL.toThoughtsPh) + '">' + esc(plan.thoughts) + "</textarea></label>" +
+      '<label class="field">' + esc(CPL.toVoice) + '<textarea id="cpl-to-voice" data-cpl="to-voice" maxlength="120" placeholder="' + esc(CPL.toVoicePh) + '">' + esc(plan.voice) + "</textarea></label>" +
+      '<label class="field">' + esc(CPL.toPhrase) + '<input type="text" id="cpl-to-phrase" data-cpl="to-phrase" maxlength="80" placeholder="' + esc(CPL.toPhrasePh) + '" value="' + esc(plan.phrase) + '"></label>' +
+      '<p class="cpl-to-label">' + esc(CPL.toActsLabel) + "</p>" +
+      '<p class="muted">' + esc(CPL.toActsHint) + "</p>" +
+      '<div class="cpl-to-acts">' + chips + "</div>" +
+      '<label class="field">' + esc(CPL.toCustom) + '<input type="text" id="cpl-to-custom" data-cpl="to-custom" maxlength="80" placeholder="' + esc(CPL.toCustomPh) + '" value="' + esc(plan.custom) + '"></label>' +
+      '<div id="cpl-to-hints">' + hint + "</div>" +
+      '<label class="check"><input type="checkbox" id="cpl-to-return" data-cpl="to-return"' + (plan.returnCommit ? " checked" : "") + ">" + esc(CPL.toReturn) + "</label>" +
+      '<p class="cpl-to-label" id="cpl-to-fear-label">' + esc(CPL.toFearQ) + "</p>" +
+      '<div class="cpl-to-fear" role="group" aria-labelledby="cpl-to-fear-label">' +
+      '<button type="button" class="chip' + (fearNo ? " on" : "") + '" data-action="cpl-to-fear" data-fear="no" aria-pressed="' + (fearNo ? "true" : "false") + '">' + esc(CPL.toFearNo) + "</button>" +
+      '<button type="button" class="chip" data-action="cpl-to-fear" data-fear="yes" aria-pressed="false">' + esc(CPL.toFearYes) + "</button>" +
+      "</div>" +
+      '<label class="check"><input type="checkbox" id="cpl-to-share" data-cpl="to-share"' + (plan.share ? " checked" : "") + ">" + esc(CPL.toShare) + "</label>" +
+      (state.cplToErr ? '<p class="err">' + esc(state.cplToErr) + "</p>" : "") +
+      '<button type="button" class="btn block" data-action="cpl-to-save">' + esc(plan.saved ? CPL.toUpdate : CPL.toSave) + "</button></section>";
+  }
+  function clearCplPauseTimer() {
+    if (cplPauseTimer) {
+      clearInterval(cplPauseTimer);
+      cplPauseTimer = null;
+    }
+  }
+  function cplPauseReset() {
+    clearCplPauseTimer();
+    cplPause.phase = "idle";
+    cplPause.startedAt = 0;
+    cplPause.endsAt = 0;
+    cplPause.extended = false;
+    cplPause.repairPick = "";
+    cplPause.repairCustom = "";
+  }
+  function cplPauseLeft() {
+    if (cplPause.phase !== "cooling") return 0;
+    var left = Math.ceil((cplPause.endsAt - Date.now()) / 1000);
+    if (left < 0) left = 0;
+    return left;
+  }
+  function cplPauseParts() {
+    var left = cplPauseLeft();
+    var m = Math.floor(left / 60);
+    var s = left % 60;
+    return { m: String(m), s: (s < 10 ? "0" : "") + s };
+  }
+  function syncCplPauseDom() {
+    if (typeof document === "undefined") return;
+    var tick = document.getElementById("cpl-pause-tick");
+    if (!tick) return;
+    tick.textContent = fill(CPL.toPauseTick, cplPauseParts());
+  }
+  function cplPauseOnTick() {
+    if (cplPause.phase !== "cooling") return;
+    if (cplPauseLeft() <= 0) {
+      cplPause.phase = "repair";
+      clearCplPauseTimer();
+      render();
+      return;
+    }
+    syncCplPauseDom();
+  }
+  function armCplPauseTimer() {
+    clearCplPauseTimer();
+    if (cplPause.phase !== "cooling") return;
+    if (typeof document === "undefined") return;
+    if (!document.getElementById("cpl-pause-tick")) return;
+    cplPauseTimer = setInterval(cplPauseOnTick, 1000);
+  }
+  function cplPauseBegin() {
+    cplSl.running = false;
+    cplSl.done = false;
+    cplSl.left = 180;
+    clearCplSlTimer();
+    cplPause.phase = "cooling";
+    cplPause.extended = false;
+    cplPause.startedAt = Date.now();
+    cplPause.endsAt = cplPause.startedAt + 20 * 60 * 1000;
+    cplPause.repairPick = "";
+    cplPause.repairCustom = "";
+  }
+  function cplPauseExtend() {
+    if (cplPause.phase !== "cooling" || cplPause.extended) return false;
+    cplPause.endsAt = cplPause.startedAt + 30 * 60 * 1000;
+    cplPause.extended = true;
+    return true;
+  }
+  function cplPauseRepairText() {
+    var custom = cplTimeoutClip(cplPause.repairCustom, 120);
+    if (custom.length >= 2) return custom;
+    var pick = String(cplPause.repairPick || "");
+    for (var i = 0; i < CPL.toRepairPhrases.length; i++) {
+      if (CPL.toRepairPhrases[i] === pick) return pick;
+    }
+    return "";
+  }
+  function cplPauseCommitRepair(meta) {
+    var text = cplPauseRepairText();
+    if (isCrisisText(text)) return "crisis";
+    if (cplViolent(text)) return "violent";
+    if (text.length < 2) return "short";
+    cplPause.phase = "idle";
+    cplPause.repairPick = "";
+    cplPause.repairCustom = "";
+    clearCplPauseTimer();
+    if (meta.slSpeakerSide !== "a" && meta.slSpeakerSide !== "b") {
+      meta.slSpeakerSide = meta.active === "b" ? "b" : "a";
+      saveCplMeta(meta);
+    }
+    cplSl.left = 180;
+    cplSl.done = false;
+    cplSl.running = true;
+    return "ok";
+  }
+  function cplPauseMineHTML(meta) {
+    var side = meta.active === "b" ? "b" : "a";
+    var name = nameOf(meta, side) || CPL.noname;
+    var labels = cplTimeoutActLabels(loadCplSide(side).timeout);
+    var items = labels.map(function (label) { return "<li>" + esc(label) + "</li>"; }).join("");
+    var list = items ? '<ul class="cpl-pause-list">' + items + "</ul>" : "<p>" + esc(CPL.toPauseMineEmpty) + "</p>";
+    return '<div class="cpl-pause-mine"><h3>' + esc(CPL.toPauseMine) + "</h3>" +
+      '<p class="muted">' + esc(fill(CPL.toPauseMineNote, { name: name })) + "</p>" +
+      list +
+      '<p class="muted">' + esc(CPL.toPauseNoRuminate) + "</p></div>";
+  }
+  function cplPauseCard(meta) {
+    if (state.hold || !meta || meta.safety) return "";
+    var side = meta.active === "b" ? "b" : "a";
+    var shared = '<div class="cpl-pause-shared"><h3>' + esc(CPL.toSharedTitle) + "</h3>" + cplTimeoutSharedHTML(meta) + "</div>";
+    if (cplPause.phase === "repair") {
+      var customOn = cplTimeoutClip(cplPause.repairCustom, 120).length >= 2;
+      var chips = CPL.toRepairPhrases.map(function (phrase, i) {
+        var on = !customOn && cplPause.repairPick === phrase;
+        return '<button type="button" class="chip' + (on ? " on" : "") + '" data-action="cpl-pause-phrase" data-repair="' + i + '" aria-pressed="' + (on ? "true" : "false") + '">' + esc(phrase) + "</button>";
+      }).join("");
+      return '<div class="cpl-pause is-repair">' +
+        "<h2>" + esc(CPL.toRepairTitle) + "</h2>" +
+        "<p>" + esc(CPL.toRepairHow) + "</p>" +
+        '<div class="cpl-pause-phrases">' + chips + "</div>" +
+        '<label class="field">' + esc(CPL.toRepairCustom) + '<textarea id="cpl-pause-repair" data-cpl="pause-repair" maxlength="120">' + esc(cplPause.repairCustom || "") + "</textarea></label>" +
+        (state.cplPauseErr ? '<p class="err">' + esc(state.cplPauseErr) + "</p>" : "") +
+        '<button type="button" class="btn olive block" data-action="cpl-pause-return">' + esc(CPL.toRepairGo) + "</button>" +
+        shared + "</div>";
+    }
+    if (cplPause.phase === "cooling") {
+      var extend = cplPause.extended
+        ? '<p class="muted">' + esc(CPL.toPauseExtended) + "</p>"
+        : '<button type="button" class="btn secondary block" data-action="cpl-pause-extend">' + esc(CPL.toPauseExtend) + "</button>";
+      return '<div class="cpl-pause is-cooling">' +
+        "<h2>" + esc(CPL.toPauseTitle) + "</h2>" +
+        "<p>" + esc(CPL.toPauseCool) + "</p>" +
+        '<p id="cpl-pause-tick" class="cpl-pause-tick" role="timer">' + esc(fill(CPL.toPauseTick, cplPauseParts())) + "</p>" +
+        extend +
+        cplPauseMineHTML(meta) +
+        shared + "</div>";
+    }
+    var noPlan = cplTimeoutReady(loadCplSide(side).timeout) ? "" : '<p class="muted">' + esc(CPL.toPauseNoPlan) + "</p>";
+    return '<div class="cpl-pause">' +
+      "<h2>" + esc(CPL.toPauseTitle) + "</h2>" +
+      "<p>" + esc(CPL.toPauseBody) + "</p>" +
+      shared +
+      noPlan +
+      '<button type="button" class="btn block" data-action="cpl-pause-start">' + esc(CPL.toPauseStart) + "</button></div>";
+  }
   function viewCplSetup(meta) {
     return '<section class="card"><p class="kicker">' + esc(CPL.kicker) + "</p><h1>" + esc(CPL.tile) + "</h1>" +
       "<p>" + esc(CPL.disc) + "</p>" +
@@ -1784,14 +2306,14 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
       (state.cplErr ? '<p class="err">' + esc(state.cplErr) + "</p>" : "") +
       '<div class="stack">' +
       (i > 0 ? '<button type="button" class="btn secondary block" data-action="cpl-prev">' + esc(CPL.back) + "</button>" : '<button type="button" class="btn secondary block" data-action="cpl-to-who">' + esc(CPL.backWho) + "</button>") +
-      '<button type="button" class="btn block" data-action="cpl-next">' + esc(i === 7 ? CPL.finishMine : CPL.next) + "</button></div></section>" + cplNicePrivate(meta) + cplSoftPrivate(meta);
+      '<button type="button" class="btn block" data-action="cpl-next">' + esc(i === 7 ? CPL.finishMine : CPL.next) + "</button></div></section>" + cplNicePrivate(meta) + cplSoftPrivate(meta) + cplTimeoutPrivate(meta);
   }
   function viewCplWait(meta) {
     var other = otherOf(meta.active);
     return whoBanner(meta) + '<section class="card"><h1>' + esc(CPL.waitTitle) + "</h1>" +
       "<p>" + esc(fill(CPL.waitBody, { name: nameOf(meta, other) })) + "</p>" +
       '<button type="button" class="btn block" data-action="cpl-switch">' + esc(fill(CPL.theirTurn, { name: nameOf(meta, other) })) + "</button>" +
-      '<button type="button" class="btn secondary block" data-action="cpl-review">' + esc(CPL.reviewMine) + "</button></section>" + cplNicePrivate(meta) + cplSoftPrivate(meta);
+      '<button type="button" class="btn secondary block" data-action="cpl-review">' + esc(CPL.reviewMine) + "</button></section>" + cplNicePrivate(meta) + cplSoftPrivate(meta) + cplTimeoutPrivate(meta);
   }
   function viewCplReview(meta) {
     var side = meta.active === "b" ? "b" : "a";
@@ -1801,7 +2323,7 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     }).join("");
     return whoBanner(meta) + '<section class="card"><p class="kicker">' + esc(fill(CPL.privateTag, { name: nameOf(meta, side) })) + "</p>" +
       "<h1>" + esc(CPL.reviewTitle) + "</h1><p>" + esc(CPL.reviewNote) + "</p>" + rows +
-      '<button type="button" class="btn secondary block" data-action="cpl-to-who">' + esc(CPL.backWho) + "</button></section>" + cplNicePrivate(meta) + cplSoftPrivate(meta);
+      '<button type="button" class="btn secondary block" data-action="cpl-to-who">' + esc(CPL.backWho) + "</button></section>" + cplNicePrivate(meta) + cplSoftPrivate(meta) + cplTimeoutPrivate(meta);
   }
   function viewCplSummary(meta) {
     var sum = loadJSON(K_CPL_SUM, null);
@@ -1837,11 +2359,12 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
         '<div class="meta">' + esc(open ? (d.completed ? CPL.done : CPL.openDay) : CPL.locked) + "</div></button>";
     }).join("");
     var pct = Math.round((done / 7) * 100);
-    return whoBanner(meta) + cplNicePrivate(meta) + cplSoftPrivate(meta) + '<section class="card"><p class="kicker">' + esc(CPL.kicker) + "</p><h1>" + esc(CPL.planTitle) + "</h1>" +
+    return whoBanner(meta) + cplNicePrivate(meta) + cplSoftPrivate(meta) + cplTimeoutPrivate(meta) + '<section class="card"><p class="kicker">' + esc(CPL.kicker) + "</p><h1>" + esc(CPL.planTitle) + "</h1>" +
       "<p>" + esc(CPL.planIntro) + "</p>" +
       "<p>" + esc(fill(CPL.planProgress, { done: done, total: 7, start: plan.startDate })) + "</p>" +
       '<div class="progress" aria-hidden="true"><span style="width:' + pct + '%"></span></div>' +
       cplNiceWeekLine(meta) +
+      cplTimeoutStatus(meta) +
       '<button type="button" class="btn secondary block" data-action="cpl-reopen-sum">' + esc(CPL.reopenSum) + "</button>" +
       list + cplResetBlock() + "</section>";
   }
@@ -1899,11 +2422,13 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     }
     var both = "";
     var slHTML = "";
+    var pauseHTML = "";
     var niceJoint = "";
     var softJoint = "";
     if (def.mode === "joint") {
       both = '<label class="check"><input type="checkbox" data-cpl="both" data-day="' + esc(def.id) + '"' + (day.bothHere ? " checked" : "") + ">" + esc(CPL.bothHere) + "</label>";
-      slHTML = cplSlCard(meta);
+      pauseHTML = cplPauseCard(meta);
+      if (cplPause.phase !== "cooling" && cplPause.phase !== "repair") slHTML = cplSlCard(meta);
       if (day.bothHere) {
         niceJoint = cplNiceJoint(meta, def.id);
         softJoint = cplSoftJoint(meta);
@@ -1911,7 +2436,8 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     }
     var ownNice = (def.mode === "individual" && meta.active === def.who) ? cplNicePrivate(meta) : "";
     var ownSoft = (def.mode === "individual" && meta.active === def.who) ? cplSoftPrivate(meta) : "";
-    return head + sumHTML + slHTML +
+    var ownTo = (def.mode === "individual" && meta.active === def.who) ? cplTimeoutPrivate(meta) : "";
+    return head + sumHTML + slHTML + pauseHTML +
       "<h2>" + esc(CPL.lessonH) + "</h2><p>" + esc(def.lesson) + "</p>" +
       "<h2>" + esc(CPL.exerciseH) + "</h2><p>" + esc(def.exercise) + "</p>" +
       both +
@@ -1921,11 +2447,12 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
       '<textarea id="cpl-note" data-cpl="note" data-day="' + esc(def.id) + '">' + esc(note) + "</textarea></label>" +
       (state.cplErr ? '<p class="err">' + esc(state.cplErr) + "</p>" : "") +
       '<label class="check"><input type="checkbox" data-action="cpl-done" data-day="' + esc(def.id) + '"' + (day.completed ? " checked" : "") + ">" + esc(day.completed ? CPL.done : CPL.complete) + "</label>" +
-      '<button type="button" class="btn secondary block" data-action="cpl-back-plan">' + esc(CPL.backPlan) + "</button></section>" + ownNice + ownSoft;
+      '<button type="button" class="btn secondary block" data-action="cpl-back-plan">' + esc(CPL.backPlan) + "</button></section>" + ownNice + ownSoft + ownTo;
   }
   function viewCplSafety(meta) {
     return '<section class="card cpl-safety"><h1>' + esc(CPL.safetyTitle) + "</h1>" +
       "<p>" + esc(CPL.safetyBody) + "</p>" +
+      "<p><strong>" + esc(CPL.safetyTimeout) + "</strong></p>" +
       "<p><strong>" + esc(CPL.safetyLeave) + "</strong></p>" +
       '<a class="call" href="tel:100"><span>' + esc(CPL.policeLabel) + "</span><b>100</b></a>" +
       '<a class="call" href="tel:1201"><span>' + esc(CPL.eranShort) + "</span><b>1201</b></a>" +
@@ -2066,17 +2593,91 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
         return;
       }
     }
+    if (kind === "to-body" || kind === "to-thoughts" || kind === "to-voice" || kind === "to-phrase" || kind === "to-custom" || kind === "to-return" || kind === "to-share") {
+      if (state.hold || meta.safety) return;
+      var sideT = meta.active === "b" ? "b" : "a";
+      var recT = loadCplSide(sideT);
+      var planT = recT.timeout;
+      var fieldMap = { "to-body": ["body", 160], "to-thoughts": ["thoughts", 160], "to-voice": ["voice", 120], "to-phrase": ["phrase", 80], "to-custom": ["custom", 80] };
+      if (fieldMap[kind]) {
+        var valT = String(el.value || "").slice(0, fieldMap[kind][1]);
+        if (isCrisisText(valT)) {
+          cplTimeoutClear(sideT);
+          cplPauseReset();
+          el.value = "";
+          triggerCrisis("text");
+          return;
+        }
+        if (cplViolent(valT)) {
+          cplTimeoutClear(sideT);
+          el.value = "";
+          enterSafety(meta);
+          return;
+        }
+        if (planT[fieldMap[kind][0]] !== valT) planT.saved = false;
+        planT[fieldMap[kind][0]] = valT;
+        saveCplSide(sideT, recT);
+        syncCplTimeoutHint();
+        return;
+      }
+      if (kind === "to-return") {
+        planT.returnCommit = !!el.checked;
+        planT.saved = false;
+        saveCplSide(sideT, recT);
+        return;
+      }
+      if (kind === "to-share") {
+        if (el.checked && cplTimeoutHasCrisis(planT)) {
+          cplTimeoutClear(sideT);
+          cplPauseReset();
+          triggerCrisis("text");
+          return;
+        }
+        if (el.checked && cplTimeoutHasViolent(planT)) {
+          cplTimeoutClear(sideT);
+          enterSafety(meta);
+          return;
+        }
+        planT.share = !!el.checked;
+        planT.saved = false;
+        saveCplSide(sideT, recT);
+        return;
+      }
+    }
+    if (kind === "pause-repair") {
+      if (state.hold || meta.safety) return;
+      var repairVal = String(el.value || "").slice(0, 120);
+      if (isCrisisText(repairVal)) {
+        cplPause.repairCustom = "";
+        el.value = "";
+        cplPauseReset();
+        triggerCrisis("text");
+        return;
+      }
+      if (cplViolent(repairVal)) {
+        cplPause.repairCustom = "";
+        el.value = "";
+        enterSafety(meta);
+        return;
+      }
+      cplPause.repairCustom = repairVal;
+      if (cplTimeoutClip(repairVal, 120).length >= 2) cplPause.repairPick = "";
+    }
   }
   function onCplAction(action, t) {
     var meta = loadCplMeta();
     state.cplErr = "";
     state.cplNiceErr = "";
     state.cplSoftErr = "";
+    state.cplToErr = "";
+    state.cplPauseErr = "";
     if (action === "cpl-reset-ask") { state.cplReset = true; render(); return; }
     if (action === "cpl-reset-no") { state.cplReset = false; render(); return; }
     if (action === "cpl-reset-yes") { cplWipe(); render(); return; }
     if (meta.safety && action !== "cpl-reset-ask") { render(); return; }
     captureCplSoftForm(meta);
+    captureCplTimeout(meta);
+    if (cplTimeoutGuard(meta) === "stop") return;
     if (action === "cpl-nice-add") {
       if (state.hold) return;
       var typedNice = readCplBox("cpl-nice-text");
@@ -2123,6 +2724,60 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
       render();
       return;
     }
+    if (action === "cpl-to-act") {
+      if (state.hold) return;
+      var actResult = cplTimeoutToggleAct(meta, String(t.dataset.act || ""));
+      if (actResult === "max") state.cplToErr = CPL.toActMax;
+      render();
+      return;
+    }
+    if (action === "cpl-to-fear") {
+      if (state.hold) return;
+      var fearAnswer = String(t.dataset.fear || "");
+      var fearResult = cplTimeoutFear(meta, fearAnswer);
+      if (fearResult === "violent") { enterSafety(meta); return; }
+      render();
+      return;
+    }
+    if (action === "cpl-to-save") {
+      if (state.hold) return;
+      var toResult = cplTimeoutApplySave(meta);
+      if (toResult === "crisis" || toResult === "safety") return;
+      render();
+      return;
+    }
+    if (action === "cpl-pause-start") {
+      if (!cplJointOpen(meta)) return;
+      cplPauseBegin();
+      render();
+      return;
+    }
+    if (action === "cpl-pause-extend") {
+      if (!cplJointOpen(meta)) return;
+      if (cplPauseExtend()) render();
+      return;
+    }
+    if (action === "cpl-pause-phrase") {
+      if (!cplJointOpen(meta) || cplPause.phase !== "repair") return;
+      var repairIx = Number(t.dataset.repair);
+      if (repairIx >= 0 && repairIx < CPL.toRepairPhrases.length) {
+        cplPause.repairPick = CPL.toRepairPhrases[repairIx];
+        cplPause.repairCustom = "";
+      }
+      render();
+      return;
+    }
+    if (action === "cpl-pause-return") {
+      if (!cplJointOpen(meta) || cplPause.phase !== "repair") return;
+      var repairBox = readCplBox("cpl-pause-repair");
+      if (repairBox != null) cplPause.repairCustom = String(repairBox).slice(0, 120);
+      var repairStatus = cplPauseCommitRepair(meta);
+      if (repairStatus === "crisis") { cplPauseReset(); triggerCrisis("text"); return; }
+      if (repairStatus === "violent") { cplPause.repairCustom = ""; enterSafety(meta); return; }
+      if (repairStatus === "short") { state.cplPauseErr = CPL.toRepairNeed; render(); return; }
+      render();
+      return;
+    }
     if (action === "cpl-edit") { meta.screen = "setup"; saveCplMeta(meta); render(); return; }
     if (action === "cpl-to-who") { meta.screen = "who"; saveCplMeta(meta); render(); return; }
     if (action === "cpl-save-names") {
@@ -2153,7 +2808,8 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
       var who = action === "cpl-pick" ? t.dataset.who : otherOf(meta.active);
       if (who !== "a" && who !== "b") who = "a";
       meta.active = who;
-      meta.screen = screenFor(meta, who);
+      var stayOnPause = action === "cpl-switch" && meta.screen === "session" && cplJointOpen(meta) && (cplPause.phase === "cooling" || cplPause.phase === "repair");
+      if (!stayOnPause) meta.screen = screenFor(meta, who);
       saveCplMeta(meta);
       render(); return;
     }
@@ -2601,6 +3257,202 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     var softSafetyView = viewCouples();
     eq(softSafetyView.indexOf("100") !== -1 && softSafetyView.indexOf("1201") !== -1 && softSafetyView.indexOf(CPL.safetyTitle) !== -1, "soft safety card");
     eq(softSafetyView.indexOf(CPL.softSave) === -1 && softSafetyView.indexOf(CPL.hitSample) === -1 && softSafetyView.indexOf(CPL.softLesson) === -1, "safety hides builder");
+    eq(softSafetyView.indexOf(CPL.safetyTimeout) !== -1, "timeout is not a fix for violence");
+    cplWipe();
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "plan", safety: false });
+    saveJSON(K_CPL_PLAN, makeCplPlan());
+    function toPlan(over) {
+      var plan = cplTimeoutBlank();
+      plan.body = "לב דופק";
+      plan.thoughts = "אין טעם לדבר";
+      plan.voice = "הקול עולה";
+      plan.phrase = "הפסקה עכשיו";
+      plan.activities = ["breath", "walk"];
+      plan.returnCommit = true;
+      plan.fear = "no";
+      plan.share = false;
+      plan.saved = true;
+      if (over) {
+        var keys = Object.keys(over);
+        for (var oi = 0; oi < keys.length; oi++) plan[keys[oi]] = over[keys[oi]];
+      }
+      return plan;
+    }
+    eq(cplTimeoutFieldsOk(toPlan()) === true, "sample plan ok");
+    eq(cplTimeoutFieldsOk(toPlan({ activities: ["breath"], custom: "" })) === false, "one activity short");
+    eq(cplTimeoutFieldsOk(toPlan({ activities: ["breath"], custom: "מים קרים" })) === true, "custom counts");
+    eq(cplTimeoutFieldsOk(toPlan({ activities: ["breath", "walk", "music", "shower"], custom: "מים קרים" })) === false, "five is too many");
+    eq(cplTimeoutFieldsOk(toPlan({ returnCommit: false })) === false, "return required");
+    eq(cplTimeoutFieldsOk(toPlan({ fear: "" })) === false, "fear answer required");
+    eq(cplTimeoutRuminate("לשחזר את המריבה בראש") === true, "rumination caught");
+    eq(cplTimeoutRuminate("הליכה בחוץ") === false, "walk is calm");
+    var metaTo = loadCplMeta();
+    var draft = loadCplSide("a");
+    draft.timeout = toPlan({ custom: "לשחזר את המריבה", saved: false });
+    saveCplSide("a", draft);
+    state.cplToErr = "";
+    var rumView = viewCouples();
+    eq(rumView.indexOf(CPL.toRuminateTip) !== -1, "rumination tip");
+    eq(cplTimeoutSave(metaTo) === "ok", "rumination does not block");
+    eq(cplTimeoutReady(loadCplSide("a").timeout) === true, "saved despite tip");
+    cplWipe();
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "plan", safety: false });
+    var bad = cplBlank();
+    bad.done = true;
+    bad.timeout = toPlan({ body: CPL.hitSample, saved: false });
+    saveCplSide("a", bad);
+    eq(cplTimeoutSave(loadCplMeta()) === "violent", "violent body");
+    eq(JSON.stringify(loadCplSide("a").timeout).indexOf(CPL.hitSample) === -1, "violent timeout not stored");
+    cplWipe();
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "plan", safety: false });
+    saveJSON(K_CPL_PLAN, makeCplPlan());
+    var fearRec = cplBlank();
+    fearRec.timeout = toPlan({ body: "BODY_BEFORE_FEAR", saved: false, share: true });
+    saveCplSide("a", fearRec);
+    eq(cplTimeoutFear(loadCplMeta(), "yes") === "violent", "fear yes");
+    var fearSafety = cplTimeoutApplySave(loadCplMeta());
+    eq(fearSafety === "short" || loadCplMeta().safety === true, "fear cleared the plan");
+    cplWipe();
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "plan", safety: false });
+    var fearSide = cplBlank();
+    fearSide.timeout = toPlan({ phrase: "PHRASE_BEFORE_FEAR", saved: false });
+    saveCplSide("a", fearSide);
+    eq(cplTimeoutFear(loadCplMeta(), "yes") === "violent", "direct fear question");
+    enterSafety(loadCplMeta());
+    var fearView = viewCouples();
+    eq(fearView.indexOf("100") !== -1 && fearView.indexOf("1201") !== -1, "fear shows numbers");
+    eq(fearView.indexOf(CPL.safetyTitle) !== -1 && fearView.indexOf(CPL.safetyTimeout) !== -1, "fear shows safety card");
+    eq(fearView.indexOf("PHRASE_BEFORE_FEAR") === -1 && fearView.indexOf(CPL.toSave) === -1, "fear hides the plan");
+    eq(loadCplMeta().safety === true, "fear stops the couples plan");
+    cplWipe();
+    var planA = cplBlank();
+    planA.done = true;
+    planA.timeout = toPlan({
+      body: "BODY_SECRET_A",
+      thoughts: "THOUGHT_SECRET_A",
+      voice: "VOICE_SECRET_A",
+      phrase: "PHRASE_SHARED_A",
+      custom: "CUSTOM_SECRET_A",
+      activities: ["breath", "walk"],
+      share: true
+    });
+    saveCplSide("a", planA);
+    var planB = cplBlank();
+    planB.done = true;
+    planB.timeout = toPlan({
+      body: "BODY_SECRET_B",
+      thoughts: "THOUGHT_SECRET_B",
+      voice: "VOICE_SECRET_B",
+      phrase: "PHRASE_PRIVATE_B",
+      custom: "CUSTOM_SECRET_B",
+      activities: ["music", "shower"],
+      share: false
+    });
+    saveCplSide("b", planB);
+    var weekTo = makeCplPlan();
+    weekTo.startDate = "2020-01-01";
+    saveJSON(K_CPL_PLAN, weekTo);
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "plan", safety: false });
+    var planOwn = viewCouples();
+    var statusBoth = fill(CPL.toStatus, { a: "Lina", b: "Omar", an: CPL.toHas, bn: CPL.toHas });
+    eq(planOwn.indexOf(statusBoth) !== -1, "status on plan");
+    eq(planOwn.indexOf(CPL.toStatusNote) !== -1, "status hides words");
+    eq(planOwn.indexOf(CPL.toLesson) !== -1 && planOwn.indexOf("עשרים דקות") !== -1, "why twenty minutes");
+    eq(planOwn.indexOf("BODY_SECRET_A") !== -1 && planOwn.indexOf("CUSTOM_SECRET_A") !== -1, "own plan visible");
+    eq(planOwn.indexOf("BODY_SECRET_B") === -1 && planOwn.indexOf("PHRASE_PRIVATE_B") === -1 && planOwn.indexOf("CUSTOM_SECRET_B") === -1, "other plan hidden");
+    eq(planOwn.indexOf("THOUGHT_SECRET_B") === -1 && planOwn.indexOf("VOICE_SECRET_B") === -1, "other signs hidden");
+    var storedToA = "";
+    var storedToB = "";
+    try { storedToA = localStorage.getItem(C.prefix + "_cpl_a") || ""; } catch (eToA) {}
+    try { storedToB = localStorage.getItem(C.prefix + "_cpl_b") || ""; } catch (eToB) {}
+    eq(storedToA.indexOf("BODY_SECRET_A") !== -1 && storedToA.indexOf("BODY_SECRET_B") === -1, "timeout account a");
+    eq(storedToB.indexOf("BODY_SECRET_B") !== -1 && storedToB.indexOf("BODY_SECRET_A") === -1 && storedToB.indexOf("PHRASE_SHARED_A") === -1, "timeout account b");
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "b", screen: "ask", safety: false });
+    var askToB = viewCouples();
+    eq(askToB.indexOf("BODY_SECRET_B") !== -1 && askToB.indexOf("CUSTOM_SECRET_B") !== -1, "other account sees itself");
+    eq(askToB.indexOf("BODY_SECRET_A") === -1 && askToB.indexOf("PHRASE_SHARED_A") === -1 && askToB.indexOf("CUSTOM_SECRET_A") === -1, "other account hides partner");
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "b", screen: "review", safety: false });
+    var reviewToB = viewCouples();
+    eq(reviewToB.indexOf("BODY_SECRET_A") === -1 && reviewToB.indexOf("CUSTOM_SECRET_A") === -1, "review hides partner timeout");
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "summary", safety: false });
+    var sumTo = viewCouples();
+    eq(sumTo.indexOf("BODY_SECRET_A") === -1 && sumTo.indexOf("PHRASE_SHARED_A") === -1, "summary hides timeout");
+    eq(sumTo.indexOf("BODY_SECRET_B") === -1 && sumTo.indexOf("PHRASE_PRIVATE_B") === -1, "summary hides partner timeout");
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "session", openDay: "c1", safety: false });
+    var soloTo = viewCouples();
+    eq(soloTo.indexOf(CPL.toTitle) !== -1 && soloTo.indexOf(CPL.toUpdate) !== -1, "plan during individual days");
+    eq(soloTo.indexOf("cpl-pause-start") === -1 && soloTo.indexOf(CPL.toPauseTitle) === -1, "no pause on individual");
+    eq(soloTo.indexOf("BODY_SECRET_A") !== -1 && soloTo.indexOf("BODY_SECRET_B") === -1, "individual shows only own plan");
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "session", openDay: "c4", safety: false });
+    var todayPlan = makeCplPlan();
+    saveJSON(K_CPL_PLAN, todayPlan);
+    var lockedTo = viewCouples();
+    eq(lockedTo.indexOf("cpl-pause-start") === -1 && lockedTo.indexOf("BODY_SECRET_A") === -1, "locked joint hides pause and plan");
+    saveJSON(K_CPL_PLAN, weekTo);
+    cplPauseReset();
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "session", openDay: "c4", safety: false });
+    var jointTo = viewCouples();
+    eq(jointTo.indexOf("cpl-pause-start") !== -1 && jointTo.indexOf(CPL.toPauseBody) !== -1, "pause button");
+    eq(jointTo.indexOf("cpl-sl-start") !== -1, "speaker still there");
+    eq(jointTo.indexOf("PHRASE_SHARED_A") !== -1, "opt-in phrase");
+    eq(jointTo.indexOf(fill(CPL.toReturnShared, { name: "Lina" })) !== -1, "opt-in return");
+    eq(jointTo.indexOf("PHRASE_PRIVATE_B") === -1, "private phrase stays private");
+    eq(jointTo.indexOf(fill(CPL.toReturnShared, { name: "Omar" })) === -1, "private return stays private");
+    eq(jointTo.indexOf("BODY_SECRET_A") === -1 && jointTo.indexOf("THOUGHT_SECRET_A") === -1 && jointTo.indexOf("VOICE_SECRET_A") === -1, "signs stay private");
+    eq(jointTo.indexOf("BODY_SECRET_B") === -1 && jointTo.indexOf("CUSTOM_SECRET_A") === -1 && jointTo.indexOf("CUSTOM_SECRET_B") === -1, "calm lists hidden before pause");
+    eq(jointTo.indexOf(CPL.toLesson) === -1 && jointTo.indexOf(CPL.toSave) === -1, "no private builder in joint");
+    cplPauseBegin();
+    var coolA = viewCouples();
+    eq(coolA.indexOf("cpl-pause-tick") !== -1, "countdown");
+    eq(coolA.indexOf("נותרו 20:") !== -1 || coolA.indexOf("נותרו 19:") !== -1, "starts at twenty");
+    eq(coolA.indexOf("cpl-sl-start") === -1, "speaker waits during pause");
+    eq(coolA.indexOf("CUSTOM_SECRET_A") !== -1 && coolA.indexOf("נשימה איטית") !== -1, "own calm list");
+    eq(coolA.indexOf("CUSTOM_SECRET_B") === -1 && coolA.indexOf("מוזיקה") === -1, "other calm list hidden");
+    eq(coolA.indexOf("BODY_SECRET_A") === -1 && coolA.indexOf("BODY_SECRET_B") === -1, "signs hidden while cooling");
+    eq(coolA.indexOf(CPL.toPauseNoRuminate) !== -1, "no rehearsing");
+    eq(cplPauseExtend() === true, "extend");
+    var cool30 = viewCouples();
+    eq(cool30.indexOf("נותרו 30:") !== -1 || cool30.indexOf("נותרו 29:") !== -1, "extends to thirty");
+    eq(cool30.indexOf(CPL.toPauseExtend) === -1 && cool30.indexOf(CPL.toPauseExtended) !== -1, "extend once");
+    eq(cplPauseExtend() === false, "no second extend");
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "b", screen: "session", openDay: "c4", safety: false, slSpeakerSide: "a" });
+    var coolB = viewCouples();
+    eq(coolB.indexOf("CUSTOM_SECRET_B") !== -1 && coolB.indexOf("מקלחת") !== -1, "switched partner sees own list");
+    eq(coolB.indexOf("CUSTOM_SECRET_A") === -1 && coolB.indexOf("נשימה איטית") === -1, "switched partner does not see the other list");
+    eq(coolB.indexOf("PHRASE_SHARED_A") !== -1 && coolB.indexOf("PHRASE_PRIVATE_B") === -1, "only the opted-in phrase");
+    eq(coolB.indexOf("BODY_SECRET_A") === -1 && coolB.indexOf("BODY_SECRET_B") === -1, "switch still hides signs");
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "session", openDay: "c4", safety: false });
+    onCplAction("cpl-switch", { dataset: {} });
+    eq(loadCplMeta().active === "b" && loadCplMeta().screen === "session", "phone pass stays on the pause");
+    var passed = viewCouples();
+    eq(passed.indexOf("CUSTOM_SECRET_B") !== -1 && passed.indexOf("CUSTOM_SECRET_A") === -1, "passed phone shows the other list");
+    eq(passed.indexOf("cpl-pause-tick") !== -1, "countdown stays up");
+    cplPause.endsAt = Date.now() - 50;
+    cplPauseOnTick();
+    eq(cplPause.phase === "repair" && cplPauseTimer === null, "repair when time is up");
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "session", openDay: "c4", safety: false });
+    var repairView = viewCouples();
+    eq(repairView.indexOf(CPL.toRepairTitle) !== -1 && repairView.indexOf(CPL.toRepairPhrases[0]) !== -1, "repair phrases");
+    eq(repairView.indexOf("cpl-sl-start") === -1, "speaker waits for repair");
+    eq(repairView.indexOf("BODY_SECRET_A") === -1 && repairView.indexOf("CUSTOM_SECRET_A") === -1, "repair hides the calm list");
+    cplPause.repairPick = "";
+    cplPause.repairCustom = "";
+    eq(cplPauseCommitRepair(loadCplMeta()) === "short", "repair needs a phrase");
+    cplPause.phase = "repair";
+    cplPause.repairCustom = CPL.hitSample;
+    eq(cplPauseCommitRepair(loadCplMeta()) === "violent", "violent repair");
+    eq(cplSl.running === false, "violent repair does not resume");
+    cplPause.phase = "repair";
+    cplPause.repairCustom = "";
+    cplPause.repairPick = CPL.toRepairPhrases[1];
+    eq(cplPauseCommitRepair(loadCplMeta()) === "ok", "repair phrase");
+    eq(cplPause.phase === "idle" && cplSl.running === true && cplSl.left === 180, "speaker resumes");
+    var afterRepair = viewCouples();
+    eq(afterRepair.indexOf("cpl-sl-start") !== -1 && afterRepair.indexOf("נותרו 3:00") !== -1, "speaker card is back");
+    eq(afterRepair.indexOf(CPL.toRepairPhrases[1]) === -1, "spoken repair is not kept on screen");
+    cplSl.running = false;
+    cplSl.left = 180;
+    cplPauseReset();
     state.hold = false;
     state.crisis = null;
     cplWipe();
@@ -2608,6 +3460,7 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     var holdRec = cplBlank();
     holdRec.nice = [{ id: "h1", text: "HOLD_SECRET_NOTE", date: today, share: true, used: "" }];
     holdRec.soft = [{ id: "hs", when: "HOLD_SOFT_SECRET", felt: "עצב", ask: "בקשה מוסתרת", share: true }];
+    holdRec.timeout = toPlan({ body: "HOLD_TIMEOUT_SECRET", phrase: "HOLD_PHRASE_SECRET", custom: "HOLD_CUSTOM_SECRET", share: true });
     saveCplSide("a", holdRec);
     saveJSON(K_CPL_PLAN, makeCplPlan());
     state.cplSoftForms = { a: { when: "HOLD_SOFT_FORM", feltPick: "כעס", feltCustom: "", ask: "עוד בקשה" }, b: cplSoftBlankForm() };
@@ -2617,8 +3470,10 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     eq(held.indexOf(C.ui.holdTitle) !== -1, "hold screen");
     eq(held.indexOf("HOLD_SECRET_NOTE") === -1 && held.indexOf(CPL.niceTitle) === -1 && held.indexOf(CPL.niceJointTitle) === -1, "hold hides nice");
     eq(held.indexOf("HOLD_SOFT_SECRET") === -1 && held.indexOf("HOLD_SOFT_FORM") === -1 && held.indexOf(CPL.softLesson) === -1 && held.indexOf(CPL.softJointTitle) === -1, "hold hides soft");
+    eq(held.indexOf("HOLD_TIMEOUT_SECRET") === -1 && held.indexOf("HOLD_PHRASE_SECRET") === -1 && held.indexOf("HOLD_CUSTOM_SECRET") === -1 && held.indexOf(CPL.toLesson) === -1, "hold hides timeout");
     eq(viewCouples().indexOf(CPL.niceTitle) === -1 && viewCouples().indexOf("HOLD_SECRET_NOTE") === -1, "viewCouples hold");
     eq(cplSoftPrivate(loadCplMeta()) === "" && cplSoftJoint(loadCplMeta()) === "", "hold hides soft fn");
+    eq(cplTimeoutPrivate(loadCplMeta()) === "" && cplPauseCard(loadCplMeta()) === "" && cplTimeoutStatus(loadCplMeta()) === "", "hold hides timeout fn");
     state.hold = false;
     state.crisis = null;
     cplWipe();

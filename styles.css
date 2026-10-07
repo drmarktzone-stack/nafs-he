@@ -889,6 +889,104 @@ textarea { min-height: 100px; resize: vertical; }
 .cpl-soft-joint p { margin: 0 0 8px; overflow-wrap: anywhere; }
 .cpl-soft-joint .kicker { margin-bottom: 2px; }
 
+.cpl-to h2 { font-size: 1.25rem; margin-bottom: 6px; }
+.cpl-to textarea { min-height: 68px; }
+.cpl-to .field { margin-bottom: 10px; }
+.cpl-to-label {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin: 0 0 8px;
+}
+.cpl-to-acts,
+.cpl-to-fear,
+.cpl-pause-phrases {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 12px;
+}
+.cpl-to-acts .chip,
+.cpl-to-fear .chip,
+.cpl-pause-phrases .chip {
+  min-height: var(--touch);
+  white-space: normal;
+  text-align: start;
+  max-width: 100%;
+}
+.cpl-to-acts .chip.on,
+.cpl-to-acts .chip.on:hover,
+.cpl-to-fear .chip.on,
+.cpl-to-fear .chip.on:hover,
+.cpl-pause-phrases .chip.on,
+.cpl-pause-phrases .chip.on:hover {
+  background: var(--olive);
+  color: #fff;
+  border-color: var(--olive);
+}
+.cpl-to-tip {
+  background: var(--warn-bg);
+  color: var(--warn-ink);
+  border: 1px solid #ecd9a8;
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin: 0 0 8px;
+}
+.cpl-to-status {
+  background: var(--olive-soft);
+  border: 1px solid #c9d9ce;
+  border-radius: 14px;
+  padding: 10px 12px;
+  margin: 8px 0 12px;
+}
+.cpl-to-status p { margin: 0 0 4px; }
+.cpl-to-status .muted { margin: 0; }
+.cpl-pause {
+  background: linear-gradient(180deg, #f7f1e6, #efe3ce);
+  border: 1px solid #e0d0b8;
+  border-radius: 16px;
+  padding: 14px;
+  margin: 12px 0;
+  box-shadow: var(--shadow-sm);
+}
+.cpl-pause h2 { font-size: 1.2rem; margin-bottom: 6px; }
+.cpl-pause h3 { font-size: 1.05rem; margin: 8px 0 6px; }
+.cpl-pause p { margin: 0 0 8px; overflow-wrap: anywhere; }
+.cpl-pause .kicker { margin-bottom: 2px; }
+.cpl-pause-tick {
+  font-family: var(--font-ui);
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(1.8rem, 8vw, 2.4rem);
+  line-height: 1.15;
+  color: var(--olive-deep);
+  margin: 6px 0 12px;
+  font-weight: 700;
+}
+.cpl-pause-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+}
+.cpl-pause-list li {
+  background: #fff;
+  border: 1px solid #e0d0b8;
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin: 0 0 6px;
+  overflow-wrap: anywhere;
+}
+.cpl-pause textarea { min-height: 72px; }
+.cpl-pause-shared {
+  background: rgba(255, 253, 249, 0.72);
+  border: 1px solid #e0d0b8;
+  border-radius: 14px;
+  padding: 10px 12px;
+  margin: 8px 0 12px;
+}
+.cpl-pause.is-cooling {
+  border-color: #c9b8a2;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .orb { transition: none !important; }
   .tile, .btn, .progress > span { transition: none !important; }
