@@ -470,6 +470,61 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     "סליחה על חלק אחד. אפשר להמשיך לאט?"
   ],
   "softFeelings": ["עצב", "כעס", "פחד", "בדידות", "תסכול", "דאגה", "פגיעה", "עייפות"],
+  "pcTitle": "בדיקה קצרה",
+  "pcKicker": "פרטית ל{name}",
+  "pcIntro": "אחרי כמה ימים בתוכנית, ובערך פעם בשבוע, אפשר לסמן איך הנושאים מהשאלות מרגישים עכשיו. עושים את זה לבד, לפני המפגש. רק אתה או את רואים את המספרים.",
+  "pcScale": "0 זה קשה מאוד. 10 זה קל יותר. זה לא ציון על הזוגיות.",
+  "pcHardEnd": "קשה",
+  "pcEaseEnd": "קל יותר",
+  "pcHelped": "מה עזר השבוע",
+  "pcHard": "מה עדיין קשה",
+  "pcShare": "לשתף תקציר קצר במפגש המשותף הבא",
+  "pcShareNote": "בלי הסימון, הבדיקה נשארת רק בצד שלך. במפגש יופיע תקציר בלי מספרים, ורק ממה שסימנת.",
+  "pcSave": "שמירת הבדיקה",
+  "pcNeed": "קודם כותבים משפט קצר על מה שעזר, ומשפט על מה שעדיין קשה.",
+  "pcEarly": "אחרי כמה ימים בתוכנית אפשר בדיקה קצרה, רק בצד שלך. אחר כך בערך פעם בשבוע.",
+  "pcLater": "אפשר לחזור לבדיקה בערך פעם בשבוע.",
+  "pcOpen": "בדיקה קצרה השבוע",
+  "pcBaseTitle": "איך זה מרגיש בהתחלה",
+  "pcBaseBody": "מסמנים איך כל נושא מהשאלות שלך מרגיש עכשיו. זה נשמר רק אצלך. בהמשך נשווה רק את הצד שלך, לא את הצד השני.",
+  "pcBaseSave": "שמירת נקודת ההתחלה",
+  "pcBaseOpen": "סימון איך זה הרגיש בהתחלה",
+  "pcCompare": "מול איך שזה הרגיש בהתחלה",
+  "pcBaseBar": "בהתחלה",
+  "pcNowBar": "עכשיו",
+  "pcUp": "יותר קל",
+  "pcDown": "יותר קשה",
+  "pcSame": "דומה",
+  "pcEncourageUp": "יש כאן תזוזה לכיוון יותר קל. זה תרגול קטן, לא ציון.",
+  "pcEncourageMix": "חלק זז וחלק עדיין כבד. מספיק לשים לב, בלי להפוך את זה לפסק דין.",
+  "pcEncourageDown": "השבוע הרגיש כבד יותר. זה קורה. למטה יש תרגיל אחד שאפשר לחזור אליו.",
+  "pcEncourageSame": "זה דומה לאיך שזה התחיל. להישאר עם תרגיל אחד זה כבר צעד.",
+  "pcSuggestSoft": "אפשר לחזור לפתיחה הרכה, ולבקשה אחת ספציפית.",
+  "pcSuggestTimeout": "אפשר לחזור להפסקה ולתיקון, לפני שהשיחה מתחממת.",
+  "pcSuggestNice": "אפשר לרשום דבר נחמד אחד ששמת לב אליו.",
+  "pcSuggestSpeaker": "במפגש המשותף אפשר לתרגל מדבר ומקשיב, שלוש דקות לכל תור.",
+  "pcJointTitle": "תקציר שבחרתם לשתף",
+  "pcJointHow": "קוראים רק את מה שכל צד סימן לשתף. בלי מספרים, ובלי מה שנשאר פרטי.",
+  "pcJointEmpty": "אף צד לא סימן תקציר לשיתוף. מה שלא סומן נשאר רק אצלו.",
+  "pcJointHelped": "מה שעזר: {text}",
+  "pcJointHard": "מה שעדיין קשה: {text}",
+  "pcTherapist": "אם זה נהיה כבד יותר, כדאי לדבר עם מטפל או מטפלת זוגית עם רישיון. המדריך הזה הוא עזרה עצמית, לא טיפול.",
+  "pcEmergency": "חירום",
+  "pcNoOther": "כאן רק השינוי שלך. אין כאן מספרים של הצד השני.",
+  "pcSharedOk": "התקציר יחכה למפגש המשותף. רק מה שסימנת.",
+  "pcPrivateOk": "הבדיקה נשמרה רק אצלך.",
+  "pcWeek": "איך השבוע בינינו מרגיש",
+  "pcSharp": 3,
+  "pcLow": 3,
+  "pcWaitDays": 3,
+  "pcWeekDays": 7,
+  "pcThemes": [
+    {"id": "open", "label": "איך המריבה נפתחת", "exercise": "soft", "keys": ["טון", "צועק", "צועקת", "צעקה", "ביקורת", "מאשים", "מאשימה", "קול רם"]},
+    {"id": "listen", "label": "להקשיב אחד לשני", "exercise": "speaker", "keys": ["לא מקשיב", "לא מקשיבה", "קוטע", "קוטעת", "לא שומע", "לא שומעת", "מדברים ביחד"]},
+    {"id": "heat", "label": "כשהשיחה מתחממת", "exercise": "timeout", "keys": ["מוצף", "מוצפת", "מתחמם", "מתחממת", "כעס", "כועס", "כועסת", "רותח", "צועקים"]},
+    {"id": "notice", "label": "לשים לב לדברים טובים", "exercise": "nice", "keys": ["לא מעריך", "לא מעריכה", "לא שמים לב", "בדידות", "שקוף", "שקופה"]},
+    {"id": "close", "label": "להתקרב או לסגת", "exercise": "speaker", "keys": ["שותק", "שותקת", "נסוג", "נסוגה", "יוצא מהחדר", "סוגר את הנושא", "מתעקש", "מתעקשת"]}
+  ],
   "hitSample": "הוא מכה אותי כשהוא כועס",
   "safeSample": "אנחנו רבים על כלים וחשבונות",
   "questions": [
@@ -597,7 +652,7 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
   function loadProgram() { return loadJSON(K_PROGRAM, null); }
   function saveProgram(p) { saveJSON(K_PROGRAM, p); }
 
-  var state = { view: "home", dayId: null, crisis: null, hold: false, guideText: "", guide: null, pad: "", pst: {}, check: null, result: null, formError: "", confirmClear: false, cplErr: "", cplNiceErr: "", cplSoftErr: "", cplToErr: "", cplPauseErr: "", cplReset: false };
+  var state = { view: "home", dayId: null, crisis: null, hold: false, guideText: "", guide: null, pad: "", pst: {}, check: null, result: null, formError: "", confirmClear: false, cplErr: "", cplNiceErr: "", cplSoftErr: "", cplToErr: "", cplPauseErr: "", cplPcErr: "", cplReset: false };
   var breath = { running: false, timer: null, mode: "468", phaseIdx: 0, left: 4, cycle: 0, totalCycles: 5, dayId: null, finishedMsg: "" };
   var cplSlTimer = null;
   var cplSl = { running: false, left: 180, done: false };
@@ -1184,7 +1239,7 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
   }
 
   function cplBlank() {
-    return { answers: ["", "", "", "", "", "", "", ""], done: false, doneAt: null, qi: 0, notes: {}, nice: [], soft: [], timeout: cplTimeoutBlank() };
+    return { answers: ["", "", "", "", "", "", "", ""], done: false, doneAt: null, qi: 0, notes: {}, nice: [], soft: [], timeout: cplTimeoutBlank(), progress: cplProgressBlank() };
   }
   function loadCplMeta() {
     var m = loadJSON(K_CPL_META, null) || {};
@@ -1205,6 +1260,7 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     rec.nice = cplNormalizeNice(rec.nice);
     rec.soft = cplNormalizeSoft(rec.soft);
     rec.timeout = cplNormalizeTimeout(rec.timeout);
+    rec.progress = cplNormalizeProgress(rec.progress);
     return rec;
   }
   function cplNormalizeNice(list) {
@@ -1379,7 +1435,9 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     state.cplSoftErr = "";
     state.cplToErr = "";
     state.cplPauseErr = "";
+    state.cplPcErr = "";
     state.cplSoftForms = { a: cplSoftBlankForm(), b: cplSoftBlankForm() };
+    state.cplPcDraft = { a: cplPcBlankDraft(), b: cplPcBlankDraft() };
     state.cplReset = false;
     cplSl.running = false;
     cplSl.done = false;
@@ -1484,28 +1542,48 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
         hitV = true;
       }
     }
+    if (rec.progress && rec.progress.checks) {
+      var keptPc = [];
+      for (var pi = 0; pi < rec.progress.checks.length; pi++) {
+        var pc = rec.progress.checks[pi];
+        if (isCrisisText(pc.helped) || isCrisisText(pc.hard)) { hitC = true; continue; }
+        if (cplViolent(pc.helped) || cplViolent(pc.hard)) { hitV = true; continue; }
+        keptPc.push(pc);
+      }
+      rec.progress.checks = keptPc;
+    }
     saveCplSide(which, rec);
     return { hitV: hitV, hitC: hitC };
   }
-  function enterSafety(meta) {
+  function enterSafety(meta, fromCheckin) {
     meta.safety = true;
     meta.screen = "safety";
+    meta.safetyCheckin = fromCheckin === true;
     saveCplMeta(meta);
     try { localStorage.removeItem(K_CPL_PLAN); localStorage.removeItem(K_CPL_SUM); } catch (e) {}
     state.cplErr = "";
     state.cplSoftErr = "";
     state.cplToErr = "";
     state.cplPauseErr = "";
+    state.cplPcErr = "";
     cplSl.running = false;
     clearCplSlTimer();
     cplPauseReset();
     render();
   }
+  function cplAnswersReady(rec) {
+    if (!rec || !rec.answers || rec.answers.length !== 8) return false;
+    for (var i = 0; i < 8; i++) if (String(rec.answers[i] || "").trim().length < 2) return false;
+    return true;
+  }
   function screenFor(meta, who) {
     if (meta.safety) return "safety";
     var rec = loadCplSide(who);
     var o = loadCplSide(otherOf(who));
-    if (!rec.done) return "ask";
+    if (!rec.done) {
+      if (cplAnswersReady(rec) && !(rec.progress && rec.progress.baselineAt)) return "baseline";
+      return "ask";
+    }
     if (!o.done) return "wait";
     if (!loadCplPlan()) return "summary";
     return "plan";
@@ -2267,6 +2345,434 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
       noPlan +
       '<button type="button" class="btn block" data-action="cpl-pause-start">' + esc(CPL.toPauseStart) + "</button></div>";
   }
+  function cplProgressBlank() {
+    return { baseline: {}, baselineAt: "", checks: [] };
+  }
+  function cplPcBlankDraft() {
+    return { helped: "", hard: "", share: false, ratings: {}, base: {} };
+  }
+  function cplPcDraft(side) {
+    var which = side === "b" ? "b" : "a";
+    if (!state.cplPcDraft) state.cplPcDraft = { a: cplPcBlankDraft(), b: cplPcBlankDraft() };
+    if (!state.cplPcDraft[which]) state.cplPcDraft[which] = cplPcBlankDraft();
+    return state.cplPcDraft[which];
+  }
+  function cplPcClip(s, max) {
+    return String(s || "").replace(/\s+/g, " ").trim().slice(0, max);
+  }
+  function cplPcNum(v) {
+    var n = Math.round(Number(v));
+    if (n !== n || n < 0) return 0;
+    if (n > 10) return 10;
+    return n;
+  }
+  function cplNormalizeProgress(raw) {
+    var progress = cplProgressBlank();
+    if (!raw || typeof raw !== "object") return progress;
+    var base = raw.baseline && typeof raw.baseline === "object" ? raw.baseline : {};
+    Object.keys(base).forEach(function (k) {
+      var id = String(k || "").slice(0, 24);
+      if (!id) return;
+      if (base[k] == null || base[k] === "") return;
+      progress.baseline[id] = cplPcNum(base[k]);
+    });
+    var at = String(raw.baselineAt || "");
+    if (/^\d{4}-\d{2}-\d{2}/.test(at)) progress.baselineAt = at.slice(0, 10);
+    var checks = Array.isArray(raw.checks) ? raw.checks : [];
+    for (var i = 0; i < checks.length && progress.checks.length < 12; i++) {
+      var c = checks[i];
+      if (!c) continue;
+      var helped = cplPcClip(c.helped, 240);
+      var hard = cplPcClip(c.hard, 240);
+      if (helped.length < 2 || hard.length < 2) continue;
+      var ratings = {};
+      var src = c.ratings && typeof c.ratings === "object" ? c.ratings : {};
+      Object.keys(src).forEach(function (k) {
+        var id = String(k || "").slice(0, 24);
+        if (!id || src[k] == null || src[k] === "") return;
+        ratings[id] = cplPcNum(src[k]);
+      });
+      if (!Object.keys(ratings).length) continue;
+      var date = String(c.date || "");
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) date = "";
+      progress.checks.push({
+        id: String(c.id || ("p" + i)).slice(0, 40),
+        at: String(c.at || "").slice(0, 40),
+        date: date,
+        ratings: ratings,
+        helped: helped,
+        hard: hard,
+        share: c.share === true,
+        used: c.used ? String(c.used).slice(0, 8) : ""
+      });
+    }
+    return progress;
+  }
+  function cplProgressExerciseFor(text) {
+    var blob = norm(text || "");
+    var themes = CPL.pcThemes || [];
+    for (var i = 0; i < themes.length; i++) {
+      var keys = themes[i].keys || [];
+      for (var k = 0; k < keys.length; k++) {
+        var key = norm(keys[k]);
+        if (key && blob.indexOf(key) !== -1) return themes[i].exercise;
+      }
+    }
+    return "soft";
+  }
+  function cplProgressAreas(rec) {
+    var answers = rec && rec.answers ? rec.answers : [];
+    var areas = [];
+    var seen = {};
+    function add(area) {
+      if (!area || !area.id || seen[area.id] || areas.length >= 4) return;
+      seen[area.id] = 1;
+      areas.push(area);
+    }
+    var topic = cplClip(answers[0], 42);
+    if (topic && topic !== CPL.emptyBit) add({ id: "topic", label: topic, exercise: cplProgressExerciseFor(answers[0]) });
+    var ask = cplClip(answers[7], 42);
+    if (ask && ask !== CPL.emptyBit) add({ id: "ask", label: ask, exercise: "soft" });
+    var blob = norm(answers.join(" "));
+    var themes = CPL.pcThemes || [];
+    for (var i = 0; i < themes.length; i++) {
+      var theme = themes[i];
+      var hit = false;
+      var keys = theme.keys || [];
+      for (var k = 0; k < keys.length; k++) {
+        var key = norm(keys[k]);
+        if (key && blob.indexOf(key) !== -1) { hit = true; break; }
+      }
+      if (hit) add({ id: theme.id, label: theme.label, exercise: theme.exercise });
+    }
+    if (!areas.length) add({ id: "week", label: CPL.pcWeek, exercise: "soft" });
+    return areas;
+  }
+  function cplProgressDue(plan, rec, today) {
+    if (!plan || !rec || !rec.done || !rec.progress || !rec.progress.baselineAt) return false;
+    var checks = rec.progress.checks || [];
+    if (!checks.length) return daysBetween(plan.startDate, today) >= CPL.pcWaitDays;
+    var last = checks[0].date;
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(last)) return true;
+    return daysBetween(last, today) >= CPL.pcWeekDays;
+  }
+  function cplProgressWord(base, now) {
+    if (typeof base !== "number" || typeof now !== "number") return CPL.pcSame;
+    if (now > base) return CPL.pcUp;
+    if (now < base) return CPL.pcDown;
+    return CPL.pcSame;
+  }
+  function cplProgressMood(areas, base, ratings) {
+    var up = 0, down = 0;
+    for (var i = 0; i < areas.length; i++) {
+      var id = areas[i].id;
+      var now = ratings[id];
+      var b = base[id];
+      if (typeof now !== "number" || typeof b !== "number") continue;
+      if (now > b) up++;
+      else if (now < b) down++;
+    }
+    if (down > 0 && up > 0) return CPL.pcEncourageMix;
+    if (down > 0) return CPL.pcEncourageDown;
+    if (up > 0) return CPL.pcEncourageUp;
+    return CPL.pcEncourageSame;
+  }
+  function cplProgressSuggestions(areas, base, ratings) {
+    var seen = {};
+    var out = [];
+    var text = {
+      soft: CPL.pcSuggestSoft,
+      timeout: CPL.pcSuggestTimeout,
+      nice: CPL.pcSuggestNice,
+      speaker: CPL.pcSuggestSpeaker
+    };
+    for (var i = 0; i < areas.length; i++) {
+      var area = areas[i];
+      var now = ratings[area.id];
+      var b = base[area.id];
+      if (typeof now !== "number") continue;
+      var low = now <= CPL.pcLow;
+      var worse = typeof b === "number" && now < b;
+      if (!low && !worse) continue;
+      var key = area.exercise || "soft";
+      if (seen[key] || !text[key]) continue;
+      seen[key] = 1;
+      out.push(text[key]);
+    }
+    return out;
+  }
+  function cplProgressSharp(areas, base, ratings) {
+    for (var i = 0; i < areas.length; i++) {
+      var id = areas[i].id;
+      var now = ratings[id];
+      var b = base[id];
+      if (typeof now !== "number" || typeof b !== "number") continue;
+      if (b - now >= CPL.pcSharp) return true;
+    }
+    return false;
+  }
+  function cplPcRead(meta) {
+    var side = meta && meta.active === "b" ? "b" : "a";
+    var draft = cplPcDraft(side);
+    if (typeof document === "undefined") return draft;
+    var areas = cplProgressAreas(loadCplSide(side));
+    for (var i = 0; i < areas.length; i++) {
+      var id = areas[i].id;
+      var nowEl = document.getElementById("cpl-pc-range-" + id);
+      var baseEl = document.getElementById("cpl-pc-base-" + id);
+      if (nowEl) draft.ratings[id] = cplPcNum(nowEl.value);
+      if (baseEl) draft.base[id] = cplPcNum(baseEl.value);
+    }
+    var helped = document.getElementById("cpl-pc-helped");
+    var hard = document.getElementById("cpl-pc-hard");
+    var share = document.getElementById("cpl-pc-share");
+    if (helped) draft.helped = String(helped.value || "").slice(0, 240);
+    if (hard) draft.hard = String(hard.value || "").slice(0, 240);
+    if (share) draft.share = !!share.checked;
+    return draft;
+  }
+  function cplProgressRatingsFrom(draft, areas, key) {
+    var ratings = {};
+    var bag = draft && draft[key] ? draft[key] : {};
+    for (var i = 0; i < areas.length; i++) {
+      var id = areas[i].id;
+      ratings[id] = typeof bag[id] === "number" ? cplPcNum(bag[id]) : 5;
+    }
+    return ratings;
+  }
+  function cplProgressSaveBaseline(meta) {
+    var side = meta.active === "b" ? "b" : "a";
+    var draft = cplPcRead(meta);
+    var rec = loadCplSide(side);
+    var areas = cplProgressAreas(rec);
+    rec.progress.baseline = cplProgressRatingsFrom(draft, areas, "base");
+    rec.progress.baselineAt = jerusalemToday();
+    var finishInterview = !rec.done && cplAnswersReady(rec);
+    if (finishInterview) {
+      rec.done = true;
+      rec.doneAt = new Date().toISOString();
+    }
+    saveCplSide(side, rec);
+    if (finishInterview) {
+      if (!loadCplSide(otherOf(side)).done) meta.screen = "wait";
+      else {
+        if (!finishBothIfReady(meta)) return "stop";
+        meta.screen = "summary";
+      }
+    } else meta.screen = screenFor(meta, side);
+    saveCplMeta(meta);
+    return "ok";
+  }
+  function cplProgressCommit(meta) {
+    var side = meta.active === "b" ? "b" : "a";
+    var draft = cplPcRead(meta);
+    var helpedRaw = String(draft.helped || "");
+    var hardRaw = String(draft.hard || "");
+    if (isCrisisText(helpedRaw) || isCrisisText(hardRaw)) return "crisis";
+    if (cplViolent(helpedRaw) || cplViolent(hardRaw)) return "violent";
+    var helped = cplPcClip(helpedRaw, 240);
+    var hard = cplPcClip(hardRaw, 240);
+    if (helped.length < 2 || hard.length < 2) return "short";
+    var rec = loadCplSide(side);
+    if (!rec.progress.baselineAt) return "short";
+    var areas = cplProgressAreas(rec);
+    var ratings = cplProgressRatingsFrom(draft, areas, "ratings");
+    if (cplProgressSharp(areas, rec.progress.baseline, ratings)) return "sharp";
+    rec.progress.checks.unshift({
+      id: String(Date.now()),
+      at: new Date().toISOString(),
+      date: jerusalemToday(),
+      ratings: ratings,
+      helped: helped,
+      hard: hard,
+      share: draft.share === true,
+      used: ""
+    });
+    if (rec.progress.checks.length > 12) rec.progress.checks = rec.progress.checks.slice(0, 12);
+    saveCplSide(side, rec);
+    draft.helped = "";
+    draft.hard = "";
+    draft.share = false;
+    return "ok";
+  }
+  function cplProgressApply(meta) {
+    var status = cplProgressCommit(meta);
+    if (status === "crisis" || status === "violent" || status === "sharp") {
+      var side = meta.active === "b" ? "b" : "a";
+      var draft = cplPcDraft(side);
+      draft.helped = "";
+      draft.hard = "";
+      draft.share = false;
+      enterSafety(meta, true);
+      return "safety";
+    }
+    if (status === "short") { state.cplPcErr = CPL.pcNeed; return "short"; }
+    return "ok";
+  }
+  function cplProgressShared(side, dayId) {
+    var checks = loadCplSide(side).progress.checks || [];
+    for (var i = 0; i < checks.length; i++) {
+      var c = checks[i];
+      if (c.share && (!c.used || c.used === dayId)) return c;
+    }
+    return null;
+  }
+  function cplStampProgressUsed(dayId) {
+    ["a", "b"].forEach(function (side) {
+      var rec = loadCplSide(side);
+      var changed = false;
+      rec.progress.checks.forEach(function (c) {
+        if (c.share && !c.used) { c.used = dayId; changed = true; }
+      });
+      if (changed) saveCplSide(side, rec);
+    });
+  }
+  function cplClearProgressUsed(dayId) {
+    ["a", "b"].forEach(function (side) {
+      var rec = loadCplSide(side);
+      var changed = false;
+      rec.progress.checks.forEach(function (c) {
+        if (c.used === dayId) { c.used = ""; changed = true; }
+      });
+      if (changed) saveCplSide(side, rec);
+    });
+  }
+  function cplPcSlider(id, value, kind, label) {
+    var n = cplPcNum(value);
+    var inputId = (kind === "base" ? "cpl-pc-base-" : "cpl-pc-range-") + id;
+    return '<div class="cpl-pc-area"><p class="cpl-pc-label">' + esc(label) + '</p>' +
+      '<div class="cpl-pc-scale"><span>' + esc(CPL.pcHardEnd) + '</span>' +
+      '<input type="range" min="0" max="10" step="1" dir="rtl" id="' + esc(inputId) + '" data-cpl="' + (kind === "base" ? "pc-base" : "pc-rate") + '" data-area="' + esc(id) + '" value="' + n + '" aria-label="' + esc(label) + '">' +
+      '<b id="cpl-pc-val-' + esc(id) + '" class="cpl-pc-val">' + n + '</b>' +
+      '<span>' + esc(CPL.pcEaseEnd) + '</span></div></div>';
+  }
+  function cplProgressResultHTML(meta, check) {
+    var side = meta.active === "b" ? "b" : "a";
+    var rec = loadCplSide(side);
+    var areas = cplProgressAreas(rec);
+    var base = rec.progress.baseline || {};
+    var ratings = check && check.ratings ? check.ratings : {};
+    var rows = areas.map(function (area) {
+      var now = ratings[area.id];
+      var b = base[area.id];
+      if (typeof now !== "number") return "";
+      var word = cplProgressWord(b, now);
+      var cls = word === CPL.pcUp ? "up" : (word === CPL.pcDown ? "down" : "same");
+      var arrow = word === CPL.pcUp ? "↑" : (word === CPL.pcDown ? "↓" : "→");
+      var baseW = typeof b === "number" ? Math.round(b * 10) : 0;
+      var nowW = Math.round(now * 10);
+      return '<div class="cpl-pc-row"><p class="cpl-pc-label">' + esc(area.label) + '</p>' +
+        '<div class="cpl-pc-bars"><div class="cpl-pc-bar"><span class="cpl-pc-bar-label">' + esc(CPL.pcBaseBar) + '</span><span class="cpl-pc-track"><span style="width:' + baseW + '%"></span></span></div>' +
+        '<div class="cpl-pc-bar"><span class="cpl-pc-bar-label">' + esc(CPL.pcNowBar) + '</span><span class="cpl-pc-track is-now"><span style="width:' + nowW + '%"></span></span></div></div>' +
+        '<p class="cpl-pc-change ' + cls + '">' + arrow + " " + esc(word) + "</p></div>";
+    }).join("");
+    var suggestions = cplProgressSuggestions(areas, base, ratings).map(function (line) {
+      return '<p class="cpl-pc-suggest">' + esc(line) + "</p>";
+    }).join("");
+    return '<div class="cpl-pc-result"><p>' + esc(cplProgressMood(areas, base, ratings)) + '</p>' +
+      '<p class="muted">' + esc(CPL.pcCompare) + "</p>" + rows + suggestions +
+      (check && check.helped ? "<p><strong>" + esc(CPL.pcHelped) + "</strong> " + esc(check.helped) + "</p>" : "") +
+      (check && check.hard ? "<p><strong>" + esc(CPL.pcHard) + "</strong> " + esc(check.hard) + "</p>" : "") +
+      '<p class="muted">' + esc(CPL.pcNoOther) + "</p></div>";
+  }
+  function cplProgressEntry(meta) {
+    if (state.hold || !meta || meta.safety) return "";
+    var plan = loadCplPlan();
+    if (!plan) return "";
+    var side = meta.active === "b" ? "b" : "a";
+    var rec = loadCplSide(side);
+    if (!rec.done) return "";
+    var name = nameOf(meta, side) || CPL.noname;
+    var head = '<section class="card cpl-pc"><p class="kicker">' + esc(fill(CPL.pcKicker, { name: name })) + "</p><h2>" + esc(CPL.pcTitle) + "</h2>";
+    if (!rec.progress.baselineAt) {
+      return head + "<p>" + esc(CPL.pcBaseBody) + "</p>" +
+        '<button type="button" class="btn block" data-action="cpl-pc-base-open">' + esc(CPL.pcBaseOpen) + "</button></section>";
+    }
+    var latest = rec.progress.checks[0];
+    var result = latest ? cplProgressResultHTML(meta, latest) : "";
+    if (cplProgressDue(plan, rec, jerusalemToday())) {
+      return head + "<p>" + esc(CPL.pcIntro) + "</p>" + result +
+        '<button type="button" class="btn block" data-action="cpl-pc-open">' + esc(CPL.pcOpen) + "</button></section>";
+    }
+    if (!latest) return head + "<p>" + esc(CPL.pcEarly) + "</p></section>";
+    var savedNote = latest.share ? CPL.pcSharedOk : CPL.pcPrivateOk;
+    return head + result + '<p class="muted">' + esc(savedNote) + "</p>" +
+      '<p class="muted">' + esc(CPL.pcLater) + "</p></section>";
+  }
+  function cplProgressJoint(meta, dayId) {
+    if (state.hold || !meta || meta.safety) return "";
+    function block(side) {
+      var check = cplProgressShared(side, dayId);
+      if (!check) return "";
+      var rec = loadCplSide(side);
+      var areas = cplProgressAreas(rec);
+      var base = rec.progress.baseline || {};
+      var bits = [];
+      for (var i = 0; i < areas.length; i++) {
+        var id = areas[i].id;
+        var now = check.ratings[id];
+        if (typeof now !== "number") continue;
+        bits.push("<li>" + esc(areas[i].label) + ": " + esc(cplProgressWord(base[id], now)) + "</li>");
+      }
+      var name = nameOf(meta, side) || CPL.noname;
+      return '<div class="cpl-pc-share"><p class="kicker">' + esc(fill(CPL.niceBy, { name: name })) + "</p>" +
+        (bits.length ? '<ul class="cpl-pc-share-list">' + bits.join("") + "</ul>" : "") +
+        "<p>" + esc(fill(CPL.pcJointHelped, { text: check.helped })) + "</p>" +
+        "<p>" + esc(fill(CPL.pcJointHard, { text: check.hard })) + "</p></div>";
+    }
+    var body = block("a") + block("b");
+    var inner = body || ("<p>" + esc(CPL.pcJointEmpty) + "</p>");
+    return '<div class="cpl-pc-joint"><h2>' + esc(CPL.pcJointTitle) + "</h2><p>" + esc(CPL.pcJointHow) + "</p>" + inner + "</div>";
+  }
+  function viewCplBaseline(meta) {
+    var side = meta.active === "b" ? "b" : "a";
+    var name = nameOf(meta, side) || CPL.noname;
+    var rec = loadCplSide(side);
+    var draft = cplPcDraft(side);
+    var areas = cplProgressAreas(rec);
+    var sliders = areas.map(function (area) {
+      var current = typeof draft.base[area.id] === "number" ? draft.base[area.id] : 5;
+      return cplPcSlider(area.id, current, "base", area.label);
+    }).join("");
+    return whoBanner(meta) + '<section class="card cpl-pc"><p class="kicker">' + esc(fill(CPL.pcKicker, { name: name })) + "</p><h1>" + esc(CPL.pcBaseTitle) + "</h1>" +
+      "<p>" + esc(CPL.pcBaseBody) + "</p>" +
+      "<p>" + esc(CPL.pcScale) + "</p>" +
+      sliders +
+      '<button type="button" class="btn block" data-action="cpl-pc-base-save">' + esc(CPL.pcBaseSave) + "</button>" +
+      (rec.done
+        ? '<button type="button" class="btn secondary block" data-action="cpl-back-plan">' + esc(CPL.backPlan) + "</button>"
+        : '<button type="button" class="btn secondary block" data-action="cpl-pc-base-back">' + esc(CPL.back) + "</button>") +
+      "</section>";
+  }
+  function viewCplProgress(meta) {
+    var side = meta.active === "b" ? "b" : "a";
+    var name = nameOf(meta, side) || CPL.noname;
+    var rec = loadCplSide(side);
+    var plan = loadCplPlan();
+    if (!plan || !rec.done || !rec.progress.baselineAt) return viewCplPlan(meta);
+    if (!cplProgressDue(plan, rec, jerusalemToday())) {
+      return whoBanner(meta) + cplProgressEntry(meta) +
+        '<p><button type="button" class="btn secondary block" data-action="cpl-back-plan">' + esc(CPL.backPlan) + "</button></p>";
+    }
+    var draft = cplPcDraft(side);
+    var areas = cplProgressAreas(rec);
+    var base = rec.progress.baseline || {};
+    var sliders = areas.map(function (area) {
+      var current = typeof draft.ratings[area.id] === "number" ? draft.ratings[area.id] : (typeof base[area.id] === "number" ? base[area.id] : 5);
+      return cplPcSlider(area.id, current, "rate", area.label);
+    }).join("");
+    return whoBanner(meta) + '<section class="card cpl-pc"><p class="kicker">' + esc(fill(CPL.pcKicker, { name: name })) + "</p><h1>" + esc(CPL.pcTitle) + "</h1>" +
+      "<p>" + esc(CPL.pcIntro) + "</p>" +
+      "<p>" + esc(CPL.pcScale) + "</p>" +
+      sliders +
+      '<label class="field">' + esc(CPL.pcHelped) + '<textarea id="cpl-pc-helped" data-cpl="pc-helped" maxlength="240">' + esc(draft.helped || "") + "</textarea></label>" +
+      '<label class="field">' + esc(CPL.pcHard) + '<textarea id="cpl-pc-hard" data-cpl="pc-hard" maxlength="240">' + esc(draft.hard || "") + "</textarea></label>" +
+      '<label class="check"><input type="checkbox" id="cpl-pc-share" data-cpl="pc-share"' + (draft.share ? " checked" : "") + ">" + esc(CPL.pcShare) + "</label>" +
+      '<p class="muted">' + esc(CPL.pcShareNote) + "</p>" +
+      (state.cplPcErr ? '<p class="err">' + esc(state.cplPcErr) + "</p>" : "") +
+      '<button type="button" class="btn block" data-action="cpl-pc-save">' + esc(CPL.pcSave) + "</button>" +
+      '<button type="button" class="btn secondary block" data-action="cpl-back-plan">' + esc(CPL.backPlan) + "</button></section>";
+  }
   function viewCplSetup(meta) {
     return '<section class="card"><p class="kicker">' + esc(CPL.kicker) + "</p><h1>" + esc(CPL.tile) + "</h1>" +
       "<p>" + esc(CPL.disc) + "</p>" +
@@ -2359,7 +2865,7 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
         '<div class="meta">' + esc(open ? (d.completed ? CPL.done : CPL.openDay) : CPL.locked) + "</div></button>";
     }).join("");
     var pct = Math.round((done / 7) * 100);
-    return whoBanner(meta) + cplNicePrivate(meta) + cplSoftPrivate(meta) + cplTimeoutPrivate(meta) + '<section class="card"><p class="kicker">' + esc(CPL.kicker) + "</p><h1>" + esc(CPL.planTitle) + "</h1>" +
+    return whoBanner(meta) + cplProgressEntry(meta) + cplNicePrivate(meta) + cplSoftPrivate(meta) + cplTimeoutPrivate(meta) + '<section class="card"><p class="kicker">' + esc(CPL.kicker) + "</p><h1>" + esc(CPL.planTitle) + "</h1>" +
       "<p>" + esc(CPL.planIntro) + "</p>" +
       "<p>" + esc(fill(CPL.planProgress, { done: done, total: 7, start: plan.startDate })) + "</p>" +
       '<div class="progress" aria-hidden="true"><span style="width:' + pct + '%"></span></div>' +
@@ -2425,6 +2931,7 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     var pauseHTML = "";
     var niceJoint = "";
     var softJoint = "";
+    var pcJoint = "";
     if (def.mode === "joint") {
       both = '<label class="check"><input type="checkbox" data-cpl="both" data-day="' + esc(def.id) + '"' + (day.bothHere ? " checked" : "") + ">" + esc(CPL.bothHere) + "</label>";
       pauseHTML = cplPauseCard(meta);
@@ -2432,6 +2939,7 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
       if (day.bothHere) {
         niceJoint = cplNiceJoint(meta, def.id);
         softJoint = cplSoftJoint(meta);
+        pcJoint = cplProgressJoint(meta, def.id);
       }
     }
     var ownNice = (def.mode === "individual" && meta.active === def.who) ? cplNicePrivate(meta) : "";
@@ -2443,6 +2951,7 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
       both +
       niceJoint +
       softJoint +
+      pcJoint +
       '<label class="field">' + esc(def.mode === "joint" ? CPL.jointNote : CPL.noteLabel) +
       '<textarea id="cpl-note" data-cpl="note" data-day="' + esc(def.id) + '">' + esc(note) + "</textarea></label>" +
       (state.cplErr ? '<p class="err">' + esc(state.cplErr) + "</p>" : "") +
@@ -2450,13 +2959,21 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
       '<button type="button" class="btn secondary block" data-action="cpl-back-plan">' + esc(CPL.backPlan) + "</button></section>" + ownNice + ownSoft + ownTo;
   }
   function viewCplSafety(meta) {
+    var emergency = "";
+    var therapist = "";
+    if (meta && meta.safetyCheckin) {
+      emergency = '<a class="call" href="tel:101"><span>' + esc(CPL.pcEmergency) + "</span><b>101</b></a>";
+      therapist = "<p>" + esc(CPL.pcTherapist) + "</p>";
+    }
     return '<section class="card cpl-safety"><h1>' + esc(CPL.safetyTitle) + "</h1>" +
       "<p>" + esc(CPL.safetyBody) + "</p>" +
       "<p><strong>" + esc(CPL.safetyTimeout) + "</strong></p>" +
       "<p><strong>" + esc(CPL.safetyLeave) + "</strong></p>" +
       '<a class="call" href="tel:100"><span>' + esc(CPL.policeLabel) + "</span><b>100</b></a>" +
       '<a class="call" href="tel:1201"><span>' + esc(CPL.eranShort) + "</span><b>1201</b></a>" +
+      emergency +
       "<p>" + esc(CPL.safetyCall) + "</p>" +
+      therapist +
       '<p class="disclaimer">' + esc(CPL.disc) + "</p>" +
       cplResetBlock() + "</section>";
   }
@@ -2469,6 +2986,8 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     if (meta.screen === "wait") return viewCplWait(meta);
     if (meta.screen === "review") return viewCplReview(meta);
     if (meta.screen === "summary") return viewCplSummary(meta);
+    if (meta.screen === "baseline") return viewCplBaseline(meta);
+    if (meta.screen === "progress") return viewCplProgress(meta);
     if (meta.screen === "session") return viewCplSession(meta);
     if (meta.screen === "plan") return viewCplPlan(meta);
     return viewCplWho(meta);
@@ -2663,6 +3182,31 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
       cplPause.repairCustom = repairVal;
       if (cplTimeoutClip(repairVal, 120).length >= 2) cplPause.repairPick = "";
     }
+    if (kind === "pc-rate" || kind === "pc-base" || kind === "pc-helped" || kind === "pc-hard" || kind === "pc-share") {
+      if (state.hold || meta.safety) return;
+      var sideP = meta.active === "b" ? "b" : "a";
+      var draftP = cplPcDraft(sideP);
+      var areaP = String(el.dataset.area || "");
+      if (kind === "pc-rate" || kind === "pc-base") {
+        var nP = cplPcNum(el.value);
+        if (kind === "pc-base") draftP.base[areaP] = nP;
+        else draftP.ratings[areaP] = nP;
+        var labP = document.getElementById("cpl-pc-val-" + areaP);
+        if (labP) labP.textContent = String(nP);
+        return;
+      }
+      if (kind === "pc-share") { draftP.share = !!el.checked; return; }
+      var textP = String(el.value || "").slice(0, 240);
+      if (isCrisisText(textP) || cplViolent(textP)) {
+        draftP.helped = "";
+        draftP.hard = "";
+        el.value = "";
+        enterSafety(meta, true);
+        return;
+      }
+      if (kind === "pc-helped") draftP.helped = textP;
+      else draftP.hard = textP;
+    }
   }
   function onCplAction(action, t) {
     var meta = loadCplMeta();
@@ -2671,6 +3215,7 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     state.cplSoftErr = "";
     state.cplToErr = "";
     state.cplPauseErr = "";
+    state.cplPcErr = "";
     if (action === "cpl-reset-ask") { state.cplReset = true; render(); return; }
     if (action === "cpl-reset-no") { state.cplReset = false; render(); return; }
     if (action === "cpl-reset-yes") { cplWipe(); render(); return; }
@@ -2678,6 +3223,51 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     captureCplSoftForm(meta);
     captureCplTimeout(meta);
     if (cplTimeoutGuard(meta) === "stop") return;
+    if (action === "cpl-pc-base-open") {
+      meta.screen = "baseline";
+      saveCplMeta(meta);
+      render();
+      return;
+    }
+    if (action === "cpl-pc-open") {
+      var openSide = meta.active === "b" ? "b" : "a";
+      var openRec = loadCplSide(openSide);
+      var openPlan = loadCplPlan();
+      if (!openPlan || !openRec.done || !openRec.progress.baselineAt) return;
+      if (!cplProgressDue(openPlan, openRec, jerusalemToday())) return;
+      meta.screen = "progress";
+      saveCplMeta(meta);
+      render();
+      return;
+    }
+    if (action === "cpl-pc-base-back") {
+      var backSide = meta.active === "b" ? "b" : "a";
+      var backRec = loadCplSide(backSide);
+      if (!backRec.done) {
+        backRec.qi = 7;
+        saveCplSide(backSide, backRec);
+        meta.screen = "ask";
+      } else meta.screen = "plan";
+      saveCplMeta(meta);
+      render();
+      return;
+    }
+    if (action === "cpl-pc-base-save") {
+      if (state.hold) return;
+      var baseStatus = cplProgressSaveBaseline(meta);
+      if (baseStatus === "stop") return;
+      render();
+      return;
+    }
+    if (action === "cpl-pc-save") {
+      if (state.hold) return;
+      var pcStatus = cplProgressApply(meta);
+      if (pcStatus === "safety") return;
+      if (pcStatus === "ok") meta.screen = "plan";
+      saveCplMeta(meta);
+      render();
+      return;
+    }
     if (action === "cpl-nice-add") {
       if (state.hold) return;
       var typedNice = readCplBox("cpl-nice-text");
@@ -2829,6 +3419,13 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
       var text = String(recn.answers[qi] || "").trim();
       if (text.length < 2) { state.cplErr = CPL.needText; render(); return; }
       if (qi < 7) { recn.qi = qi + 1; saveCplSide(meta.active, recn); render(); return; }
+      if (!recn.progress.baselineAt) {
+        saveCplSide(meta.active, recn);
+        meta.screen = "baseline";
+        saveCplMeta(meta);
+        render();
+        return;
+      }
       recn.done = true;
       recn.doneAt = new Date().toISOString();
       saveCplSide(meta.active, recn);
@@ -2907,7 +3504,10 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
       if (!want) {
         day.completed = false;
         day.completedAt = null;
-        if (found.def.mode === "joint") cplClearNiceUsed(found.def.id);
+        if (found.def.mode === "joint") {
+          cplClearNiceUsed(found.def.id);
+          cplClearProgressUsed(found.def.id);
+        }
         saveJSON(K_CPL_PLAN, plan);
         state.cplErr = "";
         render(); return;
@@ -2929,7 +3529,10 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
       }
       day.completed = true;
       day.completedAt = new Date().toISOString();
-      if (found.def.mode === "joint") cplStampNiceUsed(found.def.id);
+      if (found.def.mode === "joint") {
+        cplStampNiceUsed(found.def.id);
+        cplStampProgressUsed(found.def.id);
+      }
       saveJSON(K_CPL_PLAN, plan);
       state.cplErr = "";
       render(); return;
@@ -3461,6 +4064,10 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     holdRec.nice = [{ id: "h1", text: "HOLD_SECRET_NOTE", date: today, share: true, used: "" }];
     holdRec.soft = [{ id: "hs", when: "HOLD_SOFT_SECRET", felt: "עצב", ask: "בקשה מוסתרת", share: true }];
     holdRec.timeout = toPlan({ body: "HOLD_TIMEOUT_SECRET", phrase: "HOLD_PHRASE_SECRET", custom: "HOLD_CUSTOM_SECRET", share: true });
+    holdRec.done = true;
+    holdRec.progress.baselineAt = today;
+    holdRec.progress.baseline = { week: 4 };
+    holdRec.progress.checks = [{ id: "hp", at: today, date: today, ratings: { week: 6 }, helped: "HOLD_PROGRESS_SECRET", hard: "עדיין כבד", share: true, used: "" }];
     saveCplSide("a", holdRec);
     saveJSON(K_CPL_PLAN, makeCplPlan());
     state.cplSoftForms = { a: { when: "HOLD_SOFT_FORM", feltPick: "כעס", feltCustom: "", ask: "עוד בקשה" }, b: cplSoftBlankForm() };
@@ -3474,8 +4081,185 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     eq(viewCouples().indexOf(CPL.niceTitle) === -1 && viewCouples().indexOf("HOLD_SECRET_NOTE") === -1, "viewCouples hold");
     eq(cplSoftPrivate(loadCplMeta()) === "" && cplSoftJoint(loadCplMeta()) === "", "hold hides soft fn");
     eq(cplTimeoutPrivate(loadCplMeta()) === "" && cplPauseCard(loadCplMeta()) === "" && cplTimeoutStatus(loadCplMeta()) === "", "hold hides timeout fn");
+    eq(held.indexOf("HOLD_PROGRESS_SECRET") === -1 && held.indexOf(CPL.pcTitle) === -1 && held.indexOf(CPL.pcJointTitle) === -1, "hold hides progress");
+    eq(cplProgressEntry(loadCplMeta()) === "" && cplProgressJoint(loadCplMeta(), "c4") === "", "hold hides progress fn");
     state.hold = false;
     state.crisis = null;
+    cplWipe();
+    var themeRec = cplBlank();
+    themeRec.answers[0] = "כלים בכיור";
+    themeRec.answers[2] = "אני שותק ויוצא מהחדר";
+    themeRec.answers[7] = "לכתוב אם מאחרים";
+    var themeAreas = cplProgressAreas(themeRec);
+    eq(themeAreas[0].id === "topic" && themeAreas[0].label.indexOf("כלים") !== -1 && themeAreas[0].exercise === "soft", "topic from the interview");
+    eq(themeAreas.some(function (a) { return a.id === "ask" && a.label.indexOf("לכתוב") !== -1 && a.exercise === "soft"; }), "request from the interview");
+    eq(themeAreas.some(function (a) { return a.id === "close" && a.exercise === "speaker"; }), "withdraw topic");
+    eq(viewCplSafety({}).indexOf("tel:101") === -1 && viewCplSafety({}).indexOf(CPL.pcTherapist) === -1, "safety card stays as it was");
+    cplWipe();
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "plan", safety: false });
+    var earlyA = cplBlank();
+    earlyA.done = true;
+    earlyA.answers[0] = "כלים בכיור";
+    earlyA.answers[7] = "לכתוב אם מאחרים";
+    earlyA.progress.baseline = { topic: 6, ask: 5 };
+    earlyA.progress.baselineAt = today;
+    saveCplSide("a", earlyA);
+    var earlyB = cplBlank();
+    earlyB.done = true;
+    saveCplSide("b", earlyB);
+    saveJSON(K_CPL_PLAN, makeCplPlan());
+    var earlyHtml = viewCouples();
+    eq(earlyHtml.indexOf(CPL.pcEarly) !== -1 && earlyHtml.indexOf(CPL.pcOpen) === -1, "check-in waits a few days");
+    var duePlan = makeCplPlan();
+    duePlan.startDate = "2020-01-01";
+    saveJSON(K_CPL_PLAN, duePlan);
+    var dueHtml = viewCouples();
+    eq(dueHtml.indexOf(CPL.pcOpen) !== -1 && dueHtml.indexOf(CPL.pcIntro) !== -1, "check-in opens after a few days");
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "progress", safety: false });
+    var formHtml = viewCouples();
+    eq(formHtml.indexOf(CPL.pcHelped) !== -1 && formHtml.indexOf(CPL.pcHard) !== -1 && formHtml.indexOf(CPL.pcShare) !== -1, "two prompts and opt-in");
+    eq(formHtml.indexOf('type="range"') !== -1 && formHtml.indexOf('max="10"') !== -1 && formHtml.indexOf('min="0"') !== -1, "slider");
+    eq(formHtml.indexOf("כלים בכיור") !== -1, "reuses the interview topic");
+    state.cplPcDraft = { a: cplPcBlankDraft(), b: cplPcBlankDraft() };
+    var draftA = cplPcDraft("a");
+    draftA.ratings = { topic: 5, ask: 5 };
+    draftA.helped = "HELPED_A_VISIBLE";
+    draftA.hard = "HARD_A_STILL";
+    draftA.share = false;
+    eq(cplProgressCommit(loadCplMeta()) === "ok", "save private check-in");
+    var savedA = loadCplSide("a");
+    eq(savedA.progress.checks.length === 1 && savedA.progress.checks[0].share === false, "opt-in off by default");
+    eq(savedA.progress.checks[0].ratings.topic === 5, "own rating stored");
+    eq(JSON.stringify(loadCplSide("b").progress.checks) === "[]", "check-in did not write the other side");
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "plan", safety: false });
+    var ownResult = viewCouples();
+    eq(ownResult.indexOf(CPL.pcDown) !== -1 && ownResult.indexOf(CPL.pcSuggestSoft) !== -1, "worse topic points to soft start");
+    eq(ownResult.indexOf(CPL.pcNoOther) !== -1 && ownResult.indexOf("HELPED_A_VISIBLE") !== -1, "own change and own words");
+    eq(ownResult.indexOf(CPL.pcLater) !== -1 && ownResult.indexOf(CPL.pcOpen) === -1, "next check-in is about a week away");
+    var worseB = cplBlank();
+    worseB.done = true;
+    worseB.answers[0] = "שקט ארוך";
+    worseB.answers[2] = "אני שותק ויוצא מהחדר";
+    worseB.answers[7] = "שעה בלי טלפון";
+    worseB.progress.baseline = { topic: 4, ask: 6, close: 8 };
+    worseB.progress.baselineAt = "2020-01-02";
+    worseB.progress.checks = [{
+      id: "b1",
+      at: "2020-01-08",
+      date: "2020-01-08",
+      ratings: { topic: 4, ask: 6, close: 2 },
+      helped: "PRIVATE_PROGRESS_B",
+      hard: "HARD_PRIVATE_B",
+      share: false,
+      used: ""
+    }];
+    saveCplSide("b", worseB);
+    var stillA = viewCouples();
+    eq(stillA.indexOf("PRIVATE_PROGRESS_B") === -1 && stillA.indexOf("HARD_PRIVATE_B") === -1, "other check-in stays hidden");
+    eq(stillA.indexOf("width:20%") === -1, "other rating bar stays hidden");
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "b", screen: "plan", safety: false });
+    var sideBHtml = viewCouples();
+    eq(sideBHtml.indexOf("PRIVATE_PROGRESS_B") !== -1 && sideBHtml.indexOf(CPL.pcSuggestSpeaker) !== -1, "low listening points to speaker-listener");
+    eq(sideBHtml.indexOf("HELPED_A_VISIBLE") === -1 && sideBHtml.indexOf("HARD_A_STILL") === -1, "partner words stay on their side");
+    var storedPcA = "";
+    var storedPcB = "";
+    try { storedPcA = localStorage.getItem(C.prefix + "_cpl_a") || ""; } catch (ePcA) {}
+    try { storedPcB = localStorage.getItem(C.prefix + "_cpl_b") || ""; } catch (ePcB) {}
+    eq(storedPcA.indexOf("HELPED_A_VISIBLE") !== -1 && storedPcA.indexOf("PRIVATE_PROGRESS_B") === -1, "progress stored on a");
+    eq(storedPcB.indexOf("PRIVATE_PROGRESS_B") !== -1 && storedPcB.indexOf("HELPED_A_VISIBLE") === -1, "progress stored on b");
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "summary", safety: false });
+    var sumPc = viewCouples();
+    eq(sumPc.indexOf("HELPED_A_VISIBLE") === -1 && sumPc.indexOf("PRIVATE_PROGRESS_B") === -1, "summary hides check-ins");
+    var sumPcBlob = JSON.stringify(buildCoupleSummary(loadCplSide("a"), loadCplSide("b"), "Lina", "Omar"));
+    eq(sumPcBlob.indexOf("HELPED_A_VISIBLE") === -1 && sumPcBlob.indexOf("PRIVATE_PROGRESS_B") === -1, "summary fn hides check-ins");
+    var shareA = loadCplSide("a");
+    shareA.progress.checks[0].share = true;
+    shareA.progress.checks[0].helped = "SHARED_PROGRESS_A";
+    shareA.progress.checks[0].hard = "SHARED_HARD_A";
+    saveCplSide("a", shareA);
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "session", openDay: "c4", safety: false });
+    var pcClosed = viewCouples();
+    eq(pcClosed.indexOf(CPL.pcJointTitle) === -1 && pcClosed.indexOf("SHARED_PROGRESS_A") === -1 && pcClosed.indexOf("PRIVATE_PROGRESS_B") === -1, "joint hides the summary until both are here");
+    var pcOpenPlan = loadCplPlan();
+    for (var pci = 0; pci < pcOpenPlan.days.length; pci++) if (pcOpenPlan.days[pci].id === "c4") pcOpenPlan.days[pci].bothHere = true;
+    saveJSON(K_CPL_PLAN, pcOpenPlan);
+    var pcJointHtml = viewCouples();
+    eq(pcJointHtml.indexOf(CPL.pcJointTitle) !== -1 && pcJointHtml.indexOf("SHARED_PROGRESS_A") !== -1 && pcJointHtml.indexOf("SHARED_HARD_A") !== -1, "opt-in summary on the joint day");
+    eq(pcJointHtml.indexOf("PRIVATE_PROGRESS_B") === -1 && pcJointHtml.indexOf("HARD_PRIVATE_B") === -1, "only what was chosen to share");
+    eq(pcJointHtml.indexOf("width:") === -1, "joint summary has no rating bars");
+    cplStampProgressUsed("c4");
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "session", openDay: "c5", safety: false });
+    var pcLaterPlan = loadCplPlan();
+    for (var pcj = 0; pcj < pcLaterPlan.days.length; pcj++) if (pcLaterPlan.days[pcj].id === "c5") pcLaterPlan.days[pcj].bothHere = true;
+    saveJSON(K_CPL_PLAN, pcLaterPlan);
+    var pcLaterHtml = viewCouples();
+    eq(pcLaterHtml.indexOf("SHARED_PROGRESS_A") === -1 && pcLaterHtml.indexOf(CPL.pcJointEmpty) !== -1, "shared summary stays on the session that used it");
+    cplWipe();
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "progress", safety: false });
+    var sharpPlan = makeCplPlan();
+    sharpPlan.startDate = "2020-01-01";
+    saveJSON(K_CPL_PLAN, sharpPlan);
+    var sharpRec = cplBlank();
+    sharpRec.done = true;
+    sharpRec.answers[0] = "כלים בכיור";
+    sharpRec.answers[7] = "לכתוב אם מאחרים";
+    sharpRec.progress.baseline = { topic: 8, ask: 7 };
+    sharpRec.progress.baselineAt = "2020-01-01";
+    saveCplSide("a", sharpRec);
+    state.cplPcDraft = { a: cplPcBlankDraft(), b: cplPcBlankDraft() };
+    var sharpDraft = cplPcDraft("a");
+    sharpDraft.ratings = { topic: 4, ask: 7 };
+    sharpDraft.helped = "ניסינו רגע";
+    sharpDraft.hard = "הערב היה כבד";
+    eq(cplProgressApply(loadCplMeta()) === "safety", "sharp drop stops");
+    eq(loadCplMeta().safety === true && loadCplMeta().safetyCheckin === true && loadCplMeta().screen === "safety", "sharp drop safety flag");
+    eq(loadCplPlan() === null, "sharp drop removes the joint plan");
+    eq(loadCplSide("a").progress.checks.length === 0, "sharp drop is not stored as a check-in");
+    var sharpView = viewCouples();
+    eq(sharpView.indexOf("100") !== -1 && sharpView.indexOf("1201") !== -1 && sharpView.indexOf(">101<") !== -1, "sharp drop shows the numbers");
+    eq(sharpView.indexOf(CPL.safetyTitle) !== -1 && sharpView.indexOf(CPL.pcTherapist) !== -1, "sharp drop shows the safety card and a therapist");
+    eq(sharpView.indexOf("cpl-sl-start") === -1 && sharpView.indexOf(CPL.pcSuggestSoft) === -1 && sharpView.indexOf(CPL.pcSave) === -1, "sharp drop does not continue to exercises");
+    cplWipe();
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "progress", safety: false });
+    saveJSON(K_CPL_PLAN, sharpPlan);
+    var harmRec = cplBlank();
+    harmRec.done = true;
+    harmRec.answers[0] = "כלים בכיור";
+    harmRec.answers[7] = "לכתוב אם מאחרים";
+    harmRec.progress.baseline = { topic: 5, ask: 5 };
+    harmRec.progress.baselineAt = "2020-01-01";
+    saveCplSide("a", harmRec);
+    state.cplPcDraft = { a: cplPcBlankDraft(), b: cplPcBlankDraft() };
+    cplPcDraft("a").helped = CPL.hitSample;
+    cplPcDraft("a").hard = "קשה בערב";
+    cplPcDraft("a").ratings = { topic: 5, ask: 5 };
+    eq(cplProgressCommit(loadCplMeta()) === "violent", "violent check-in");
+    eq(JSON.stringify(loadCplSide("a").progress).indexOf(CPL.hitSample) === -1, "violent check-in not stored");
+    eq(cplProgressApply(loadCplMeta()) === "safety", "violent check-in safety");
+    var harmView = viewCouples();
+    eq(harmView.indexOf("100") !== -1 && harmView.indexOf("1201") !== -1 && harmView.indexOf(">101<") !== -1 && harmView.indexOf(CPL.pcTherapist) !== -1, "violence shows the safety card");
+    eq(harmView.indexOf(CPL.hitSample) === -1 && harmView.indexOf("cpl-sl-start") === -1, "violence hides the exercise");
+    cplWipe();
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "progress", safety: false });
+    saveJSON(K_CPL_PLAN, sharpPlan);
+    var crisisRec = cplBlank();
+    crisisRec.done = true;
+    crisisRec.answers[0] = "כלים בכיור";
+    crisisRec.answers[7] = "לכתוב אם מאחרים";
+    crisisRec.progress.baseline = { topic: 5, ask: 5 };
+    crisisRec.progress.baselineAt = "2020-01-01";
+    saveCplSide("a", crisisRec);
+    state.cplPcDraft = { a: cplPcBlankDraft(), b: cplPcBlankDraft() };
+    cplPcDraft("a").helped = "רוצה למות";
+    cplPcDraft("a").hard = "השבוע כבד";
+    cplPcDraft("a").ratings = { topic: 5, ask: 5 };
+    eq(cplProgressApply(loadCplMeta()) === "safety", "self-harm check-in safety");
+    eq(JSON.stringify(loadCplSide("a").progress).indexOf("רוצה למות") === -1, "self-harm text not stored");
+    var crisisPc = viewCouples();
+    eq(crisisPc.indexOf(CPL.safetyTitle) !== -1 && crisisPc.indexOf(">101<") !== -1 && crisisPc.indexOf(CPL.pcTherapist) !== -1, "self-harm shows the safety card");
+    eq(crisisPc.indexOf("רוצה למות") === -1 && crisisPc.indexOf("cpl-sl-start") === -1 && loadCplPlan() === null, "self-harm does not continue");
+    state.crisis = null;
+    state.hold = false;
     cplWipe();
     return errors;
   }

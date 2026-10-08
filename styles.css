@@ -987,6 +987,113 @@ textarea { min-height: 100px; resize: vertical; }
   border-color: #c9b8a2;
 }
 
+.cpl-pc h1, .cpl-pc h2 { font-size: 1.25rem; margin-bottom: 6px; }
+.cpl-pc textarea { min-height: 76px; }
+.cpl-pc-label {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+.cpl-pc-area {
+  background: var(--sand);
+  border: 1px solid #ead9c0;
+  border-radius: 14px;
+  padding: 10px 12px;
+  margin: 0 0 8px;
+}
+.cpl-pc-scale {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.cpl-pc-scale span {
+  flex: 0 0 auto;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.cpl-pc-scale input[type="range"] {
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: var(--touch);
+  accent-color: var(--olive);
+  margin: 0;
+}
+.cpl-pc-val {
+  font-family: var(--font-ui);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  color: var(--olive-deep);
+  min-width: 1.5rem;
+  text-align: center;
+}
+.cpl-pc-row { margin: 0 0 12px; }
+.cpl-pc-bars { margin: 4px 0; }
+.cpl-pc-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 4px 0;
+}
+.cpl-pc-bar-label {
+  flex: 0 0 4.6rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.cpl-pc-track {
+  flex: 1 1 auto;
+  height: 10px;
+  background: #fff;
+  border: 1px solid #ead9c0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.cpl-pc-track > span {
+  display: block;
+  height: 100%;
+  background: var(--olive);
+  border-radius: inherit;
+  min-width: 0;
+}
+.cpl-pc-track.is-now > span { background: var(--clay); }
+.cpl-pc-change {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  margin: 4px 0 0;
+}
+.cpl-pc-change.up { color: var(--good); }
+.cpl-pc-change.down { color: var(--clay-deep); }
+.cpl-pc-change.same { color: var(--olive-deep); }
+.cpl-pc-suggest {
+  background: var(--olive-soft);
+  border: 1px solid #c9d9ce;
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin: 6px 0;
+}
+.cpl-pc-joint {
+  background: linear-gradient(180deg, #f7f1e6, #efe3ce);
+  border: 1px solid #e0d0b8;
+  border-radius: 16px;
+  padding: 14px;
+  margin: 12px 0;
+  box-shadow: var(--shadow-sm);
+}
+.cpl-pc-joint h2 { font-size: 1.2rem; margin-bottom: 6px; }
+.cpl-pc-joint p { margin: 0 0 8px; overflow-wrap: anywhere; }
+.cpl-pc-share-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px;
+}
+.cpl-pc-share-list li {
+  background: #fff;
+  border: 1px solid #e0d0b8;
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin: 0 0 6px;
+  overflow-wrap: anywhere;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .orb { transition: none !important; }
   .tile, .btn, .progress > span { transition: none !important; }
