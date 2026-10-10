@@ -331,7 +331,7 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
   "summaryOnly": "רק התמונה המשותפת. מה שנכתב בפרטי לא מועתק לכאן.",
   "startWeek": "התחלה של תוכנית שבעה ימים לזוג",
   "planTitle": "שבעה ימים",
-  "planIntro": "שלושת הימים הראשונים הם אישיים. המדריך מחליף למי השיחה: צד א, אחר כך צד ב, אחר כך צד א. בימים האלה כל צד ממלא בפרטי תוכנית הפסקה ותיקון. מיום 4 השיחות משותפות, ושניכם צריכים להיות בחדר. במפגש משותף יש תרגול מדבר ומקשיב עם שעון של שלוש דקות, וכפתור הפסקה של עשרים דקות אם השיחה מתחממת. שם אפשר גם לבחור טקס חיבור אחד לשבוע, ולסמן במסך הזה אם עשיתם אותו. יום מאוחר יותר נשאר נעול עד התאריך שלו.",
+  "planIntro": "שלושת הימים הראשונים הם אישיים. המדריך מחליף למי השיחה: צד א, אחר כך צד ב, אחר כך צד א. בימים האלה כל צד ממלא בפרטי תוכנית הפסקה ותיקון. מיום 4 השיחות משותפות, ושניכם צריכים להיות בחדר. במפגש משותף יש תרגול מדבר ומקשיב עם שעון של שלוש דקות, וכפתור הפסקה של עשרים דקות אם השיחה מתחממת. שם אפשר גם לבחור טקס חיבור אחד לשבוע, ולסמן במסך הזה אם עשיתם אותו. יום מאוחר יותר נשאר נעול עד התאריך שלו. ביום האחרון, או מכפתור במסך הזה, כל צד ממלא בפרטי סיכום: מה זז, מה עזר, והתחייבות אחת לחודש. רק מה שמסמנים לשיתוף מגיע למפגש, ושם אפשר לסכם תוכנית המשך.",
   "slTitle": "תור של דיבור והקשבה",
   "slBody": "מי שמדבר מקבל שלוש דקות. מי שמקשיב לא מתווכח בתוך התור, ורק אחריו אומר במשפט אחד מה ששמע, לפני כל תשובה.",
   "slSpeaker": "עכשיו מדבר/ת: {name}",
@@ -583,6 +583,71 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
   "ritWeekOf": "השבוע של {date}",
   "ritPastDid": "עשינו",
   "ritTherapist": "אם יש פחד, איום, או אלימות, לא ממשיכים לטקס משותף. כדאי לדבר עם מטפל או מטפלת עם רישיון. המדריך הזה הוא עזרה עצמית, לא מטפל.",
+  "wrTitle": "סיכום סוף השבוע",
+  "wrKicker": "פרטי ל{name}",
+  "wrIntro": "זה סיכום פרטי של שבוע תרגול, לא פגישה עם מטפל ולא אבחנה. מסמנים איך הנושאים מרגישים עכשיו, בוחרים מה עזר, וכותבים התחייבות אחת לחודש הקרוב. בלי סימון לשיתוף, כל חלק נשאר רק בצד שלך.",
+  "wrFromCheck": "המספרים מתחילים מהבדיקה האחרונה שלך. אפשר להזיז. למטה רואים את השינוי מול ההתחלה.",
+  "wrFromBase": "עדיין אין בדיקה באמצע השבוע. המספרים מתחילים מאיך שזה הרגיש בהתחלה, ומזיזים לפי היום.",
+  "wrNoBase": "אין כאן נקודת התחלה להשוואה. המספרים נשארים רק אצלך.",
+  "wrSkillsTitle": "מה עזר השבוע",
+  "wrSkillsHint": "בוחרים כלי אחד עד שלושה. רק אם מסמנים לשתף, הם יופיעו במפגש.",
+  "wrSkillNeed": "בוחרים בין כלי אחד לשלושה.",
+  "wrSkillMax": "עד שלושה כלים. אפשר להוריד אחד ואז להוסיף.",
+  "wrCommitTitle": "התחייבות אחת לחודש הקרוב",
+  "wrCommitLabel": "מה אני לוקח או לוקחת איתי",
+  "wrCommitNeed": "כותבים התחייבות אחת קצרה, במילים שלך.",
+  "wrShareRatings": "לשתף במפגש איך הנושאים זזו, בלי מספרים",
+  "wrShareSkills": "לשתף אילו כלים עזרו לי",
+  "wrShareCommitment": "לשתף את ההתחייבות שלי",
+  "wrSave": "שמירת הסיכום הפרטי",
+  "wrUpdate": "עדכון הסיכום הפרטי",
+  "wrOpen": "פתיחת הסיכום הפרטי",
+  "wrOpenHint": "אפשר למלא סיכום פרטי גם לפני היום האחרון. הוא נשאר אצלך, אלא אם מסמנים לשתף.",
+  "wrOpenLast": "התוכנית הגיעה ליום האחרון. כאן כל צד מסכם בפרטי מה זז, מה עזר, ומה ממשיכים איתו בחודש הקרוב.",
+  "wrSavedPrivate": "הסיכום נשמר רק אצלך.",
+  "wrSavedShared": "מה שסימנת יחכה למפגש המשותף. השאר נשאר אצלך.",
+  "wrJointTitle": "סיכום שבחרו לשתף",
+  "wrJointHow": "רק מה שכל צד סימן. מספרים, כלים והתחייבות שלא סומנו לא מופיעים כאן.",
+  "wrJointEmpty": "אף צד לא סימן עדיין חלק מהסיכום לשיתוף.",
+  "wrSkillsBy": "כלים שעזרו ל{name}: {list}",
+  "wrCommitBy": "{name} מתחייב או מתחייבת: {text}",
+  "wrHelpTitle": "מתי לפנות למטפל או מטפלת זוגית עם רישיון",
+  "wrHelpAlways": "אם יש פחד מבן או בת הזוג, איום, אלימות או שליטה, לא ממשיכים לתרגיל זוגי. פונים למטפל או מטפלת עם רישיון. המדריך הזה הוא עזרה עצמית, לא מטפל, ואין כאן אבחנה או תרופה.",
+  "wrHelpBody": "הציונים לא זזו לכיוון יותר קל, או שחלק נהיה יותר קשה. זו לא אבחנה. אם זה נשאר כבד, כדאי לדבר עם מטפל או מטפלת זוגית עם רישיון.",
+  "wrHelpJoint": "במה ששיתפתם, יש נושא שלא נהיה יותר קל, או נהיה יותר קשה. זו לא אבחנה. שווה לפנות למטפל או מטפלת זוגית עם רישיון.",
+  "wrTherapist": "מה שנכתב מתאר פחד, איום, אלימות או שליטה. כדאי לדבר עם מטפל או מטפלת זוגית עם רישיון. המדריך הזה הוא עזרה עצמית, לא מטפל, ואין כאן אבחנה או תרופה.",
+  "wrSkills": [
+    {"id": "timer", "t": "שעון מדבר ומקשיב"},
+    {"id": "nice", "t": "יומן הדברים הנחמדים"},
+    {"id": "soft", "t": "פתיחה רכה"},
+    {"id": "timeout", "t": "הפסקה ותיקון"},
+    {"id": "rituals", "t": "טקסים של חיבור"}
+  ],
+  "wrOften": [
+    {"id": "daily", "t": "כל יום, דבר קטן"},
+    {"id": "twice", "t": "פעמיים בשבוע"},
+    {"id": "weekly", "t": "פעם בשבוע"},
+    {"id": "biweekly", "t": "פעם בשבועיים"}
+  ],
+  "keepTitle": "תוכנית המשך",
+  "keepHow": "כששניכם כאן, מסכמים מה שומרים מהשבוע, כל כמה זמן, ומתי בודקים שוב. בערך בעוד ארבעה שבועות.",
+  "keepSkills": "מה ממשיכים",
+  "keepOften": "כל כמה זמן",
+  "keepDate": "תאריך לבדיקה",
+  "keepSave": "סיכמנו על תוכנית ההמשך",
+  "keepUpdate": "עדכון תוכנית ההמשך",
+  "keepNeed": "בוחרים כלי אחד עד שלושה, כל כמה זמן, ותאריך בערך בעוד ארבעה שבועות.",
+  "keepDateNeed": "תאריך הבדיקה בין שבועיים לחודשיים מהיום, בערך ארבעה שבועות.",
+  "keepPlanTitle": "תוכנית ההמשך שלנו",
+  "keepPlanEmpty": "עדיין אין תוכנית המשך. במפגש משותף, כששניכם כאן, אפשר לסכם מה שומרים.",
+  "keepLine": "שומרים על {skills}. כל כמה זמן: {often}. הבדיקה הבאה: {date}.",
+  "keepCopy": "העתקת הסיכום",
+  "keepCopied": "הסיכום הועתק. רק מה שסומן לשיתוף, ותוכנית ההמשך.",
+  "keepPrint": "הדפסת הסיכום",
+  "keepSummaryTitle": "תוכנית המשך · נפש",
+  "keepOnlyShared": "בסיכום הזה רק מה שסומן לשיתוף, ומה שסיכמתם יחד. מה שנשאר פרטי לא נכנס.",
+  "keepNothing": "עדיין אין מה לשתף בסיכום. מה שלא סומן נשאר אצל מי שכתב אותו.",
+  "keepClosed": "את תוכנית ההמשך מסכמים במפגש משותף, כששניכם מסומנים ככאן.",
   "hitSample": "הוא מכה אותי כשהוא כועס",
   "safeSample": "אנחנו רבים על כלים וחשבונות",
   "questions": [
@@ -710,7 +775,7 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
   function loadProgram() { return loadJSON(K_PROGRAM, null); }
   function saveProgram(p) { saveJSON(K_PROGRAM, p); }
 
-  var state = { view: "home", dayId: null, crisis: null, hold: false, guideText: "", guide: null, pad: "", pst: {}, check: null, result: null, formError: "", confirmClear: false, cplErr: "", cplNiceErr: "", cplSoftErr: "", cplToErr: "", cplPauseErr: "", cplPcErr: "", cplRitErr: "", cplReset: false };
+  var state = { view: "home", dayId: null, crisis: null, hold: false, guideText: "", guide: null, pad: "", pst: {}, check: null, result: null, formError: "", confirmClear: false, cplErr: "", cplNiceErr: "", cplSoftErr: "", cplToErr: "", cplPauseErr: "", cplPcErr: "", cplRitErr: "", cplWrErr: "", cplKeepErr: "", cplKeepCopied: false, cplReset: false };
   var breath = { running: false, timer: null, mode: "468", phaseIdx: 0, left: 4, cycle: 0, totalCycles: 5, dayId: null, finishedMsg: "" };
   var cplSlTimer = null;
   var cplSl = { running: false, left: 180, done: false };
@@ -1300,7 +1365,7 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
   }
 
   function cplBlank() {
-    return { answers: ["", "", "", "", "", "", "", ""], done: false, doneAt: null, qi: 0, notes: {}, nice: [], soft: [], timeout: cplTimeoutBlank(), progress: cplProgressBlank(), rituals: [] };
+    return { answers: ["", "", "", "", "", "", "", ""], done: false, doneAt: null, qi: 0, notes: {}, nice: [], soft: [], timeout: cplTimeoutBlank(), progress: cplProgressBlank(), rituals: [], review: cplReviewBlank() };
   }
   function loadCplMeta() {
     var m = loadJSON(K_CPL_META, null) || {};
@@ -1323,6 +1388,7 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     rec.timeout = cplNormalizeTimeout(rec.timeout);
     rec.progress = cplNormalizeProgress(rec.progress);
     rec.rituals = cplNormalizeRituals(rec.rituals);
+    rec.review = cplNormalizeReview(rec.review);
     return rec;
   }
   function cplNormalizeNice(list) {
@@ -1499,9 +1565,14 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     state.cplPauseErr = "";
     state.cplPcErr = "";
     state.cplRitErr = "";
+    state.cplWrErr = "";
+    state.cplKeepErr = "";
+    state.cplKeepCopied = false;
     state.cplSoftForms = { a: cplSoftBlankForm(), b: cplSoftBlankForm() };
     state.cplPcDraft = { a: cplPcBlankDraft(), b: cplPcBlankDraft() };
     state.cplRitDraft = { a: cplRitBlankDraft(), b: cplRitBlankDraft() };
+    state.cplWrDraft = { a: cplWrBlankDraft(), b: cplWrBlankDraft() };
+    state.cplKeepDraft = cplKeepBlankDraft();
     state.cplReset = false;
     cplSl.running = false;
     cplSl.done = false;
@@ -1627,6 +1698,10 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
       }
       rec.rituals = keptRit;
     }
+    if (rec.review && rec.review.commitment) {
+      if (isCrisisText(rec.review.commitment)) { rec.review.commitment = ""; rec.review.saved = false; hitC = true; }
+      else if (cplViolent(rec.review.commitment)) { rec.review.commitment = ""; rec.review.saved = false; hitV = true; }
+    }
     saveCplSide(which, rec);
     return { hitV: hitV, hitC: hitC };
   }
@@ -1635,6 +1710,7 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     meta.screen = "safety";
     meta.safetyCheckin = fromCheckin === true;
     meta.safetyRitual = fromCheckin === "ritual";
+    meta.safetyWeek = fromCheckin === "week";
     saveCplMeta(meta);
     try { localStorage.removeItem(K_CPL_PLAN); localStorage.removeItem(K_CPL_SUM); } catch (e) {}
     state.cplErr = "";
@@ -1643,6 +1719,11 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     state.cplPauseErr = "";
     state.cplPcErr = "";
     state.cplRitErr = "";
+    state.cplWrErr = "";
+    state.cplKeepErr = "";
+    state.cplKeepCopied = false;
+    state.cplWrDraft = { a: cplWrBlankDraft(), b: cplWrBlankDraft() };
+    state.cplKeepDraft = cplKeepBlankDraft();
     state.cplRitDraft = { a: cplRitBlankDraft(), b: cplRitBlankDraft() };
     cplSl.running = false;
     clearCplSlTimer();
@@ -3176,6 +3257,588 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
       (agreed.when ? '<p class="muted">' + esc(agreed.when) + "</p>" : "") +
       '<div class="cpl-rit-weeks">' + rows + "</div></div>";
   }
+  function cplReviewBlank() {
+    return { saved: false, at: "", date: "", ratings: {}, skills: [], commitment: "", shareRatings: false, shareSkills: false, shareCommitment: false };
+  }
+  function cplWrBlankDraft() {
+    return { ratings: {}, skills: [], commitment: "", shareRatings: false, shareSkills: false, shareCommitment: false };
+  }
+  function cplWrDraft(side) {
+    var which = side === "b" ? "b" : "a";
+    if (!state.cplWrDraft) state.cplWrDraft = { a: cplWrBlankDraft(), b: cplWrBlankDraft() };
+    if (!state.cplWrDraft[which]) state.cplWrDraft[which] = cplWrBlankDraft();
+    return state.cplWrDraft[which];
+  }
+  function cplKeepBlankDraft() {
+    return { skills: [], often: "weekly", checkIn: "", seeded: false };
+  }
+  function cplKeepDraft() {
+    if (!state.cplKeepDraft) state.cplKeepDraft = cplKeepBlankDraft();
+    return state.cplKeepDraft;
+  }
+  function cplReviewSkillLabel(id) {
+    var list = CPL.wrSkills || [];
+    for (var i = 0; i < list.length; i++) if (list[i].id === id) return list[i].t;
+    return "";
+  }
+  function cplReviewOftenLabel(id) {
+    var list = CPL.wrOften || [];
+    for (var i = 0; i < list.length; i++) if (list[i].id === id) return list[i].t;
+    return "";
+  }
+  function cplReviewSortSkills(ids) {
+    var order = (CPL.wrSkills || []).map(function (s) { return s.id; });
+    return (ids || []).slice().sort(function (a, b) { return order.indexOf(a) - order.indexOf(b); });
+  }
+  function cplReviewSkillList(ids) {
+    var labels = [];
+    cplReviewSortSkills(ids).forEach(function (id) {
+      var label = cplReviewSkillLabel(id);
+      if (label) labels.push(label);
+    });
+    return labels.join(" · ");
+  }
+  function cplReviewDateLabel(iso) {
+    var p = String(iso || "").split("-");
+    if (p.length !== 3) return String(iso || "");
+    return String(Number(p[2])) + "." + String(Number(p[1])) + "." + p[0];
+  }
+  function cplNormalizeReview(raw) {
+    var review = cplReviewBlank();
+    if (!raw || typeof raw !== "object") return review;
+    var ratings = raw.ratings && typeof raw.ratings === "object" ? raw.ratings : {};
+    Object.keys(ratings).forEach(function (k) {
+      var id = String(k || "").slice(0, 24);
+      if (!id || ratings[k] == null || ratings[k] === "") return;
+      review.ratings[id] = cplPcNum(ratings[k]);
+    });
+    var skills = [];
+    var src = Array.isArray(raw.skills) ? raw.skills : [];
+    for (var i = 0; i < src.length && skills.length < 3; i++) {
+      var sid = String(src[i] || "");
+      if (!cplReviewSkillLabel(sid) || skills.indexOf(sid) !== -1) continue;
+      skills.push(sid);
+    }
+    review.skills = cplReviewSortSkills(skills);
+    review.commitment = cplPcClip(raw.commitment, 240);
+    review.shareRatings = raw.shareRatings === true;
+    review.shareSkills = raw.shareSkills === true;
+    review.shareCommitment = raw.shareCommitment === true;
+    var date = String(raw.date || "");
+    if (/^\d{4}-\d{2}-\d{2}$/.test(date)) review.date = date;
+    var at = String(raw.at || "");
+    if (at) review.at = at.slice(0, 40);
+    review.saved = raw.saved === true && review.commitment.length >= 2 && review.skills.length >= 1 && Object.keys(review.ratings).length >= 1;
+    return review;
+  }
+  function cplReviewSeedInfo(rec, areas) {
+    var latest = rec && rec.progress && rec.progress.checks && rec.progress.checks[0];
+    var base = rec && rec.progress && rec.progress.baseline ? rec.progress.baseline : {};
+    var ratings = {};
+    var fromCheck = false;
+    var hasBase = false;
+    for (var i = 0; i < areas.length; i++) {
+      var id = areas[i].id;
+      if (latest && typeof latest.ratings[id] === "number") {
+        ratings[id] = cplPcNum(latest.ratings[id]);
+        fromCheck = true;
+      } else if (typeof base[id] === "number") ratings[id] = cplPcNum(base[id]);
+      else ratings[id] = 5;
+      if (typeof base[id] === "number") hasBase = true;
+    }
+    return { ratings: ratings, fromCheck: fromCheck, hasBase: hasBase };
+  }
+  function cplReviewShownRatings(draft, seed, areas) {
+    var ratings = {};
+    for (var i = 0; i < areas.length; i++) {
+      var id = areas[i].id;
+      ratings[id] = draft && typeof draft.ratings[id] === "number" ? cplPcNum(draft.ratings[id]) : seed.ratings[id];
+    }
+    return ratings;
+  }
+  function cplReviewNeedsHelp(areas, base, ratings) {
+    var up = 0;
+    var known = 0;
+    var worse = false;
+    for (var i = 0; i < areas.length; i++) {
+      var id = areas[i].id;
+      var now = ratings[id];
+      var b = base[id];
+      if (typeof now !== "number" || typeof b !== "number") continue;
+      known++;
+      if (now > b) up++;
+      else if (now < b) worse = true;
+    }
+    if (!known) return false;
+    if (worse) return true;
+    return up === 0;
+  }
+  function cplReviewSavedNeedsHelp(rec) {
+    if (!rec || !rec.review || !rec.review.saved) return false;
+    var areas = cplProgressAreas(rec);
+    var base = rec.progress && rec.progress.baseline ? rec.progress.baseline : {};
+    return cplReviewNeedsHelp(areas, base, rec.review.ratings);
+  }
+  function cplSharedNeedsHelp() {
+    var sides = ["a", "b"];
+    for (var i = 0; i < sides.length; i++) {
+      var rec = loadCplSide(sides[i]);
+      if (rec.review && rec.review.shareRatings && cplReviewSavedNeedsHelp(rec)) return true;
+    }
+    return false;
+  }
+  function cplReviewRead(meta) {
+    var side = meta && meta.active === "b" ? "b" : "a";
+    var draft = cplWrDraft(side);
+    if (typeof document === "undefined") return draft;
+    var areas = cplProgressAreas(loadCplSide(side));
+    for (var i = 0; i < areas.length; i++) {
+      var el = document.getElementById("cpl-wr-range-" + areas[i].id);
+      if (el) draft.ratings[areas[i].id] = cplPcNum(el.value);
+    }
+    var commit = document.getElementById("cpl-wr-commit");
+    if (commit) draft.commitment = String(commit.value || "").slice(0, 240);
+    var sr = document.getElementById("cpl-wr-share-ratings");
+    var ss = document.getElementById("cpl-wr-share-skills");
+    var sc = document.getElementById("cpl-wr-share-commitment");
+    if (sr) draft.shareRatings = !!sr.checked;
+    if (ss) draft.shareSkills = !!ss.checked;
+    if (sc) draft.shareCommitment = !!sc.checked;
+    return draft;
+  }
+  function cplReviewKnownSkills(list) {
+    var skills = [];
+    var src = Array.isArray(list) ? list : [];
+    for (var i = 0; i < src.length; i++) {
+      var id = String(src[i] || "");
+      if (!cplReviewSkillLabel(id) || skills.indexOf(id) !== -1) continue;
+      skills.push(id);
+    }
+    return cplReviewSortSkills(skills).slice(0, 3);
+  }
+  function cplReviewCommit(meta) {
+    var side = meta.active === "b" ? "b" : "a";
+    var draft = cplReviewRead(meta);
+    var raw = String(draft.commitment || "");
+    if (isCrisisText(raw)) return "crisis";
+    if (cplViolent(raw)) return "violent";
+    var commitment = cplPcClip(raw, 240);
+    var skills = cplReviewKnownSkills(draft.skills);
+    if (commitment.length < 2) return "commit";
+    if (!skills.length) return "skills";
+    var rec = loadCplSide(side);
+    var areas = cplProgressAreas(rec);
+    var seed = cplReviewSeedInfo(rec, areas);
+    var ratings = cplReviewShownRatings(draft, seed, areas);
+    rec.review = {
+      saved: true,
+      at: new Date().toISOString(),
+      date: jerusalemToday(),
+      ratings: ratings,
+      skills: skills,
+      commitment: commitment,
+      shareRatings: draft.shareRatings === true,
+      shareSkills: draft.shareSkills === true,
+      shareCommitment: draft.shareCommitment === true
+    };
+    saveCplSide(side, rec);
+    draft.commitment = commitment;
+    draft.skills = skills.slice();
+    draft.ratings = ratings;
+    draft.shareRatings = rec.review.shareRatings;
+    draft.shareSkills = rec.review.shareSkills;
+    draft.shareCommitment = rec.review.shareCommitment;
+    return "ok";
+  }
+  function cplReviewApply(meta) {
+    var status = cplReviewCommit(meta);
+    if (status === "crisis" || status === "violent") {
+      var side = meta.active === "b" ? "b" : "a";
+      var draft = cplWrDraft(side);
+      draft.commitment = "";
+      draft.shareCommitment = false;
+      if (status === "crisis") { triggerCrisis("text"); return "crisis"; }
+      enterSafety(meta, "week");
+      return "safety";
+    }
+    if (status === "commit") { state.cplWrErr = CPL.wrCommitNeed; return "commit"; }
+    if (status === "skills") { state.cplWrErr = CPL.wrSkillNeed; return "skills"; }
+    return "ok";
+  }
+  function cplReviewToggleSkill(meta, id) {
+    if (!cplReviewSkillLabel(id)) return "short";
+    var side = meta.active === "b" ? "b" : "a";
+    var draft = cplWrDraft(side);
+    var at = draft.skills.indexOf(id);
+    if (at !== -1) { draft.skills.splice(at, 1); return "ok"; }
+    if (draft.skills.length >= 3) return "max";
+    draft.skills.push(id);
+    draft.skills = cplReviewSortSkills(draft.skills);
+    return "ok";
+  }
+  function cplWeekLastOpen(plan, today) {
+    if (!plan || !plan.days || !plan.days.length || !plan.startDate) return false;
+    return daysBetween(plan.startDate, today || jerusalemToday()) >= plan.days.length - 1;
+  }
+  function syncCplWrArea(id, now, base) {
+    if (typeof document === "undefined") return;
+    var n = cplPcNum(now);
+    var lab = document.getElementById("cpl-wr-val-" + id);
+    if (lab) lab.textContent = String(n);
+    var nowBar = document.getElementById("cpl-wr-now-" + id);
+    if (nowBar) nowBar.style.width = Math.round(n * 10) + "%";
+    var change = document.getElementById("cpl-wr-change-" + id);
+    if (!change || typeof base !== "number") return;
+    var word = cplProgressWord(base, n);
+    var cls = word === CPL.pcUp ? "up" : (word === CPL.pcDown ? "down" : "same");
+    var arrow = word === CPL.pcUp ? "↑" : (word === CPL.pcDown ? "↓" : "→");
+    change.textContent = arrow + " " + word;
+    change.className = "cpl-pc-change " + cls;
+  }
+  function cplWrSlider(area, value) {
+    var n = cplPcNum(value);
+    return '<div class="cpl-pc-area"><p class="cpl-pc-label">' + esc(area.label) + "</p>" +
+      '<div class="cpl-pc-scale"><span>' + esc(CPL.pcHardEnd) + "</span>" +
+      '<input type="range" min="0" max="10" step="1" dir="rtl" id="cpl-wr-range-' + esc(area.id) + '" data-cpl="wr-rate" data-area="' + esc(area.id) + '" value="' + n + '" aria-label="' + esc(area.label) + '">' +
+      '<b id="cpl-wr-val-' + esc(area.id) + '" class="cpl-pc-val">' + n + "</b>" +
+      "<span>" + esc(CPL.pcEaseEnd) + "</span></div></div>";
+  }
+  function cplReviewChangeHTML(area, base, now) {
+    if (typeof base !== "number") return "";
+    var word = cplProgressWord(base, now);
+    var cls = word === CPL.pcUp ? "up" : (word === CPL.pcDown ? "down" : "same");
+    var arrow = word === CPL.pcUp ? "↑" : (word === CPL.pcDown ? "↓" : "→");
+    var baseW = Math.round(base * 10);
+    var nowW = Math.round(cplPcNum(now) * 10);
+    return '<div class="cpl-pc-bars"><div class="cpl-pc-bar"><span class="cpl-pc-bar-label">' + esc(CPL.pcBaseBar) + '</span><span class="cpl-pc-track"><span style="width:' + baseW + '%"></span></span></div>' +
+      '<div class="cpl-pc-bar"><span class="cpl-pc-bar-label">' + esc(CPL.pcNowBar) + '</span><span class="cpl-pc-track is-now"><span id="cpl-wr-now-' + esc(area.id) + '" style="width:' + nowW + '%"></span></span></div></div>' +
+      '<p id="cpl-wr-change-' + esc(area.id) + '" class="cpl-pc-change ' + cls + '">' + arrow + " " + esc(word) + "</p>";
+  }
+  function cplWrSkillChips(selected, action) {
+    return (CPL.wrSkills || []).map(function (skill) {
+      var on = selected.indexOf(skill.id) !== -1;
+      return '<button type="button" class="chip' + (on ? " on" : "") + '" data-action="' + action + '" data-skill="' + esc(skill.id) + '" aria-pressed="' + (on ? "true" : "false") + '">' + esc(skill.t) + "</button>";
+    }).join("");
+  }
+  function cplSafetyCallsHTML() {
+    return '<div class="cpl-safety cpl-safety-embed">' +
+      '<a class="call" href="tel:100"><span>' + esc(CPL.policeLabel) + "</span><b>100</b></a>" +
+      '<a class="call" href="tel:1201"><span>' + esc(CPL.eranShort) + "</span><b>1201</b></a>" +
+      "<p>" + esc(CPL.safetyCall) + "</p></div>";
+  }
+  function cplReviewHelpHTML(needsCard, joint) {
+    return '<section class="cpl-wr-help"><h2>' + esc(CPL.wrHelpTitle) + "</h2>" +
+      "<p>" + esc(CPL.wrHelpAlways) + "</p>" +
+      (needsCard ? "<p>" + esc(joint ? CPL.wrHelpJoint : CPL.wrHelpBody) + "</p>" + cplSafetyCallsHTML() : "") +
+      "</section>";
+  }
+  function cplWeekReviewEntry(meta) {
+    if (state.hold || !meta || meta.safety) return "";
+    var plan = loadCplPlan();
+    if (!plan) return "";
+    var side = meta.active === "b" ? "b" : "a";
+    var rec = loadCplSide(side);
+    var last = cplWeekLastOpen(plan);
+    var saved = !!(rec.review && rec.review.saved);
+    var savedNote = "";
+    if (saved) {
+      var shared = rec.review.shareRatings || rec.review.shareSkills || rec.review.shareCommitment;
+      savedNote = '<p class="muted">' + esc(shared ? CPL.wrSavedShared : CPL.wrSavedPrivate) + "</p>";
+    }
+    var btn = last && !saved ? "btn block" : "btn secondary block";
+    return '<div class="cpl-wr-entry' + (last ? " is-due" : "") + '"><h2>' + esc(CPL.wrTitle) + "</h2><p>" + esc(last ? CPL.wrOpenLast : CPL.wrOpenHint) + "</p>" +
+      savedNote +
+      '<button type="button" class="' + btn + '" data-action="cpl-wr-open">' + esc(CPL.wrOpen) + "</button></div>";
+  }
+  function viewCplWeekReview(meta) {
+    if (!loadCplPlan()) return viewCplPlan(meta);
+    var side = meta.active === "b" ? "b" : "a";
+    var name = nameOf(meta, side) || CPL.noname;
+    var rec = loadCplSide(side);
+    var draft = cplWrDraft(side);
+    var areas = cplProgressAreas(rec);
+    var seed = cplReviewSeedInfo(rec, areas);
+    var ratings = cplReviewShownRatings(draft, seed, areas);
+    var base = rec.progress && rec.progress.baseline ? rec.progress.baseline : {};
+    var sliders = areas.map(function (area) {
+      return cplWrSlider(area, ratings[area.id]) + cplReviewChangeHTML(area, base[area.id], ratings[area.id]);
+    }).join("");
+    var seedNote = !seed.hasBase ? CPL.wrNoBase : (seed.fromCheck ? CPL.wrFromCheck : CPL.wrFromBase);
+    var saved = !!(rec.review && rec.review.saved);
+    var help = cplReviewHelpHTML(saved && cplReviewSavedNeedsHelp(rec), false);
+    return whoBanner(meta) + '<section class="card cpl-wr"><p class="kicker">' + esc(fill(CPL.wrKicker, { name: name })) + "</p><h1>" + esc(CPL.wrTitle) + "</h1>" +
+      "<p>" + esc(CPL.wrIntro) + "</p>" +
+      "<p>" + esc(CPL.pcScale) + "</p>" +
+      '<p class="muted">' + esc(seedNote) + "</p>" +
+      '<p class="muted">' + esc(CPL.pcCompare) + "</p>" +
+      sliders +
+      "<h2>" + esc(CPL.wrSkillsTitle) + "</h2>" +
+      '<p class="muted">' + esc(CPL.wrSkillsHint) + "</p>" +
+      '<div class="cpl-wr-picks">' + cplWrSkillChips(draft.skills, "cpl-wr-skill") + "</div>" +
+      "<h2>" + esc(CPL.wrCommitTitle) + "</h2>" +
+      '<label class="field">' + esc(CPL.wrCommitLabel) + '<textarea id="cpl-wr-commit" data-cpl="wr-commit" maxlength="240">' + esc(draft.commitment || "") + "</textarea></label>" +
+      '<label class="check"><input type="checkbox" id="cpl-wr-share-ratings" data-cpl="wr-share-ratings"' + (draft.shareRatings ? " checked" : "") + ">" + esc(CPL.wrShareRatings) + "</label>" +
+      '<label class="check"><input type="checkbox" id="cpl-wr-share-skills" data-cpl="wr-share-skills"' + (draft.shareSkills ? " checked" : "") + ">" + esc(CPL.wrShareSkills) + "</label>" +
+      '<label class="check"><input type="checkbox" id="cpl-wr-share-commitment" data-cpl="wr-share-commitment"' + (draft.shareCommitment ? " checked" : "") + ">" + esc(CPL.wrShareCommitment) + "</label>" +
+      (state.cplWrErr ? '<p class="err">' + esc(state.cplWrErr) + "</p>" : "") +
+      '<button type="button" class="btn block" data-action="cpl-wr-save">' + esc(saved ? CPL.wrUpdate : CPL.wrSave) + "</button>" +
+      (saved ? '<p class="muted">' + esc((rec.review.shareRatings || rec.review.shareSkills || rec.review.shareCommitment) ? CPL.wrSavedShared : CPL.wrSavedPrivate) + "</p>" : "") +
+      help +
+      '<p class="disclaimer">' + esc(CPL.disc) + "</p>" +
+      '<button type="button" class="btn secondary block" data-action="cpl-back-plan">' + esc(CPL.backPlan) + "</button></section>";
+  }
+  function cplReviewSideSharedHTML(meta, side) {
+    var rec = loadCplSide(side);
+    var rev = rec.review;
+    if (!rev || !rev.saved) return "";
+    var name = nameOf(meta, side) || CPL.noname;
+    var parts = [];
+    if (rev.shareRatings) {
+      var areas = cplProgressAreas(rec);
+      var base = rec.progress && rec.progress.baseline ? rec.progress.baseline : {};
+      var items = [];
+      for (var i = 0; i < areas.length; i++) {
+        var now = rev.ratings[areas[i].id];
+        if (typeof now !== "number") continue;
+        items.push("<li>" + esc(areas[i].label) + ": " + esc(cplProgressWord(base[areas[i].id], now)) + "</li>");
+      }
+      if (items.length) parts.push('<ul class="cpl-wr-share-list">' + items.join("") + "</ul>");
+    }
+    if (rev.shareSkills && rev.skills.length) parts.push("<p>" + esc(fill(CPL.wrSkillsBy, { name: name, list: cplReviewSkillList(rev.skills) })) + "</p>");
+    if (rev.shareCommitment && rev.commitment) parts.push("<p>" + esc(fill(CPL.wrCommitBy, { name: name, text: rev.commitment })) + "</p>");
+    if (!parts.length) return "";
+    return '<div class="cpl-wr-share"><p class="kicker">' + esc(fill(CPL.niceBy, { name: name })) + "</p>" + parts.join("") + "</div>";
+  }
+  function cplKeepRead(plan) {
+    if (!plan || !plan.keep || typeof plan.keep !== "object") return null;
+    var skills = cplReviewKnownSkills(plan.keep.skills);
+    if (!skills.length) return null;
+    var often = String(plan.keep.often || "");
+    if (!cplReviewOftenLabel(often)) return null;
+    var checkIn = String(plan.keep.checkIn || "");
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(checkIn)) return null;
+    var agreedAt = String(plan.keep.agreedAt || "");
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(agreedAt)) agreedAt = jerusalemToday();
+    return { skills: skills, often: often, checkIn: checkIn, agreedAt: agreedAt };
+  }
+  function cplKeepDateOk(iso, today) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(String(iso || ""))) return false;
+    var diff = daysBetween(today || jerusalemToday(), iso);
+    return diff >= 14 && diff <= 60;
+  }
+  function cplSharedSkillIds() {
+    var seen = {};
+    var out = [];
+    ["a", "b"].forEach(function (side) {
+      var rev = loadCplSide(side).review;
+      if (!rev || !rev.saved || !rev.shareSkills) return;
+      rev.skills.forEach(function (id) {
+        if (seen[id] || !cplReviewSkillLabel(id)) return;
+        seen[id] = 1;
+        out.push(id);
+      });
+    });
+    return cplReviewSortSkills(out);
+  }
+  function cplKeepHasShared(meta) {
+    if (cplKeepRead(loadCplPlan())) return true;
+    var sides = ["a", "b"];
+    for (var i = 0; i < sides.length; i++) {
+      var rev = loadCplSide(sides[i]).review;
+      if (!rev || !rev.saved) continue;
+      if (rev.shareRatings || rev.shareSkills || rev.shareCommitment) return true;
+    }
+    return false;
+  }
+  function cplKeepCapture() {
+    var draft = cplKeepDraft();
+    if (typeof document === "undefined") return draft;
+    var el = document.getElementById("cpl-keep-date");
+    if (el) draft.checkIn = String(el.value || "").slice(0, 10);
+    return draft;
+  }
+  function cplKeepEnsureSeed() {
+    var draft = cplKeepDraft();
+    if (draft.seeded) return draft;
+    var existing = cplKeepRead(loadCplPlan());
+    if (existing) {
+      draft.skills = existing.skills.slice();
+      draft.often = existing.often;
+      draft.checkIn = existing.checkIn;
+    } else {
+      draft.skills = cplSharedSkillIds().slice(0, 3);
+      draft.often = draft.often && cplReviewOftenLabel(draft.often) ? draft.often : "weekly";
+      draft.checkIn = cplAddDays(jerusalemToday(), 28);
+    }
+    draft.seeded = true;
+    return draft;
+  }
+  function cplKeepToggleSkill(id) {
+    if (!cplReviewSkillLabel(id)) return "short";
+    var draft = cplKeepEnsureSeed();
+    var at = draft.skills.indexOf(id);
+    if (at !== -1) { draft.skills.splice(at, 1); return "ok"; }
+    if (draft.skills.length >= 3) return "max";
+    draft.skills.push(id);
+    draft.skills = cplReviewSortSkills(draft.skills);
+    return "ok";
+  }
+  function cplKeepAgree(meta) {
+    var open = cplJointOpen(meta);
+    if (!open) return "closed";
+    var plan = loadCplPlan();
+    if (!plan) return "closed";
+    var day = null;
+    for (var i = 0; i < plan.days.length; i++) if (plan.days[i].id === open.def.id) day = plan.days[i];
+    if (!day || !day.bothHere) return "closed";
+    var draft = cplKeepCapture();
+    var skills = cplReviewKnownSkills(draft.skills);
+    if (!skills.length || !cplReviewOftenLabel(draft.often)) return "short";
+    var today = jerusalemToday();
+    if (!cplKeepDateOk(draft.checkIn, today)) return "date";
+    plan.keep = { skills: skills, often: draft.often, checkIn: draft.checkIn, agreedAt: today };
+    saveJSON(K_CPL_PLAN, plan);
+    draft.skills = skills.slice();
+    draft.often = plan.keep.often;
+    draft.checkIn = plan.keep.checkIn;
+    draft.seeded = true;
+    return "ok";
+  }
+  function cplKeepSummaryText(meta) {
+    var lines = [CPL.keepSummaryTitle, CPL.disc, ""];
+    var any = false;
+    ["a", "b"].forEach(function (side) {
+      var rec = loadCplSide(side);
+      var rev = rec.review;
+      if (!rev || !rev.saved) return;
+      var name = nameOf(meta, side) || CPL.noname;
+      if (rev.shareSkills && rev.skills.length) {
+        lines.push(fill(CPL.wrSkillsBy, { name: name, list: cplReviewSkillList(rev.skills) }));
+        any = true;
+      }
+      if (rev.shareCommitment && rev.commitment) {
+        lines.push(fill(CPL.wrCommitBy, { name: name, text: rev.commitment }));
+        any = true;
+      }
+      if (rev.shareRatings) {
+        var areas = cplProgressAreas(rec);
+        var base = rec.progress && rec.progress.baseline ? rec.progress.baseline : {};
+        for (var i = 0; i < areas.length; i++) {
+          var now = rev.ratings[areas[i].id];
+          if (typeof now !== "number") continue;
+          lines.push(name + ": " + areas[i].label + " — " + cplProgressWord(base[areas[i].id], now));
+          any = true;
+        }
+      }
+    });
+    var keep = cplKeepRead(loadCplPlan());
+    if (keep) {
+      lines.push("");
+      lines.push(fill(CPL.keepLine, {
+        skills: cplReviewSkillList(keep.skills),
+        often: cplReviewOftenLabel(keep.often),
+        date: cplReviewDateLabel(keep.checkIn)
+      }));
+      any = true;
+    }
+    if (!any) lines.push(CPL.keepNothing);
+    if (cplSharedNeedsHelp()) {
+      lines.push("");
+      lines.push(CPL.wrHelpTitle);
+      lines.push(CPL.wrHelpJoint);
+      lines.push(CPL.policeLabel + " 100");
+      lines.push(CPL.eranShort + " 1201");
+    }
+    lines.push("");
+    lines.push(CPL.keepOnlyShared);
+    return lines.join("\n");
+  }
+  function cplKeepPrintHTML(meta) {
+    return '<div id="cpl-keep-print" class="cpl-keep-print">' + esc(cplKeepSummaryText(meta)).replace(/\n/g, "<br>") + "</div>";
+  }
+  function cplKeepToolsHTML(meta) {
+    if (!cplKeepHasShared(meta)) return "";
+    return '<div class="stack">' +
+      '<button type="button" class="btn secondary block" data-action="cpl-keep-copy">' + esc(CPL.keepCopy) + "</button>" +
+      '<button type="button" class="btn secondary block" data-action="cpl-keep-print">' + esc(CPL.keepPrint) + "</button>" +
+      (state.cplKeepCopied ? '<p class="muted">' + esc(CPL.keepCopied) + "</p>" : "") +
+      "</div>" + cplKeepPrintHTML(meta);
+  }
+  function cplKeepCopyFallback(text, mark) {
+    if (typeof document === "undefined") { if (mark) mark(); return; }
+    var area = document.createElement("textarea");
+    area.value = text;
+    document.body.appendChild(area);
+    area.select();
+    try { document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(area);
+    if (mark) mark();
+  }
+  function cplKeepCopy(meta) {
+    var text = cplKeepSummaryText(meta);
+    function mark() { state.cplKeepCopied = true; render(); }
+    if (typeof navigator !== "undefined" && navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(mark).catch(function () { cplKeepCopyFallback(text, mark); });
+      return;
+    }
+    cplKeepCopyFallback(text, mark);
+  }
+  function cplKeepPrint() {
+    if (typeof window === "undefined" || typeof document === "undefined" || !window.print) return;
+    document.body.classList.add("print-keep");
+    var cleanup = function () {
+      document.body.classList.remove("print-keep");
+      window.removeEventListener("afterprint", cleanup);
+    };
+    window.addEventListener("afterprint", cleanup);
+    window.print();
+  }
+  function cplKeepLineHTML(keep) {
+    return "<p>" + esc(fill(CPL.keepLine, {
+      skills: cplReviewSkillList(keep.skills),
+      often: cplReviewOftenLabel(keep.often),
+      date: cplReviewDateLabel(keep.checkIn)
+    })) + "</p>";
+  }
+  function cplKeepAgreeHTML(meta) {
+    var draft = cplKeepEnsureSeed();
+    var keep = cplKeepRead(loadCplPlan());
+    var often = (CPL.wrOften || []).map(function (item) {
+      var on = draft.often === item.id;
+      return '<button type="button" class="chip' + (on ? " on" : "") + '" data-action="cpl-keep-often" data-often="' + esc(item.id) + '" aria-pressed="' + (on ? "true" : "false") + '">' + esc(item.t) + "</button>";
+    }).join("");
+    var agreed = keep ? '<div class="cpl-keep-agreed"><p class="kicker">' + esc(CPL.keepPlanTitle) + "</p>" + cplKeepLineHTML(keep) + "</div>" : "";
+    return '<div class="cpl-keep-form"><h2>' + esc(CPL.keepTitle) + "</h2><p>" + esc(CPL.keepHow) + "</p>" +
+      agreed +
+      "<p class=\"cpl-wr-label\">" + esc(CPL.keepSkills) + "</p>" +
+      '<div class="cpl-wr-picks">' + cplWrSkillChips(draft.skills, "cpl-keep-skill") + "</div>" +
+      "<p class=\"cpl-wr-label\">" + esc(CPL.keepOften) + "</p>" +
+      '<div class="cpl-wr-picks">' + often + "</div>" +
+      '<label class="field">' + esc(CPL.keepDate) + '<input type="date" id="cpl-keep-date" data-cpl="keep-date" dir="ltr" value="' + esc(draft.checkIn || "") + '"></label>' +
+      (state.cplKeepErr ? '<p class="err">' + esc(state.cplKeepErr) + "</p>" : "") +
+      '<button type="button" class="btn block" data-action="cpl-keep-save">' + esc(keep ? CPL.keepUpdate : CPL.keepSave) + "</button></div>";
+  }
+  function cplKeepPlanCard(meta) {
+    if (state.hold || !meta || meta.safety) return "";
+    var keep = cplKeepRead(loadCplPlan());
+    var side = meta.active === "b" ? "b" : "a";
+    var help = cplReviewSavedNeedsHelp(loadCplSide(side)) ? cplReviewHelpHTML(true, false) : "";
+    if (!keep) {
+      return '<div class="cpl-keep-plan"><h2>' + esc(CPL.keepPlanTitle) + '</h2><p class="muted">' + esc(CPL.keepPlanEmpty) + "</p>" + help + "</div>";
+    }
+    return '<div class="cpl-keep-plan"><h2>' + esc(CPL.keepPlanTitle) + "</h2>" + cplKeepLineHTML(keep) +
+      '<p class="muted">' + esc(CPL.keepOnlyShared) + "</p>" +
+      cplKeepToolsHTML(meta) + help + "</div>";
+  }
+  function cplReviewJoint(meta) {
+    if (state.hold || !meta || meta.safety) return "";
+    var body = cplReviewSideSharedHTML(meta, "a") + cplReviewSideSharedHTML(meta, "b");
+    var inner = body || ("<p>" + esc(CPL.wrJointEmpty) + "</p>");
+    var help = cplSharedNeedsHelp() ? cplReviewHelpHTML(true, true) : "";
+    return '<div class="cpl-wr-joint"><h2>' + esc(CPL.wrJointTitle) + "</h2><p>" + esc(CPL.wrJointHow) + "</p>" +
+      inner + help + cplKeepAgreeHTML(meta) + cplKeepToolsHTML(meta) + "</div>";
+  }
+
   function viewCplBaseline(meta) {
     var side = meta.active === "b" ? "b" : "a";
     var name = nameOf(meta, side) || CPL.noname;
@@ -3306,6 +3969,7 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     if (!plan) return viewCplSummary(meta);
     var todayIx = todayIndex(plan, jerusalemToday());
     var done = plan.days.filter(function (d) { return d.completed; }).length;
+    var reviewLead = cplWeekLastOpen(plan) ? cplWeekReviewEntry(meta) : "";
     var list = plan.days.map(function (d, i) {
       var found = cplDayDef(d.id);
       var def = found.def;
@@ -3317,13 +3981,15 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
         '<div class="meta">' + esc(open ? (d.completed ? CPL.done : CPL.openDay) : CPL.locked) + "</div></button>";
     }).join("");
     var pct = Math.round((done / 7) * 100);
-    return whoBanner(meta) + cplProgressEntry(meta) + cplNicePrivate(meta) + cplSoftPrivate(meta) + cplTimeoutPrivate(meta) + cplRitualPrivate(meta) + '<section class="card"><p class="kicker">' + esc(CPL.kicker) + "</p><h1>" + esc(CPL.planTitle) + "</h1>" +
+    return whoBanner(meta) + reviewLead + cplProgressEntry(meta) + cplNicePrivate(meta) + cplSoftPrivate(meta) + cplTimeoutPrivate(meta) + cplRitualPrivate(meta) + '<section class="card"><p class="kicker">' + esc(CPL.kicker) + "</p><h1>" + esc(CPL.planTitle) + "</h1>" +
       "<p>" + esc(CPL.planIntro) + "</p>" +
       "<p>" + esc(fill(CPL.planProgress, { done: done, total: 7, start: plan.startDate })) + "</p>" +
       '<div class="progress" aria-hidden="true"><span style="width:' + pct + '%"></span></div>' +
       cplNiceWeekLine(meta) +
       cplTimeoutStatus(meta) +
       cplRitualTracker(meta) +
+      (reviewLead ? "" : cplWeekReviewEntry(meta)) +
+      cplKeepPlanCard(meta) +
       '<button type="button" class="btn secondary block" data-action="cpl-reopen-sum">' + esc(CPL.reopenSum) + "</button>" +
       list + cplResetBlock() + "</section>";
   }
@@ -3386,6 +4052,7 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     var softJoint = "";
     var pcJoint = "";
     var ritJoint = "";
+    var wrJoint = "";
     if (def.mode === "joint") {
       both = '<label class="check"><input type="checkbox" data-cpl="both" data-day="' + esc(def.id) + '"' + (day.bothHere ? " checked" : "") + ">" + esc(CPL.bothHere) + "</label>";
       pauseHTML = cplPauseCard(meta);
@@ -3395,6 +4062,7 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
         softJoint = cplSoftJoint(meta);
         pcJoint = cplProgressJoint(meta, def.id);
         ritJoint = cplRitualJoint(meta);
+        wrJoint = cplReviewJoint(meta);
       }
     }
     var ownNice = (def.mode === "individual" && meta.active === def.who) ? cplNicePrivate(meta) : "";
@@ -3409,6 +4077,7 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
       softJoint +
       pcJoint +
       ritJoint +
+      wrJoint +
       '<label class="field">' + esc(def.mode === "joint" ? CPL.jointNote : CPL.noteLabel) +
       '<textarea id="cpl-note" data-cpl="note" data-day="' + esc(def.id) + '">' + esc(note) + "</textarea></label>" +
       (state.cplErr ? '<p class="err">' + esc(state.cplErr) + "</p>" : "") +
@@ -3424,6 +4093,9 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     }
     if (meta && meta.safetyRitual) {
       therapist = "<p>" + esc(CPL.ritTherapist) + "</p>";
+    }
+    if (meta && meta.safetyWeek) {
+      therapist = "<p>" + esc(CPL.wrTherapist) + "</p>";
     }
     return '<section class="card cpl-safety"><h1>' + esc(CPL.safetyTitle) + "</h1>" +
       "<p>" + esc(CPL.safetyBody) + "</p>" +
@@ -3448,6 +4120,7 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     if (meta.screen === "summary") return viewCplSummary(meta);
     if (meta.screen === "baseline") return viewCplBaseline(meta);
     if (meta.screen === "progress") return viewCplProgress(meta);
+    if (meta.screen === "weekreview") return viewCplWeekReview(meta);
     if (meta.screen === "session") return viewCplSession(meta);
     if (meta.screen === "plan") return viewCplPlan(meta);
     return viewCplWho(meta);
@@ -3722,6 +4395,40 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
       itemR.share = !!el.checked;
       saveCplSide(sideR, recR);
     }
+    if (kind === "wr-rate" || kind === "wr-commit" || kind === "wr-share-ratings" || kind === "wr-share-skills" || kind === "wr-share-commitment") {
+      if (state.hold || meta.safety) return;
+      var sideW = meta.active === "b" ? "b" : "a";
+      var draftW = cplWrDraft(sideW);
+      if (kind === "wr-rate") {
+        var areaW = String(el.dataset.area || "");
+        var nW = cplPcNum(el.value);
+        draftW.ratings[areaW] = nW;
+        var baseW = loadCplSide(sideW).progress.baseline[areaW];
+        syncCplWrArea(areaW, nW, typeof baseW === "number" ? baseW : null);
+        return;
+      }
+      if (kind === "wr-share-ratings") { draftW.shareRatings = !!el.checked; return; }
+      if (kind === "wr-share-skills") { draftW.shareSkills = !!el.checked; return; }
+      if (kind === "wr-share-commitment") { draftW.shareCommitment = !!el.checked; return; }
+      var textW = String(el.value || "").slice(0, 240);
+      if (isCrisisText(textW)) {
+        draftW.commitment = "";
+        el.value = "";
+        triggerCrisis("text");
+        return;
+      }
+      if (cplViolent(textW)) {
+        draftW.commitment = "";
+        el.value = "";
+        enterSafety(meta, "week");
+        return;
+      }
+      draftW.commitment = textW;
+    }
+    if (kind === "keep-date") {
+      if (state.hold || meta.safety) return;
+      cplKeepDraft().checkIn = String(el.value || "").slice(0, 10);
+    }
   }
   function onCplAction(action, t) {
     var meta = loadCplMeta();
@@ -3732,6 +4439,9 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     state.cplPauseErr = "";
     state.cplPcErr = "";
     state.cplRitErr = "";
+    state.cplWrErr = "";
+    state.cplKeepErr = "";
+    state.cplKeepCopied = false;
     if (action === "cpl-reset-ask") { state.cplReset = true; render(); return; }
     if (action === "cpl-reset-no") { state.cplReset = false; render(); return; }
     if (action === "cpl-reset-yes") { cplWipe(); render(); return; }
@@ -3739,6 +4449,8 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     captureCplSoftForm(meta);
     captureCplTimeout(meta);
     captureCplRitualDraft(meta);
+    cplReviewRead(meta);
+    cplKeepCapture();
     if (cplTimeoutGuard(meta) === "stop") return;
     if (action === "cpl-pc-base-open") {
       meta.screen = "baseline";
@@ -3817,6 +4529,60 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
       if (state.hold) return;
       cplRitualToggleTick(String(t.dataset.week || ""));
       render();
+      return;
+    }
+    if (action === "cpl-wr-open") {
+      if (state.hold || !loadCplPlan()) return;
+      meta.screen = "weekreview";
+      saveCplMeta(meta);
+      render();
+      return;
+    }
+    if (action === "cpl-wr-skill") {
+      if (state.hold) return;
+      var wrSkill = cplReviewToggleSkill(meta, String(t.dataset.skill || ""));
+      if (wrSkill === "max") state.cplWrErr = CPL.wrSkillMax;
+      render();
+      return;
+    }
+    if (action === "cpl-wr-save") {
+      if (state.hold) return;
+      var wrStatus = cplReviewApply(meta);
+      if (wrStatus === "safety" || wrStatus === "crisis") return;
+      render();
+      return;
+    }
+    if (action === "cpl-keep-skill") {
+      if (state.hold || !cplJointOpen(meta)) return;
+      var keepSkill = cplKeepToggleSkill(String(t.dataset.skill || ""));
+      if (keepSkill === "max") state.cplKeepErr = CPL.wrSkillMax;
+      render();
+      return;
+    }
+    if (action === "cpl-keep-often") {
+      if (state.hold || !cplJointOpen(meta)) return;
+      var oftenId = String(t.dataset.often || "");
+      if (cplReviewOftenLabel(oftenId)) cplKeepEnsureSeed().often = oftenId;
+      render();
+      return;
+    }
+    if (action === "cpl-keep-save") {
+      if (state.hold) return;
+      var keepStatus = cplKeepAgree(meta);
+      if (keepStatus === "date") state.cplKeepErr = CPL.keepDateNeed;
+      else if (keepStatus === "short") state.cplKeepErr = CPL.keepNeed;
+      else if (keepStatus === "closed") state.cplKeepErr = CPL.keepClosed;
+      render();
+      return;
+    }
+    if (action === "cpl-keep-copy") {
+      if (state.hold) return;
+      cplKeepCopy(meta);
+      return;
+    }
+    if (action === "cpl-keep-print") {
+      if (state.hold) return;
+      cplKeepPrint();
       return;
     }
     if (action === "cpl-nice-add") {
@@ -3951,7 +4717,9 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
       if (who !== "a" && who !== "b") who = "a";
       meta.active = who;
       var stayOnPause = action === "cpl-switch" && meta.screen === "session" && cplJointOpen(meta) && (cplPause.phase === "cooling" || cplPause.phase === "repair");
-      if (!stayOnPause) meta.screen = screenFor(meta, who);
+      var stayReview = action === "cpl-switch" && meta.screen === "weekreview";
+      if (stayReview) meta.screen = "weekreview";
+      else if (!stayOnPause) meta.screen = screenFor(meta, who);
       saveCplMeta(meta);
       render(); return;
     }
@@ -4911,6 +5679,149 @@ var C = {"prefix":"nafs_he","norm":"he","locale":"he","dir":"rtl","htmlLang":"he
     eq(ritSafetyView.indexOf("100") !== -1 && ritSafetyView.indexOf("1201") !== -1 && ritSafetyView.indexOf(CPL.safetyTitle) !== -1, "ritual safety card");
     eq(ritSafetyView.indexOf(CPL.ritTherapist) !== -1 && ritSafetyView.indexOf(">101<") === -1, "ritual safety suggests a therapist");
     eq(ritSafetyView.indexOf(CPL.hitSample) === -1 && ritSafetyView.indexOf(CPL.ritAdd) === -1 && ritSafetyView.indexOf("cpl-sl-start") === -1, "ritual safety does not continue");
+    cplWipe();
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "plan", safety: false });
+    var freshPlan = makeCplPlan();
+    saveJSON(K_CPL_PLAN, freshPlan);
+    var freshHtml = viewCouples();
+    eq(freshHtml.indexOf(CPL.wrOpen) !== -1 && freshHtml.indexOf('data-action="cpl-wr-open"') !== -1, "plan has the review button");
+    eq(freshHtml.indexOf(CPL.wrOpenLast) === -1 && freshHtml.indexOf(CPL.wrOpenHint) !== -1, "early week is not the last stage");
+    eq(freshHtml.indexOf(CPL.keepPlanEmpty) !== -1, "keep plan waits for a joint agreement");
+    var lastPlan = makeCplPlan();
+    lastPlan.startDate = "2020-01-01";
+    saveJSON(K_CPL_PLAN, lastPlan);
+    var lastHtml = viewCouples();
+    eq(lastHtml.indexOf(CPL.wrOpenLast) !== -1 && lastHtml.indexOf("is-due") !== -1, "last stage invites the private review");
+    var legacy = cplBlank();
+    delete legacy.review;
+    legacy.done = true;
+    legacy.answers = ["כלים", "בשקט", "שותק", "זמן", "פרטי", "תה", "נסוג", "בקשה ברורה"];
+    legacy.nice = [{ id: "old", text: "הכין תה", date: "2020-01-02", share: false, used: "" }];
+    saveJSON(K_CPL_A, legacy);
+    var legacyLoaded = loadCplSide("a");
+    eq(legacyLoaded.review && legacyLoaded.review.saved === false && legacyLoaded.answers[0] === "כלים", "old side still loads");
+    eq(legacyLoaded.nice.length === 1 && legacyLoaded.nice[0].text === "הכין תה", "old notes stay");
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "weekreview", safety: false });
+    var reviewRec = cplBlank();
+    reviewRec.done = true;
+    reviewRec.answers = ["כלים בכיור", "בשקט", "שותק", "זמן", "פרטי מאוד", "תה", "נסוג", "לכתוב אם מאחרים"];
+    reviewRec.progress.baseline = { topic: 3, ask: 4 };
+    reviewRec.progress.baselineAt = "2020-01-01";
+    reviewRec.progress.checks = [{
+      id: "pc1",
+      at: "2020-01-08",
+      date: "2020-01-08",
+      ratings: { topic: 6, ask: 4 },
+      helped: "עזר לי",
+      hard: "עדיין קשה",
+      share: false,
+      used: ""
+    }];
+    saveCplSide("a", reviewRec);
+    state.cplWrDraft = { a: cplWrBlankDraft(), b: cplWrBlankDraft() };
+    var reviewHtml = viewCouples();
+    eq(reviewHtml.indexOf('id="cpl-wr-range-topic" data-cpl="wr-rate" data-area="topic" value="6"') !== -1, "reuses the check-in score");
+    eq(reviewHtml.indexOf(CPL.wrFromCheck) !== -1 && reviewHtml.indexOf(CPL.pcUp) !== -1, "shows change against baseline");
+    eq(reviewHtml.indexOf('data-cpl="wr-share-commitment" checked') === -1, "sharing starts off");
+    eq(reviewHtml.indexOf('href="tel:100"') === -1, "improved direction has no safety card yet");
+    eq(CPL.wrSkills.length === 5, "five week skills");
+    state.cplWrDraft.a.skills = ["timer", "nice", "soft"];
+    eq(cplReviewToggleSkill(loadCplMeta(), "rituals") === "max" && state.cplWrDraft.a.skills.length === 3, "at most three skills");
+    state.cplWrDraft.a.skills = ["soft"];
+    state.cplWrDraft.a.commitment = "פעם בשבוע פתיחה רכה";
+    state.cplWrDraft.a.ratings = { topic: 6, ask: 4 };
+    state.cplWrDraft.a.shareSkills = true;
+    eq(cplReviewApply(loadCplMeta()) === "ok", "save a private review");
+    var savedA = loadCplSide("a").review;
+    eq(savedA.saved === true && savedA.shareCommitment === false && savedA.shareSkills === true && savedA.commitment === "פעם בשבוע פתיחה רכה", "commitment stays private");
+    var savedView = viewCouples();
+    eq(savedView.indexOf('href="tel:100"') === -1 && savedView.indexOf(CPL.wrHelpTitle) !== -1, "better scores keep the guide, without the safety card");
+    eq(savedView.indexOf(CPL.wrSavedShared) !== -1, "shared skills wait for the joint session");
+    onCplAction("cpl-switch", { dataset: {} });
+    eq(loadCplMeta().active === "b" && loadCplMeta().screen === "weekreview", "the other partner gets the same screen");
+    var sideBReview = cplBlank();
+    sideBReview.done = true;
+    sideBReview.answers = ["שקט ארוך", "בשקט", "שותק", "מקום", "סוד של ב", "סבלנות", "נסוג", "לשאול פעם אחת"];
+    sideBReview.progress.baseline = { topic: 8, ask: 7 };
+    sideBReview.progress.baselineAt = "2020-01-01";
+    saveCplSide("b", sideBReview);
+    state.cplWrDraft.b = cplWrBlankDraft();
+    state.cplWrDraft.b.skills = ["timeout"];
+    state.cplWrDraft.b.commitment = "COMMIT_PRIVATE_B";
+    state.cplWrDraft.b.ratings = { topic: 8, ask: 7 };
+    eq(cplReviewApply(loadCplMeta()) === "ok", "partner b saves too");
+    eq(loadCplSide("b").review.shareCommitment === false && loadCplSide("b").review.shareRatings === false, "b stays private");
+    eq(cplReviewSavedNeedsHelp(loadCplSide("b")) === true, "same scores did not improve");
+    var bView = viewCouples();
+    eq(bView.indexOf("COMMIT_PRIVATE_B") !== -1 && bView.indexOf("פעם בשבוע פתיחה רכה") === -1, "each partner sees only their commitment");
+    eq(bView.indexOf('href="tel:100"') !== -1 && bView.indexOf('href="tel:1201"') !== -1 && bView.indexOf(CPL.wrHelpBody) !== -1, "no improvement shows the safety card");
+    eq(bView.indexOf(CPL.wrTherapist) === -1, "flat scores stay in the guide");
+    state.cplWrDraft.b.ratings = { topic: 4, ask: 7 };
+    state.cplWrDraft.b.shareRatings = true;
+    state.cplWrDraft.b.commitment = "COMMIT_SHARED_B";
+    state.cplWrDraft.b.shareCommitment = true;
+    eq(cplReviewApply(loadCplMeta()) === "ok", "b shares the drop and the commitment");
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "session", openDay: "c7", safety: false });
+    var closedPlan = loadCplPlan();
+    var closedJoint = viewCouples();
+    eq(closedJoint.indexOf(CPL.wrJointTitle) === -1 && closedJoint.indexOf("COMMIT_SHARED_B") === -1 && closedJoint.indexOf("COMMIT_PRIVATE_B") === -1, "joint hides the review until both are here");
+    for (var wri = 0; wri < closedPlan.days.length; wri++) if (closedPlan.days[wri].id === "c7") closedPlan.days[wri].bothHere = true;
+    saveJSON(K_CPL_PLAN, closedPlan);
+    state.cplKeepDraft = cplKeepBlankDraft();
+    var openJoint = viewCouples();
+    eq(openJoint.indexOf(CPL.wrJointTitle) !== -1 && openJoint.indexOf("COMMIT_SHARED_B") !== -1, "shared commitment is on the joint session");
+    eq(openJoint.indexOf("פעם בשבוע פתיחה רכה") === -1 && openJoint.indexOf("COMMIT_PRIVATE_B") === -1, "unshared commitments stay off the joint session");
+    eq(openJoint.indexOf(CPL.wrSkills[2].t) !== -1 && openJoint.indexOf(CPL.pcDown) !== -1, "shared skill and a harder score are visible as words");
+    eq(openJoint.indexOf("width:") === -1 && openJoint.indexOf('value="4"') === -1, "joint review has no private numbers");
+    eq(openJoint.indexOf('href="tel:100"') !== -1 && openJoint.indexOf(CPL.wrHelpJoint) !== -1, "shared drop shows the safety card together");
+    state.cplKeepDraft.skills = [];
+    eq(cplKeepAgree(loadCplMeta()) === "short", "agreement needs a skill");
+    state.cplKeepDraft.skills = ["soft", "timer"];
+    state.cplKeepDraft.often = "weekly";
+    state.cplKeepDraft.checkIn = cplAddDays(jerusalemToday(), 1);
+    eq(cplKeepAgree(loadCplMeta()) === "date", "check-in is about four weeks out");
+    state.cplKeepDraft.checkIn = cplAddDays(jerusalemToday(), 28);
+    eq(cplKeepAgree(loadCplMeta()) === "ok", "couple agrees on a keep-going plan");
+    var agreedKeep = cplKeepRead(loadCplPlan());
+    eq(!!agreedKeep && agreedKeep.skills.join(",") === "timer,soft" && agreedKeep.often === "weekly", "keep plan stores skills and rhythm");
+    eq(daysBetween(jerusalemToday(), agreedKeep.checkIn) === 28, "check-in lands four weeks out");
+    var keepStore = "";
+    try { keepStore = localStorage.getItem(C.prefix + "_cpl_plan") || ""; } catch (eKeep) {}
+    eq(keepStore.indexOf("פעם בשבוע פתיחה רכה") === -1 && keepStore.indexOf("COMMIT_SHARED_B") === -1 && keepStore.indexOf("weekly") !== -1, "the plan stores the agreement, not private words");
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "b", screen: "plan", safety: false });
+    var keepPlanHtml = viewCouples();
+    eq(keepPlanHtml.indexOf(CPL.keepPlanTitle) !== -1 && keepPlanHtml.indexOf(CPL.wrSkills[2].t) !== -1 && keepPlanHtml.indexOf(CPL.keepCopy) !== -1, "plan screen shows the keep-going plan");
+    eq(keepPlanHtml.indexOf("פעם בשבוע פתיחה רכה") === -1, "plan screen hides the unshared commitment");
+    eq(keepPlanHtml.indexOf("COMMIT_SHARED_B") !== -1 && keepPlanHtml.indexOf(CPL.keepOnlyShared) !== -1, "plan screen summary includes only what was shared");
+    var summary = cplKeepSummaryText(loadCplMeta());
+    eq(summary.indexOf("COMMIT_SHARED_B") !== -1 && summary.indexOf(CPL.wrSkills[2].t) !== -1, "summary keeps shared words");
+    eq(summary.indexOf("פעם בשבוע פתיחה רכה") === -1, "summary drops the unshared commitment");
+    eq(summary.indexOf("100") !== -1 && summary.indexOf("1201") !== -1 && summary.indexOf(CPL.wrHelpTitle) !== -1, "summary names help when shared scores did not improve");
+    eq(summary.indexOf(CPL.disc) !== -1 && summary.indexOf("לא מטפל") !== -1, "summary stays a self-help note");
+    var sideStore = "";
+    try { sideStore = localStorage.getItem(C.prefix + "_cpl_a") || ""; } catch (eSide) {}
+    eq(sideStore.indexOf("פעם בשבוע פתיחה רכה") !== -1 && sideStore.indexOf("COMMIT_SHARED_B") === -1, "each review stays on its own side");
+    cplWipe();
+    saveCplMeta({ aName: "Lina", bName: "Omar", active: "a", screen: "weekreview", safety: false });
+    saveJSON(K_CPL_PLAN, makeCplPlan());
+    var harmReview = cplBlank();
+    harmReview.done = true;
+    harmReview.answers = ["כלים בכיור", "בשקט", "שותק", "זמן", "פרטי", "תה", "נסוג", "לכתוב אם מאחרים"];
+    harmReview.progress.baseline = { topic: 5 };
+    harmReview.progress.baselineAt = "2020-01-01";
+    saveCplSide("a", harmReview);
+    state.cplWrDraft = { a: cplWrBlankDraft(), b: cplWrBlankDraft() };
+    state.cplWrDraft.a.skills = ["timer"];
+    state.cplWrDraft.a.ratings = { topic: 5 };
+    state.cplWrDraft.a.commitment = CPL.hitSample;
+    eq(cplReviewApply(loadCplMeta()) === "safety", "fear or violence in the commitment stops");
+    eq(loadCplMeta().safety === true && loadCplMeta().safetyWeek === true && loadCplMeta().screen === "safety", "week safety flag");
+    eq(loadCplPlan() === null, "violence stops the couples plan");
+    eq(JSON.stringify(loadCplSide("a").review).indexOf(CPL.hitSample) === -1, "violent commitment is not stored");
+    var weekSafety = viewCouples();
+    eq(weekSafety.indexOf("100") !== -1 && weekSafety.indexOf("1201") !== -1 && weekSafety.indexOf(CPL.safetyTitle) !== -1, "violence shows the safety card");
+    eq(weekSafety.indexOf(CPL.wrTherapist) !== -1 && weekSafety.indexOf(">101<") === -1, "violence suggests a licensed therapist");
+    eq(weekSafety.indexOf(CPL.hitSample) === -1 && weekSafety.indexOf(CPL.wrSave) === -1 && weekSafety.indexOf("cpl-sl-start") === -1, "violence does not continue the exercise");
     state.crisis = null;
     state.hold = false;
     cplWipe();
