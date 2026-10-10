@@ -1299,3 +1299,5 @@ textarea { min-height: 100px; resize: vertical; }
   .topbar { padding-inline: 20px; }
   .disclaimer { margin-inline: 20px; }
 }
+
+.share-link{margin-inline-start:auto;margin-inline-end:8px}

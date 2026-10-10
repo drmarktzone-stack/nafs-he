@@ -1,0 +1,30 @@
+{
+  "name": "נפש | מדריך עזרה עצמית חינמי",
+  "short_name": "נפש",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "dir": "rtl",
+  "lang": "he",
+  "background_color": "#f4efe7",
+  "theme_color": "#3a5244",
+  "description": "נפש הוא מדריך עזרה עצמית חינמי: שאלון קצר למצב רוח וחרדה (לא אבחון), תוכניות של כמה ימים, נשימה, ומדריך זוגי שבו כל אחד עונה בפרטיות. בלי הרשמה. לא תחליף למטפל מורשה.",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
